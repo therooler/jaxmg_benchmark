@@ -1,0 +1,32 @@
+[hardware]
+gpu_name = "NVIDIA H100"
+# Replace this with the value reported by nvidia-smi on the target system.
+# visible_memory_mib = 143771
+visible_memory_mib = 94000
+allocator_fraction = 0.99
+gpus_per_node = 4
+cpus_per_gpu = 4
+
+[sweep]
+routines = ["potrs", ]
+dtypes = ["float32", "float64", "complex64", "complex128"]
+tiles = [256, 512, 1024, 2048, 4096]
+# Generate factor grids for 8, 16, 24, and 32 GPUs. Set explicit
+# `grids = [...]` instead when a restricted topology is required.
+grids = ["16x1", "4x4"]
+node_counts = [4, ]
+baseline_sizes = [256, 512, 1024, 2048, 4096, 8192, 16384, 32768, 49152, 65536, 98304, 131072, 196608, 262144, 327680, 393216, 458752, 524288, 589824, 655360, 720896, 786432, 851968, 917504, 983040, 1048576, 1179648, 1310720, 1441792, 1572864]
+frontier_fractions = [0.85, 0.90, 0.92, 0.94, 0.96, 0.98, 0.99, 1.00]
+
+[execution]
+cold_runs = 1
+warm_runs = 1
+case_timeout_seconds = 20000
+
+[slurm]
+# Maximum time for one complete routine/dtype/grid sweep.
+suite_walltime = "8:00:00"
+# Host CPU RAM requested per node with `sbatch --mem`; this is not GPU HBM.
+suite_memory = "128G"
+# Add site requirements when needed, for example:
+submit_args = ["--partition=gpuxl", "--constraint=h100&ib-gpuxl4", "--reservation=rocky9"]
