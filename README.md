@@ -323,3 +323,66 @@ python -m benchmark.cusolvermp.plot \
 
 `configs/isambard_gh200.toml` and `cluster_setup/isambard.sh` are examples of
 a completed site profile. They are not required on another system.
+
+## Troubleshooting
+
+To debug hangs, use NCCL_DEBUG flags.
+
+Both variables below are read by NCCL inside the compute-node processes, not by
+the planner. `submit.py` builds the job with `--export ALL,...`, so exporting
+them in the submitting shell is enough:
+
+```bash
+export NCCL_DEBUG=INFO
+export NCCL_DEBUG_SUBSYS=INIT,NET,P2P,GRAPH
+
+python -m benchmark.cusolvermp.submit \
+  --config configs/my_cluster.toml \
+  --routine potrs --dtype float32 --grid 4x4 \
+  --output-root results/my_cluster \
+  --submit
+```
+
+### NCCL debug output
+
+`NCCL_DEBUG=INFO` with `NCCL_DEBUG_SUBSYS=INIT,NET,P2P,GRAPH` reports
+communicator setup, the selected network transport, peer-to-peer paths, and the
+ring or tree topology. The output is written to the per-case file under
+`logs/<routine>/<dtype>/<grid>/`, mixed with the benchmark's own output. Useful
+patterns once a log exists:
+
+```bash
+grep -E 'NET/IB|NET/Socket' case.log     # transport chosen per channel
+grep 'GPU Direct RDMA'      case.log     # whether GDR is active
+grep 'Init COMPLETE'        case.log     # every communicator finished setup
+```
+
+This output is verbose: a single small case produces megabytes of log, and one
+block is emitted per rank.
+
+### Multi-node hangs
+
+A multi-node case that produces no further output after its communicators
+report `Init COMPLETE` is stalled in steady-state data transfer, which NCCL
+does not log. Setting
+
+```bash
+export NCCL_IB_DISABLE=1
+```
+
+makes NCCL fall back to TCP sockets instead of InfiniBand verbs. If the case
+then completes, the redistribution schedule and cuSOLVERMp are working and the
+problem lies in the InfiniBand path — a cluster-level issue to report to your
+site administrators rather than a benchmark bug. The TCP fallback is far slower
+than IB, so use it only to isolate the fault, never for recorded timings.
+
+A narrower variant keeps InfiniBand and disables only GPUDirect RDMA:
+
+```bash
+export NCCL_NET_GDR_LEVEL=0
+```
+
+`slurm/suite.sbatch` already applies this by default, because GPUDirect RDMA
+deadlocks on some fabrics for particular cross-node transfer patterns. Export a
+different value to override it.
+
