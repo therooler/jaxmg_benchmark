@@ -47,8 +47,7 @@ export LD_LIBRARY_PATH="${NVIDIA_LIBRARY_PATH}:${LD_LIBRARY_PATH:-}"
 export XLA_PYTHON_CLIENT_ALLOCATOR="${XLA_PYTHON_CLIENT_ALLOCATOR:-vmm}"
 export XLA_PYTHON_CLIENT_MEM_FRACTION="${XLA_PYTHON_CLIENT_MEM_FRACTION:-0.99}"
 export NCCL_CUMEM_ENABLE="${NCCL_CUMEM_ENABLE:-0}"
-# GPUDirect RDMA (GDRDMA) deadlocks on Rusty's IB fabric for certain cross-node
-# transfer patterns
+# GPUDirect RDMA (GDRDMA) deadlocks on certain IB fabrics
 export NCCL_NET_GDR_LEVEL="${NCCL_NET_GDR_LEVEL:-0}"
 export OMP_NUM_THREADS="${OMP_NUM_THREADS:-1}"
 
