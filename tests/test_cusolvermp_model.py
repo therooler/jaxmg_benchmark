@@ -14,7 +14,7 @@ from benchmark.cusolvermp.run_suite import _selected_sizes, _srun_command
 
 
 CONFIG = Path(__file__).parents[1] / "configs" / "isambard_gh200.toml"
-H200_CONFIG = Path(__file__).parents[1] / "configs" / "example_h200_8gpu.toml"
+H200_CONFIG = Path(__file__).parents[1] / "configs" / "example_h200_16gpu.toml"
 
 
 class ModelTests(unittest.TestCase):
@@ -62,10 +62,18 @@ class ModelTests(unittest.TestCase):
     def test_larger_hbm_generates_larger_frontier_cases(self):
         h200 = BenchmarkConfig.load(H200_CONFIG)
         gh200_sizes = planned_sizes(
-            self.config, dtype="float32", grid=ProcessGrid(8, 1), tile_size=256
+            self.config,
+            routine="potrs",
+            dtype="float32",
+            grid=ProcessGrid(8, 1),
+            tile_size=256,
         )
         h200_sizes = planned_sizes(
-            h200, dtype="float32", grid=ProcessGrid(8, 1), tile_size=256
+            h200,
+            routine="potrs",
+            dtype="float32",
+            grid=ProcessGrid(8, 1),
+            tile_size=256,
         )
         self.assertGreater(max(h200_sizes), max(gh200_sizes))
 
@@ -86,20 +94,67 @@ class ModelTests(unittest.TestCase):
         self.assertEqual(potrs.estimate_memory(self.config).pivot_bytes, 0)
         self.assertEqual(lu.estimate_memory(self.config).pivot_bytes, 16384 * 8)
 
+    def test_gesvd_accounts_for_the_singular_vector_outputs(self):
+        """GESVD holds U and Vh; the solves hold neither."""
+        potrs = BenchmarkCase("potrs", "float64", ProcessGrid(4, 1), 16384, 1024)
+        gesvd = BenchmarkCase("gesvd", "float64", ProcessGrid(4, 1), 16384, 1024)
+        potrs_memory = potrs.estimate_memory(self.config)
+        gesvd_memory = gesvd.estimate_memory(self.config)
+        self.assertEqual(potrs_memory.vector_output_bytes, 0)
+        self.assertEqual(
+            gesvd_memory.vector_output_bytes, 2 * gesvd_memory.local_matrix_bytes
+        )
+        # GESVD takes no right-hand side and does no pivoting.
+        self.assertEqual(gesvd_memory.rhs_capacity_bytes, 0)
+        self.assertEqual(gesvd_memory.pivot_bytes, 0)
+        self.assertGreater(
+            gesvd_memory.known_total_bytes, potrs_memory.known_total_bytes
+        )
+
+    def test_gesvd_frontier_is_smaller_than_the_solve_frontier(self):
+        """Three matrix-sized buffers must shrink the planned frontier sizes."""
+        for grid in (ProcessGrid(8, 1), ProcessGrid(4, 4)):
+            for dtype in ("float32", "complex128"):
+                potrs_sizes = planned_sizes(
+                    self.config,
+                    routine="potrs",
+                    dtype=dtype,
+                    grid=grid,
+                    tile_size=256,
+                )
+                gesvd_sizes = planned_sizes(
+                    self.config,
+                    routine="gesvd",
+                    dtype=dtype,
+                    grid=grid,
+                    tile_size=256,
+                )
+                self.assertLess(
+                    max(gesvd_sizes), max(potrs_sizes), f"{grid} {dtype}"
+                )
+
     def test_all_planned_sizes_need_no_matrix_padding(self):
-        for grid in self.config.grids:
-            for dtype in self.config.dtypes:
-                for tile in self.config.tiles:
-                    for size in planned_sizes(
-                        self.config, dtype=dtype, grid=grid, tile_size=tile
-                    ):
-                        case = BenchmarkCase("potrs", dtype, grid, size, tile)
-                        self.assertFalse(case.needs_matrix_padding, case.case_id)
+        for routine in ("potrs", "lu_solve", "gesvd"):
+            for grid in self.config.grids:
+                for dtype in self.config.dtypes:
+                    for tile in self.config.tiles:
+                        for size in planned_sizes(
+                            self.config,
+                            routine=routine,
+                            dtype=dtype,
+                            grid=grid,
+                            tile_size=tile,
+                        ):
+                            case = BenchmarkCase(routine, dtype, grid, size, tile)
+                            self.assertFalse(
+                                case.needs_matrix_padding, case.case_id
+                            )
 
     def test_large_grid_has_baseline_bridges_before_frontier(self):
         """Shared baselines fill the multi-node gap without entering 85% sweep."""
         sizes = planned_sizes(
             self.config,
+            routine="potrs",
             dtype="float32",
             grid=ProcessGrid(4, 4),
             tile_size=256,
