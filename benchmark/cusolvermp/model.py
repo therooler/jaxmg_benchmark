@@ -315,8 +315,6 @@ class BenchmarkCase:
         local_rows = self.matrix_size // self.grid.rows
         local_cols = self.matrix_size // self.grid.cols
         local_matrix_bytes = local_rows * local_cols * itemsize
-        # GESVD takes no right-hand side and instead returns U and Vh, which for
-        # a square reduced decomposition are each the size of the input shard.
         is_gesvd = self.routine == "gesvd"
         # The native redistribution uses three equally sized tile buffers:
         # receive, send, and saved local data. It is sized for whichever

@@ -39,8 +39,6 @@ from benchmark.cusolvermp.model import (
 
 
 # Largest GESVD dimension for which the singular values are also compared
-# against a host reference decomposition. Above this the gather and the host
-# O(N^3) factorization are too expensive, and only the Frobenius identity runs.
 GESVD_REFERENCE_MAX_N = 2048
 
 
@@ -171,11 +169,6 @@ def _make_gesvd_input_factory(
 ):
     """Build a compiled factory for the dense matrix decomposed by GESVD.
 
-    Unlike the solves, an SVD is iterative, so its runtime depends on the input
-    spectrum. A dense pseudo-random matrix therefore gives representative
-    timings where a diagonal would not. The matrix is generated inside ``jit``
-    with an explicit output sharding so it is never materialized on one host.
-
     Args:
         matrix_size: Global square matrix dimension.
         dtype: JAX dtype for the generated matrix.
@@ -261,11 +254,9 @@ def _validate_gesvd(
 ) -> dict[str, object]:
     """Validate the singular values of a dense random matrix.
 
-    A dense SVD has no cheap closed-form answer, so two checks are combined.
-    The Frobenius identity ``sum(s_i**2) == ||A||_F**2`` is exact, costs
-    ``O(N**2)``, and therefore runs at every size. A direct comparison against a
-    host reference decomposition is stronger but ``O(N**3)``, so it runs only
-    for the small cases where it is affordable.
+    We check the Frobenius identity ``sum(s_i**2) == ||A||_F**2`` 
+    We also perform the direct comparison against for the small 
+    cases where it is affordable.
 
     Args:
         singular_values: Replicated singular values returned by GESVD.
@@ -306,9 +297,7 @@ def _validate_gesvd(
     if reference_matrix is not None:
         expected = np.linalg.svd(reference_matrix, compute_uv=False)
         maximum_error = float(np.max(np.abs(values - expected)))
-        # Normalize by the spectral norm: the smallest singular values of a
-        # random dense matrix approach zero, so a per-value relative test is
-        # meaningless there.
+        # Normalize by the spectral norm
         scale = float(expected[0]) if expected[0] > 0.0 else 1.0
         reference_tolerance = 1e-3 if single_precision else 1e-9
         if maximum_error / scale > reference_tolerance:
@@ -398,9 +387,6 @@ def _gesvd_iteration(
 ) -> tuple[float, dict[str, object]]:
     """Time one reduced SVD and validate its singular values.
 
-    ``||A||_F**2`` and the optional host reference copy are both taken before
-    the timed region, because GESVD donates the input matrix.
-
     Args:
         solver: ``jaxmg.gesvd``.
         status_size: Number of native status values emitted by one rank.
@@ -414,8 +400,7 @@ def _gesvd_iteration(
     """
     a = make_inputs()
     a.block_until_ready()
-    # Accumulate in float64: a float32 reduction over the whole matrix loses
-    # the result to rounding at benchmark dimensions.
+    # Accumulate in float64
     frobenius_squared = _global_scalar(
         jnp.sum(jnp.square(jnp.abs(a)), dtype=jnp.float64)
     )
