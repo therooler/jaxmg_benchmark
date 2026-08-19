@@ -21,6 +21,10 @@ DTYPE_BYTES = {
     "complex128": 16,
 }
 
+ROUTINES = ("potrs", "lu_solve", "gesvd")
+
+ROUTINE_MATRIX_COPIES = {"potrs": 1, "lu_solve": 1, "gesvd": 3}
+
 
 @dataclass(frozen=True, order=True)
 class ProcessGrid:
@@ -189,8 +193,8 @@ class BenchmarkConfig:
             raise ValueError("allocator_fraction must be in (0, 1]")
         if set(self.dtypes) - set(DTYPE_BYTES):
             raise ValueError(f"unsupported dtypes: {set(self.dtypes) - set(DTYPE_BYTES)}")
-        if set(self.routines) - {"potrs", "lu_solve"}:
-            raise ValueError("routines must be potrs and/or lu_solve")
+        if set(self.routines) - set(ROUTINES):
+            raise ValueError(f"routines must be drawn from {', '.join(ROUTINES)}")
         if any(tile < 1 for tile in self.tiles):
             raise ValueError("tile sizes must be positive")
         if not self.grids:
@@ -229,6 +233,8 @@ class MemoryEstimate:
         rhs_capacity_bytes: Tile-aligned right-hand-side work capacity.
         redistribution_scratch_bytes: Three native redistribution buffers.
         pivot_bytes: LU pivot indices, or zero for Cholesky.
+        vector_output_bytes: Local shards of the GESVD singular-vector matrices,
+            or zero for the solves.
         allocator_budget_bytes: VMM budget available to the process.
     """
 
@@ -236,6 +242,7 @@ class MemoryEstimate:
     rhs_capacity_bytes: int
     redistribution_scratch_bytes: int
     pivot_bytes: int
+    vector_output_bytes: int
     allocator_budget_bytes: int
 
     @property
@@ -247,6 +254,7 @@ class MemoryEstimate:
                 self.rhs_capacity_bytes,
                 self.redistribution_scratch_bytes,
                 self.pivot_bytes,
+                self.vector_output_bytes,
             )
         )
 
@@ -306,16 +314,21 @@ class BenchmarkCase:
         itemsize = DTYPE_BYTES[self.dtype]
         local_rows = self.matrix_size // self.grid.rows
         local_cols = self.matrix_size // self.grid.cols
+        local_matrix_bytes = local_rows * local_cols * itemsize
+        # GESVD takes no right-hand side and instead returns U and Vh, which for
+        # a square reduced decomposition are each the size of the input shard.
+        is_gesvd = self.routine == "gesvd"
         # The native redistribution uses three equally sized tile buffers:
         # receive, send, and saved local data. It is sized for whichever
         # process-grid direction has the longer local slab.
         return MemoryEstimate(
-            local_matrix_bytes=local_rows * local_cols * itemsize,
-            rhs_capacity_bytes=local_rows * self.tile_size * itemsize,
+            local_matrix_bytes=local_matrix_bytes,
+            rhs_capacity_bytes=0 if is_gesvd else local_rows * self.tile_size * itemsize,
             redistribution_scratch_bytes=(
                 3 * self.tile_size * max(local_rows, local_cols) * itemsize
             ),
             pivot_bytes=local_cols * 8 if self.routine == "lu_solve" else 0,
+            vector_output_bytes=2 * local_matrix_bytes if is_gesvd else 0,
             allocator_budget_bytes=config.allocator_budget_per_gpu,
         )
 
@@ -348,6 +361,7 @@ class BenchmarkCase:
             "rhs_capacity_bytes": memory.rhs_capacity_bytes,
             "redistribution_scratch_bytes": memory.redistribution_scratch_bytes,
             "pivot_bytes": memory.pivot_bytes,
+            "vector_output_bytes": memory.vector_output_bytes,
             "known_total_bytes": memory.known_total_bytes,
             "allocator_budget_bytes": memory.allocator_budget_bytes,
             "known_budget_fraction": memory.known_budget_fraction,
@@ -371,6 +385,7 @@ def _round_up_to_multiple(value: int, multiple: int) -> int:
 def _near_limit_sizes(
     config: BenchmarkConfig,
     *,
+    routine: str,
     dtype: str,
     grid: ProcessGrid,
     tile_size: int,
@@ -382,6 +397,7 @@ def _near_limit_sizes(
 
     Args:
         config: Hardware and allocator settings.
+        routine: Solver whose concurrent matrix-sized buffers set the limit.
         dtype: Element dtype used by the matrix.
         grid: Distributed process grid.
         tile_size: cuSOLVERMp tile width.
@@ -389,10 +405,12 @@ def _near_limit_sizes(
     Returns:
         Aligned dimensions at the requested fractions of the matrix-only
         allocator limit.
+
+    Raises:
+        KeyError: If the routine has no recorded matrix-copy count.
     """
-    matrix_limit = floor(
-        sqrt(config.allocator_budget_per_gpu * grid.processes / DTYPE_BYTES[dtype])
-    )
+    budget = config.allocator_budget_per_gpu / ROUTINE_MATRIX_COPIES[routine]
+    matrix_limit = floor(sqrt(budget * grid.processes / DTYPE_BYTES[dtype]))
     quantum = tile_size * lcm(grid.rows, grid.cols)
     return {
         floor(sqrt(fraction) * matrix_limit) // quantum * quantum
@@ -403,6 +421,7 @@ def _near_limit_sizes(
 def planned_sizes(
     config: BenchmarkConfig,
     *,
+    routine: str,
     dtype: str,
     grid: ProcessGrid,
     tile_size: int,
@@ -414,6 +433,8 @@ def planned_sizes(
 
     Args:
         config: Hardware and allocator settings.
+        routine: Solver being planned. GESVD holds more matrix-sized buffers
+            than the solves, so it reaches a smaller maximum dimension.
         dtype: Element dtype used by the matrix.
         grid: Distributed process grid.
         tile_size: cuSOLVERMp tile width.
@@ -425,7 +446,7 @@ def planned_sizes(
     near_limit = {
         size
         for size in _near_limit_sizes(
-            config, dtype=dtype, grid=grid, tile_size=tile_size
+            config, routine=routine, dtype=dtype, grid=grid, tile_size=tile_size
         )
         if size >= quantum
     }

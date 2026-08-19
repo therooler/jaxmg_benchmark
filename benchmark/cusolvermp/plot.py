@@ -8,7 +8,7 @@ from pathlib import Path
 
 import matplotlib.pyplot as plt
 
-from benchmark.cusolvermp.model import ProcessGrid
+from benchmark.cusolvermp.model import ROUTINES, ProcessGrid
 
 
 def _arguments() -> argparse.Namespace:
@@ -19,7 +19,7 @@ def _arguments() -> argparse.Namespace:
     """
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--output-root", default="results")
-    parser.add_argument("--routine", choices=("potrs", "lu_solve"), required=True)
+    parser.add_argument("--routine", choices=ROUTINES, required=True)
     parser.add_argument("--dtype", choices=("float32", "float64", "complex64", "complex128"), required=True)
     parser.add_argument("--grid", type=ProcessGrid.parse, required=True)
     parser.add_argument("--output")

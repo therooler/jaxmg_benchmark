@@ -1,10 +1,9 @@
 # JAXMg Benchmarks
 
-This repository benchmarks the distributed `jaxmg.potrs` and
-`jaxmg.lu_solve` routines backed by cuSOLVERMp. Each GPU runs one Python
-process.
+This repository benchmarks the distributed `jaxmg.potrs`, `jaxmg.lu_solve`, and
+`jaxmg.gesvd` routines backed by cuSOLVERMp. Each GPU runs one Python process.
 
-The benchmark measures one cold solve and one warm solve for combinations of:
+The benchmark measures one cold call and one warm call for combinations of:
 
 - matrix size;
 - tile size;
@@ -13,6 +12,11 @@ The benchmark measures one cold solve and one warm solve for combinations of:
 
 Every result is numerically validated. Matrix construction and validation are
 outside the timed region.
+
+`gesvd` is benchmarked as a square reduced decomposition, computing `U`, `s`,
+and `Vh` with `full_matrices=False`. Two properties distinguish it from the
+solves and are worth knowing before reading its numbers — both are covered in
+[GESVD notes](#gesvd-notes) below.
 
 ## Requirements
 
@@ -323,6 +327,61 @@ python -m benchmark.cusolvermp.plot \
 
 `configs/isambard_gh200.toml` and `cluster_setup/isambard.sh` are examples of
 a completed site profile. They are not required on another system.
+
+## GESVD Notes
+
+### It reaches smaller matrices than the solves
+
+The solves keep one matrix-sized buffer per process. GESVD keeps three: the
+donated `A` work buffer plus `U` and `Vh`, which cuSOLVERMp requires to occupy
+distinct storage. The size planner accounts for this, so at equal GPU count and
+datatype the largest GESVD case is about `1/sqrt(3)` of the largest solve case.
+On four H100 nodes with a `4x4` grid:
+
+```text
+float32     potrs 624640    gesvd 360448
+complex128  potrs 312320    gesvd 180224
+```
+
+Both sit at roughly 100% of the configured allocator budget; they simply reach
+it at different dimensions. Each record carries a `vector_output_bytes` field
+holding the combined `U` and `Vh` shards, which is zero for the solves.
+
+As for the solves, cuSOLVERMp's own workspace is still unknown before
+execution, so the largest `frontier_fractions` entries may still fail with an
+out-of-memory error. That is how the sweep locates the real limit.
+
+### What its validation proves
+
+The solves are checked against an exact known solution. A dense SVD has no
+cheap closed-form answer, so two checks are combined:
+
+| Check | Runs at | Recorded as |
+|---|---|---|
+| `sum(s_i^2) == \|\|A\|\|_F^2`, exact and `O(N^2)` | every size | `frobenius_identity_error` |
+| Comparison against a host reference SVD, `O(N^3)` | `N <= 2048` only | `max_abs_error`, `null` above the threshold |
+
+Singular values are additionally required to be non-negative and in descending
+order, and every rank's native status code must be zero.
+
+Be aware of what this does and does not establish. The Frobenius identity is
+necessary but not sufficient — it would not detect a permutation of otherwise
+correct singular values. The reference comparison is exact but only affordable
+at small dimensions. A large case that reports `passed` has therefore not been
+verified as strongly as a `potrs` case of the same size.
+
+### Its timings depend on the input
+
+GESVD is given a dense pseudo-random matrix from a fixed seed, rather than the
+diagonal system used by the solves. Cholesky and LU are direct algorithms with a
+fixed operation count, but an SVD is iterative, so its runtime depends on the
+spectrum of the input. A diagonal matrix would produce timings that do not
+represent real work. The consequence is that GESVD case times cannot be
+predicted from solve times at the same dimension.
+
+Generating that matrix is `O(N^2)` GPU work per iteration. It happens outside the
+timed region, so it inflates wall-clock time at the frontier without affecting
+the recorded `cold_seconds` and `warm_seconds`.
 
 ## Troubleshooting
 

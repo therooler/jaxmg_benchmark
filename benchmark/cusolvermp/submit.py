@@ -10,7 +10,12 @@ import argparse
 from pathlib import Path
 import subprocess
 
-from benchmark.cusolvermp.model import BenchmarkConfig, ProcessGrid, planned_sizes
+from benchmark.cusolvermp.model import (
+    ROUTINES,
+    BenchmarkConfig,
+    ProcessGrid,
+    planned_sizes,
+)
 
 
 def _arguments() -> argparse.Namespace:
@@ -24,7 +29,7 @@ def _arguments() -> argparse.Namespace:
     parser.add_argument("--config", required=True)
     parser.add_argument("--script", default="slurm/suite.sbatch")
     parser.add_argument("--output-root", default="results")
-    parser.add_argument("--routine", action="append", choices=("potrs", "lu_solve"))
+    parser.add_argument("--routine", action="append", choices=ROUTINES)
     parser.add_argument("--dtype", action="append", choices=("float32", "float64", "complex64", "complex128"))
     parser.add_argument("--grid", action="append", type=ProcessGrid.parse)
     parser.add_argument("--submit", action="store_true")
@@ -121,6 +126,7 @@ def main() -> None:
                     len(
                         planned_sizes(
                             config,
+                            routine=routine,
                             dtype=dtype,
                             grid=grid,
                             tile_size=tile_size,

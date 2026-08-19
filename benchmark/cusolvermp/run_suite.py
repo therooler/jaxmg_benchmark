@@ -15,6 +15,7 @@ import sys
 import time
 
 from benchmark.cusolvermp.model import (
+    ROUTINES,
     BenchmarkCase,
     BenchmarkConfig,
     ProcessGrid,
@@ -30,7 +31,7 @@ def _arguments() -> argparse.Namespace:
     """
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--config", required=True)
-    parser.add_argument("--routine", choices=("potrs", "lu_solve"), required=True)
+    parser.add_argument("--routine", choices=ROUTINES, required=True)
     parser.add_argument("--dtype", choices=("float32", "float64", "complex64", "complex128"), required=True)
     parser.add_argument("--grid", type=ProcessGrid.parse, required=True)
     parser.add_argument("--tile-size", type=int, action="append")
@@ -112,6 +113,7 @@ def _selected_sizes(
     if not args.matrix_size:
         return planned_sizes(
             config,
+            routine=args.routine,
             dtype=args.dtype,
             grid=args.grid,
             tile_size=tile_size,
