@@ -115,6 +115,18 @@ def main() -> None:
     dtypes = tuple(args.dtype or config.dtypes)
     grids = tuple(args.grid or config.grids)
 
+    # run_suite.py rejects a routine or dtype the configuration does not enable.
+    if set(routines) - set(config.routines):
+        raise ValueError(
+            f"routines not enabled by the configuration: "
+            f"{sorted(set(routines) - set(config.routines))}"
+        )
+    if set(dtypes) - set(config.dtypes):
+        raise ValueError(
+            f"dtypes not enabled by the configuration: "
+            f"{sorted(set(dtypes) - set(config.dtypes))}"
+        )
+
     submitted = 0
     total_cases = 0
     for routine in routines:
