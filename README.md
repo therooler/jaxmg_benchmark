@@ -1,7 +1,8 @@
 # JAXMg Benchmarks
 
-This repository benchmarks the distributed `jaxmg.potrs`, `jaxmg.lu_solve`, and
-`jaxmg.gesvd` routines backed by cuSOLVERMp. Each GPU runs one Python process.
+This repository benchmarks the distributed `jaxmg.potrs`, `jaxmg.lu_solve`,
+`jaxmg.gesvd`, and `jaxmg.syevd` routines backed by cuSOLVERMp. Each GPU runs
+one Python process.
 
 The benchmark measures one cold call and one warm call for combinations of:
 
@@ -13,10 +14,7 @@ The benchmark measures one cold call and one warm call for combinations of:
 Every result is numerically validated. Matrix construction and validation are
 outside the timed region.
 
-`gesvd` is benchmarked as a square reduced decomposition, computing `U`, `s`,
-and `Vh` with `full_matrices=False`. Two properties distinguish it from the
-solves and are worth knowing before reading its numbers — both are covered in
-[GESVD notes](#gesvd-notes) below.
+
 
 ## Requirements
 
