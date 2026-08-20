@@ -4,6 +4,7 @@ from pathlib import Path
 import unittest
 
 from benchmark.cusolvermp.model import (
+    ROUTINES,
     BenchmarkCase,
     BenchmarkConfig,
     ProcessGrid,
@@ -111,8 +112,24 @@ class ModelTests(unittest.TestCase):
             gesvd_memory.known_total_bytes, potrs_memory.known_total_bytes
         )
 
-    def test_gesvd_frontier_is_smaller_than_the_solve_frontier(self):
-        """Three matrix-sized buffers must shrink the planned frontier sizes."""
+    def test_syevd_accounts_for_the_eigenvector_output(self):
+        """SYEVD keeps one matrix-sized result; GESVD keeps two."""
+        syevd = BenchmarkCase("syevd", "float64", ProcessGrid(4, 1), 16384, 1024)
+        gesvd = BenchmarkCase("gesvd", "float64", ProcessGrid(4, 1), 16384, 1024)
+        syevd_memory = syevd.estimate_memory(self.config)
+        gesvd_memory = gesvd.estimate_memory(self.config)
+        self.assertEqual(
+            syevd_memory.vector_output_bytes, syevd_memory.local_matrix_bytes
+        )
+        self.assertEqual(
+            gesvd_memory.vector_output_bytes, 2 * gesvd_memory.local_matrix_bytes
+        )
+        # Neither decomposition takes a right-hand side or pivots.
+        self.assertEqual(syevd_memory.rhs_capacity_bytes, 0)
+        self.assertEqual(syevd_memory.pivot_bytes, 0)
+
+    def test_decomposition_frontiers_are_smaller_than_the_solve_frontier(self):
+        """Extra matrix-sized buffers must shrink the planned frontier sizes."""
         for grid in (ProcessGrid(8, 1), ProcessGrid(4, 4)):
             for dtype in ("float32", "complex128"):
                 potrs_sizes = planned_sizes(
@@ -122,19 +139,20 @@ class ModelTests(unittest.TestCase):
                     grid=grid,
                     tile_size=256,
                 )
-                gesvd_sizes = planned_sizes(
-                    self.config,
-                    routine="gesvd",
-                    dtype=dtype,
-                    grid=grid,
-                    tile_size=256,
-                )
-                self.assertLess(
-                    max(gesvd_sizes), max(potrs_sizes), f"{grid} {dtype}"
-                )
+                for routine in ("gesvd", "syevd"):
+                    sizes = planned_sizes(
+                        self.config,
+                        routine=routine,
+                        dtype=dtype,
+                        grid=grid,
+                        tile_size=256,
+                    )
+                    self.assertLess(
+                        max(sizes), max(potrs_sizes), f"{routine} {grid} {dtype}"
+                    )
 
     def test_all_planned_sizes_need_no_matrix_padding(self):
-        for routine in ("potrs", "lu_solve", "gesvd"):
+        for routine in ROUTINES:
             for grid in self.config.grids:
                 for dtype in self.config.dtypes:
                     for tile in self.config.tiles:
