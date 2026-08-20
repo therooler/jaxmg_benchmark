@@ -7,8 +7,7 @@ gpus_per_node = 8
 cpus_per_gpu = 16
 
 [sweep]
-# Supported routines are potrs, lu_solve, and gesvd. GESVD additionally holds U
-# and Vh, so its planned dimensions reach roughly 1/sqrt(3) of the solve sizes.
+# Supported routines are potrs, lu_solve, gesvd, and syevd.
 routines = ["potrs", "lu_solve"]
 dtypes = ["float32", "float64", "complex64", "complex128"]
 tiles = [256, 512, 1024, 2048, 4096]
