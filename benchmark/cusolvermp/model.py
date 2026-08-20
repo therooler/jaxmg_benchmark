@@ -21,9 +21,13 @@ DTYPE_BYTES = {
     "complex128": 16,
 }
 
-ROUTINES = ("potrs", "lu_solve", "gesvd")
+ROUTINES = ("potrs", "lu_solve", "gesvd", "syevd")
 
-ROUTINE_MATRIX_COPIES = {"potrs": 1, "lu_solve": 1, "gesvd": 3}
+# Peak number of matrix-sized buffers one process holds at any point in a case,
+ROUTINE_MATRIX_COPIES = {"potrs": 1, "lu_solve": 1, "gesvd": 3, "syevd": 2}
+
+# Matrix-sized results returned alongside the factorized input.
+ROUTINE_VECTOR_OUTPUTS = {"potrs": 0, "lu_solve": 0, "gesvd": 2, "syevd": 1}
 
 
 @dataclass(frozen=True, order=True)
@@ -315,18 +319,24 @@ class BenchmarkCase:
         local_rows = self.matrix_size // self.grid.rows
         local_cols = self.matrix_size // self.grid.cols
         local_matrix_bytes = local_rows * local_cols * itemsize
-        is_gesvd = self.routine == "gesvd"
+        # Only the solves take a right-hand side; the decompositions instead
+        # return matrix-sized results counted by ROUTINE_VECTOR_OUTPUTS.
+        takes_rhs = self.routine in ("potrs", "lu_solve")
         # The native redistribution uses three equally sized tile buffers:
         # receive, send, and saved local data. It is sized for whichever
         # process-grid direction has the longer local slab.
         return MemoryEstimate(
             local_matrix_bytes=local_matrix_bytes,
-            rhs_capacity_bytes=0 if is_gesvd else local_rows * self.tile_size * itemsize,
+            rhs_capacity_bytes=(
+                local_rows * self.tile_size * itemsize if takes_rhs else 0
+            ),
             redistribution_scratch_bytes=(
                 3 * self.tile_size * max(local_rows, local_cols) * itemsize
             ),
             pivot_bytes=local_cols * 8 if self.routine == "lu_solve" else 0,
-            vector_output_bytes=2 * local_matrix_bytes if is_gesvd else 0,
+            vector_output_bytes=(
+                ROUTINE_VECTOR_OUTPUTS[self.routine] * local_matrix_bytes
+            ),
             allocator_budget_bytes=config.allocator_budget_per_gpu,
         )
 
