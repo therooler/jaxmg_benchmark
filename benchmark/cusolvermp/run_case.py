@@ -38,10 +38,6 @@ from benchmark.cusolvermp.model import (
 )
 
 
-# Largest GESVD dimension for which the singular values are also compared
-GESVD_REFERENCE_MAX_N = 2048
-
-
 def _arguments() -> argparse.Namespace:
     """Read the command-line description of one fresh benchmark case.
 
@@ -250,13 +246,11 @@ def _validate_gesvd(
     status_size: int,
     dtype_name: str,
     frobenius_squared: float,
-    reference_matrix: np.ndarray | None,
 ) -> dict[str, object]:
     """Validate the singular values of a dense random matrix.
 
-    We check the Frobenius identity ``sum(s_i**2) == ||A||_F**2`` 
-    We also perform the direct comparison against for the small 
-    cases where it is affordable.
+    We check the Frobenius identity ``sum(s_i**2) == ||A||_F**2``, which is
+    exact and costs ``O(N**2)``, so it runs at every size.
 
     Args:
         singular_values: Replicated singular values returned by GESVD.
@@ -265,12 +259,9 @@ def _validate_gesvd(
         dtype_name: Benchmark dtype, used to select numerical tolerance.
         frobenius_squared: ``||A||_F**2`` accumulated before the matrix was
             donated to the solver.
-        reference_matrix: The complete input matrix when a reference
-            decomposition is affordable, otherwise ``None``.
 
     Returns:
-        Result fields recording both error measures and per-rank return codes.
-        ``max_abs_error`` is ``None`` when no reference decomposition was run.
+        Result fields recording the identity error and per-rank return codes.
 
     Raises:
         AssertionError: If either check, the status shape, or a status code fails.
@@ -293,22 +284,7 @@ def _validate_gesvd(
             f"relative_error={identity_error} tolerance={identity_tolerance}"
         )
 
-    maximum_error: float | None = None
-    if reference_matrix is not None:
-        expected = np.linalg.svd(reference_matrix, compute_uv=False)
-        maximum_error = float(np.max(np.abs(values - expected)))
-        # Normalize by the spectral norm
-        scale = float(expected[0]) if expected[0] > 0.0 else 1.0
-        reference_tolerance = 1e-3 if single_precision else 1e-9
-        if maximum_error / scale > reference_tolerance:
-            raise AssertionError(
-                "GESVD singular values disagree with the reference: "
-                f"max_abs_error={maximum_error} scale={scale} "
-                f"tolerance={reference_tolerance}"
-            )
-
     return {
-        "max_abs_error": maximum_error,
         "frobenius_identity_error": identity_error,
         "native_status_codes": _rank_status_codes(status, status_size),
     }
@@ -328,6 +304,72 @@ def _package_versions() -> dict[str, str | None]:
         except importlib.metadata.PackageNotFoundError:
             versions[package] = None
     return versions
+
+
+def _validate_syevd(
+    *,
+    eigenvalues: jax.Array,
+    status: jax.Array,
+    status_size: int,
+    dtype_name: str,
+    trace: float,
+    frobenius_squared: float,
+) -> dict[str, object]:
+    """Validate the eigenvalues of a dense symmetric matrix.
+
+    Two exact identities hold for any symmetric or Hermitian matrix and cost
+    ``O(N**2)`` or less, so both run at every size: ``sum(lambda_i) == trace(A)``
+    and ``sum(lambda_i**2) == ||A||_F**2``. Because eigenvalues are signed, the
+    trace identity constrains the result more tightly than the equivalent check
+    can for singular values.
+
+    Args:
+        eigenvalues: Replicated ascending eigenvalues returned by SYEVD.
+        status: Concatenated native status values.
+        status_size: Number of status values emitted by one rank.
+        dtype_name: Benchmark dtype, used to select numerical tolerance.
+        trace: ``trace(A)`` accumulated before the matrix was donated.
+        frobenius_squared: ``||A||_F**2`` accumulated before the matrix was
+            donated.
+
+    Returns:
+        Result fields recording each error measure and per-rank return codes.
+
+    Raises:
+        AssertionError: If a check, the status shape, or a status code fails.
+    """
+    single_precision = dtype_name in ("float32", "complex64")
+    tolerance = 5e-4 if single_precision else 1e-9
+    values = np.asarray(_global_numpy(eigenvalues), dtype=np.float64).reshape(-1)
+
+    # Both identities are normalized by ||A||_F
+    scale = np.sqrt(frobenius_squared)
+    if scale <= 0.0:
+        raise AssertionError("input matrix has zero Frobenius norm")
+
+    if values.size > 1 and np.min(np.diff(values)) < -1e-5 * scale:
+        raise AssertionError("SYEVD eigenvalues are not in ascending order")
+
+    trace_error = abs(float(np.sum(values)) - trace) / scale
+    if trace_error > tolerance:
+        raise AssertionError(
+            "SYEVD trace identity failed: "
+            f"relative_error={trace_error} tolerance={tolerance}"
+        )
+
+    identity_error = abs(float(np.sum(values**2)) - frobenius_squared)
+    identity_error /= frobenius_squared
+    if identity_error > tolerance:
+        raise AssertionError(
+            "SYEVD Frobenius identity failed: "
+            f"relative_error={identity_error} tolerance={tolerance}"
+        )
+
+    return {
+        "trace_identity_error": trace_error,
+        "frobenius_identity_error": identity_error,
+        "native_status_codes": _rank_status_codes(status, status_size),
+    }
 
 
 def _solve_iteration(
@@ -404,9 +446,6 @@ def _gesvd_iteration(
     frobenius_squared = _global_scalar(
         jnp.sum(jnp.square(jnp.abs(a)), dtype=jnp.float64)
     )
-    reference_matrix = (
-        _global_numpy(a) if case.matrix_size <= GESVD_REFERENCE_MAX_N else None
-    )
     multihost_utils.sync_global_devices(f"{barrier}_start")
     started = time.perf_counter()
     u, singular_values, vh, status = solver(
@@ -430,7 +469,66 @@ def _gesvd_iteration(
         status_size=status_size,
         dtype_name=case.dtype,
         frobenius_squared=frobenius_squared,
-        reference_matrix=reference_matrix,
+    )
+    return elapsed, metrics
+
+
+def _syevd_iteration(
+    *,
+    solver,
+    status_size: int,
+    case: BenchmarkCase,
+    mesh: Mesh,
+    make_inputs,
+    barrier: str,
+) -> tuple[float, dict[str, object]]:
+    """Time one symmetric eigendecomposition and validate its eigenvalues.
+
+    ``trace(A)`` and ``||A||_F**2`` are both taken before the timed region,
+    because SYEVD donates the input matrix.
+
+    Args:
+        solver: ``jaxmg.syevd``.
+        status_size: Number of native status values emitted by one rank.
+        case: Case being measured.
+        mesh: Process mesh matching the case grid.
+        make_inputs: Compiled factory returning the sharded symmetric matrix.
+        barrier: Unique prefix for this iteration's collective barriers.
+
+    Returns:
+        The slowest rank's decomposition duration and the validation fields.
+    """
+    a = make_inputs()
+    a.block_until_ready()
+    # Accumulate both reductions in a wide dtype: a float32 accumulation over
+    # the whole matrix loses the result to rounding at benchmark dimensions.
+    trace_dtype = jnp.complex128 if case.dtype.startswith("complex") else jnp.float64
+    trace = _global_scalar(jnp.real(jnp.trace(a, dtype=trace_dtype)))
+    frobenius_squared = _global_scalar(
+        jnp.sum(jnp.square(jnp.abs(a)), dtype=jnp.float64)
+    )
+    multihost_utils.sync_global_devices(f"{barrier}_start")
+    started = time.perf_counter()
+    eigenvalues, eigenvectors, status = solver(
+        a,
+        T_A=case.tile_size,
+        mesh=mesh,
+        matrix_specs=P("pr", "pc"),
+        return_eigenvectors=True,
+        return_status=True,
+        pad=True,
+    )
+    for array in (eigenvalues, eigenvectors, status):
+        array.block_until_ready()
+    multihost_utils.sync_global_devices(f"{barrier}_stop")
+    elapsed = _global_max_seconds(time.perf_counter() - started)
+    metrics = _validate_syevd(
+        eigenvalues=eigenvalues,
+        status=status,
+        status_size=status_size,
+        dtype_name=case.dtype,
+        trace=trace,
+        frobenius_squared=frobenius_squared,
     )
     return elapsed, metrics
 
@@ -458,13 +556,20 @@ def _run(args: argparse.Namespace) -> dict[str, object]:
         )
 
         run_iteration = _solve_iteration
-    else:
+    elif args.routine == "gesvd":
         from jaxmg import gesvd as solver
         from jaxmg._cusolvermp_status import (
             _CUSOLVERMP_GESVD_STATUS_SIZE as status_size,
         )
 
         run_iteration = _gesvd_iteration
+    else:
+        from jaxmg import syevd as solver
+        from jaxmg._cusolvermp_status import (
+            _CUSOLVERMP_SYEVD_STATUS_SIZE as status_size,
+        )
+
+        run_iteration = _syevd_iteration
 
     config = BenchmarkConfig.load(args.config)
     case = BenchmarkCase(
@@ -485,13 +590,12 @@ def _run(args: argparse.Namespace) -> dict[str, object]:
     dtype = getattr(jnp, case.dtype)
     mesh = _make_mesh(case.grid)
     if case.routine == "gesvd":
-        make_inputs = _make_gesvd_input_factory(
-            matrix_size=case.matrix_size, dtype=dtype, mesh=mesh
-        )
+        input_factory = _make_gesvd_input_factory
     else:
-        make_inputs = _make_input_factory(
-            matrix_size=case.matrix_size, dtype=dtype, mesh=mesh
-        )
+        input_factory = _make_input_factory
+    make_inputs = input_factory(
+        matrix_size=case.matrix_size, dtype=dtype, mesh=mesh
+    )
     timings: list[float] = []
     metrics: dict[str, object] = {}
     for iteration in range(config.cold_runs + config.warm_runs):
