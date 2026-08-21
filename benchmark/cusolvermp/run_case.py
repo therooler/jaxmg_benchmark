@@ -498,7 +498,7 @@ def _syevd_iteration(
     Returns:
         The slowest rank's decomposition duration and the validation fields.
     """
-    a = make_inputs()
+    a, _ = make_inputs()
     a.block_until_ready()
     # Accumulate both reductions in a wide dtype: a float32 accumulation over
     # the whole matrix loses the result to rounding at benchmark dimensions.
