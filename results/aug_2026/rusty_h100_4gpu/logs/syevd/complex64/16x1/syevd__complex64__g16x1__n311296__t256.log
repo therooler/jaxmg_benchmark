@@ -1,0 +1,301 @@
+syevd__complex64__g16x1__n311296__t256: cold 1/1 start
+E0821 16:11:54.805106  757452 gpu_hlo_schedule.cc:971] The byte size of input/output arguments (96906444976) exceeds the base limit (79961155174). This indicates an error in the calculation!
+E0821 16:11:54.805104  757453 gpu_hlo_schedule.cc:971] The byte size of input/output arguments (96906444976) exceeds the base limit (79961155174). This indicates an error in the calculation!
+E0821 16:11:54.805448 1549456 gpu_hlo_schedule.cc:971] The byte size of input/output arguments (96906444976) exceeds the base limit (79961155174). This indicates an error in the calculation!
+E0821 16:11:54.805791 1558097 gpu_hlo_schedule.cc:971] The byte size of input/output arguments (96906444976) exceeds the base limit (79961155174). This indicates an error in the calculation!
+E0821 16:11:54.805810 1558095 gpu_hlo_schedule.cc:971] The byte size of input/output arguments (96906444976) exceeds the base limit (79961155174). This indicates an error in the calculation!
+E0821 16:11:54.805810 1558096 gpu_hlo_schedule.cc:971] The byte size of input/output arguments (96906444976) exceeds the base limit (79961155174). This indicates an error in the calculation!
+E0821 16:11:54.806370  757451 gpu_hlo_schedule.cc:971] The byte size of input/output arguments (96906444976) exceeds the base limit (79961155174). This indicates an error in the calculation!
+E0821 16:11:54.806372  757454 gpu_hlo_schedule.cc:971] The byte size of input/output arguments (96906444976) exceeds the base limit (79961155174). This indicates an error in the calculation!
+E0821 16:11:54.806657 1535398 gpu_hlo_schedule.cc:971] The byte size of input/output arguments (96906444976) exceeds the base limit (79961155174). This indicates an error in the calculation!
+E0821 16:11:54.807537 1535400 gpu_hlo_schedule.cc:971] The byte size of input/output arguments (96906444976) exceeds the base limit (79961155174). This indicates an error in the calculation!
+E0821 16:11:54.807654 1549455 gpu_hlo_schedule.cc:971] The byte size of input/output arguments (96906444976) exceeds the base limit (79961155174). This indicates an error in the calculation!
+E0821 16:11:54.807716 1549453 gpu_hlo_schedule.cc:971] The byte size of input/output arguments (96906444976) exceeds the base limit (79961155174). This indicates an error in the calculation!
+E0821 16:11:54.807716 1549454 gpu_hlo_schedule.cc:971] The byte size of input/output arguments (96906444976) exceeds the base limit (79961155174). This indicates an error in the calculation!
+E0821 16:11:54.807767 1535399 gpu_hlo_schedule.cc:971] The byte size of input/output arguments (96906444976) exceeds the base limit (79961155174). This indicates an error in the calculation!
+E0821 16:11:54.808327 1558094 gpu_hlo_schedule.cc:971] The byte size of input/output arguments (96906444976) exceeds the base limit (79961155174). This indicates an error in the calculation!
+E0821 16:11:54.811052 1535397 gpu_hlo_schedule.cc:971] The byte size of input/output arguments (96906444976) exceeds the base limit (79961155174). This indicates an error in the calculation!
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 676, in <module>
+    main()
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 665, in main
+    payload = _run(args)
+              ^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 619, in _run
+    elapsed, metrics = run_iteration(
+                       ^^^^^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 522, in _syevd_iteration
+    array.block_until_ready()
+jax.errors.JaxRuntimeError: RESOURCE_EXHAUSTED: Unable to allocate CUDA scratch memory for cusolvermp_syevd_redistribution: requested 1912602624 bytes, cuda status 2 (out of memory) [executable_name='jit_impl']
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 676, in <module>
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 676, in <module>
+    main()
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 665, in main
+    payload = _run(args)
+              ^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 619, in _run
+    main()
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 665, in main
+    elapsed, metrics = run_iteration(
+                       ^^^^^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 522, in _syevd_iteration
+    payload = _run(args)
+Traceback (most recent call last):
+    array.block_until_ready()
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 676, in <module>
+              ^^^^^^^^^^
+jax.errors.JaxRuntimeError: RESOURCE_EXHAUSTED: Unable to allocate CUDA scratch memory for cusolvermp_syevd_redistribution: requested 1912602624 bytes, cuda status 2 (out of memory) [executable_name='jit_impl']
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 619, in _run
+    elapsed, metrics = run_iteration(
+                       ^^^^^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 522, in _syevd_iteration
+    array.block_until_ready()
+jax.errors.JaxRuntimeError: RESOURCE_EXHAUSTED: Unable to allocate CUDA scratch memory for cusolvermp_syevd_redistribution: requested 1912602624 bytes, cuda status 2 (out of memory) [executable_name='jit_impl']
+    main()
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 665, in main
+    payload = _run(args)
+              ^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 619, in _run
+    elapsed, metrics = run_iteration(
+                       ^^^^^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 522, in _syevd_iteration
+    array.block_until_ready()
+jax.errors.JaxRuntimeError: RESOURCE_EXHAUSTED: Unable to allocate CUDA scratch memory for cusolvermp_syevd_redistribution: requested 1912602624 bytes, cuda status 2 (out of memory) [executable_name='jit_impl']
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 676, in <module>
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 676, in <module>
+    main()
+    main()
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 665, in main
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 665, in main
+    payload = _run(args)
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 676, in <module>
+              ^^^^^^^^^^
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 676, in <module>
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 619, in _run
+    payload = _run(args)
+              ^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 619, in _run
+    elapsed, metrics = run_iteration(
+                       ^^^^^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 522, in _syevd_iteration
+    elapsed, metrics = run_iteration(
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 676, in <module>
+                       ^^^^^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 522, in _syevd_iteration
+    array.block_until_ready()
+    main()
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 665, in main
+jax.errors.JaxRuntimeError: RESOURCE_EXHAUSTED: Unable to allocate CUDA scratch memory for cusolvermp_syevd_redistribution: requested 1912602624 bytes, cuda status 2 (out of memory) [executable_name='jit_impl']
+    main()
+    array.block_until_ready()
+    payload = _run(args)
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 676, in <module>
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 665, in main
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 676, in <module>
+jax.errors.JaxRuntimeError: RESOURCE_EXHAUSTED: Unable to allocate CUDA scratch memory for cusolvermp_syevd_redistribution: requested 1912602624 bytes, cuda status 2 (out of memory) [executable_name='jit_impl']
+              ^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 619, in _run
+    payload = _run(args)
+    elapsed, metrics = run_iteration(
+              ^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 619, in _run
+                       ^^^^^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 522, in _syevd_iteration
+    main()
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 665, in main
+    main()
+    array.block_until_ready()
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 676, in <module>
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 665, in main
+    elapsed, metrics = run_iteration(
+    main()
+jax.errors.JaxRuntimeError: RESOURCE_EXHAUSTED: Unable to allocate CUDA scratch memory for cusolvermp_syevd_redistribution: requested 1912602624 bytes, cuda status 2 (out of memory) [executable_name='jit_impl']
+                       ^^^^^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 522, in _syevd_iteration
+    payload = _run(args)
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 665, in main
+    payload = _run(args)
+              ^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 619, in _run
+    array.block_until_ready()
+jax.errors.JaxRuntimeError: RESOURCE_EXHAUSTED: Unable to allocate CUDA scratch memory for cusolvermp_syevd_redistribution: requested 1912602624 bytes, cuda status 2 (out of memory) [executable_name='jit_impl']
+              ^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 619, in _run
+    payload = _run(args)
+              ^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 619, in _run
+    elapsed, metrics = run_iteration(
+                       ^^^^^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 522, in _syevd_iteration
+    elapsed, metrics = run_iteration(
+                       ^^^^^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 522, in _syevd_iteration
+    array.block_until_ready()
+    elapsed, metrics = run_iteration(
+    main()
+jax.errors.JaxRuntimeError: RESOURCE_EXHAUSTED: Unable to allocate CUDA scratch memory for cusolvermp_syevd_redistribution: requested 1912602624 bytes, cuda status 2 (out of memory) [executable_name='jit_impl']
+                       ^^^^^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 522, in _syevd_iteration
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 665, in main
+    array.block_until_ready()
+jax.errors.JaxRuntimeError: RESOURCE_EXHAUSTED: Unable to allocate CUDA scratch memory for cusolvermp_syevd_redistribution: requested 1912602624 bytes, cuda status 2 (out of memory) [executable_name='jit_impl']
+    array.block_until_ready()
+jax.errors.JaxRuntimeError: RESOURCE_EXHAUSTED: Unable to allocate CUDA scratch memory for cusolvermp_syevd_redistribution: requested 1912602624 bytes, cuda status 2 (out of memory) [executable_name='jit_impl']
+    payload = _run(args)
+              ^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 619, in _run
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 676, in <module>
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 676, in <module>
+    elapsed, metrics = run_iteration(
+                       ^^^^^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 522, in _syevd_iteration
+    array.block_until_ready()
+jax.errors.JaxRuntimeError: RESOURCE_EXHAUSTED: Unable to allocate CUDA scratch memory for cusolvermp_syevd_redistribution: requested 1912602624 bytes, cuda status 2 (out of memory) [executable_name='jit_impl']
+    main()
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 665, in main
+    main()
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 676, in <module>
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 665, in main
+    payload = _run(args)
+  File "<frozen runpy>", line 88, in _run_code
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 676, in <module>
+              ^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 619, in _run
+    payload = _run(args)
+    main()
+    elapsed, metrics = run_iteration(
+              ^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 619, in _run
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 665, in main
+                       ^^^^^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 522, in _syevd_iteration
+    main()
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 665, in main
+    payload = _run(args)
+    elapsed, metrics = run_iteration(
+              ^^^^^^^^^^
+    array.block_until_ready()
+jax.errors.JaxRuntimeError: RESOURCE_EXHAUSTED: Unable to allocate CUDA scratch memory for cusolvermp_syevd_redistribution: requested 1912602624 bytes, cuda status 2 (out of memory) [executable_name='jit_impl']
+                       ^^^^^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 522, in _syevd_iteration
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 619, in _run
+    payload = _run(args)
+              ^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 619, in _run
+    elapsed, metrics = run_iteration(
+    array.block_until_ready()
+                       ^^^^^^^^^^^^^^
+jax.errors.JaxRuntimeError: RESOURCE_EXHAUSTED: Unable to allocate CUDA scratch memory for cusolvermp_syevd_redistribution: requested 1912602624 bytes, cuda status 2 (out of memory) [executable_name='jit_impl']
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 522, in _syevd_iteration
+    elapsed, metrics = run_iteration(
+    array.block_until_ready()
+                       ^^^^^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 522, in _syevd_iteration
+jax.errors.JaxRuntimeError: RESOURCE_EXHAUSTED: Unable to allocate CUDA scratch memory for cusolvermp_syevd_redistribution: requested 1912602624 bytes, cuda status 2 (out of memory) [executable_name='jit_impl']
+    array.block_until_ready()
+jax.errors.JaxRuntimeError: RESOURCE_EXHAUSTED: Unable to allocate CUDA scratch memory for cusolvermp_syevd_redistribution: requested 1912602624 bytes, cuda status 2 (out of memory) [executable_name='jit_impl']
+W0821 16:11:55.511911 1550536 pjrt_client.cc:1613] WatchTasksAsync failed for task 10: UNAVAILABLE: failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.145:62421: Failed to connect to remote host: Connection refused
+Additional GRPC error information from remote target coordination_service while calling /xla.coordination.CoordinationService/WatchTasks:
+:UNKNOWN:Error received from peer  {grpc_status:14, grpc_message:"failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.145:62421: Failed to connect to remote host: Connection refused"}
+W0821 16:11:55.512029 1559165 pjrt_client.cc:1613] WatchTasksAsync failed for task 14: UNAVAILABLE: failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.145:62421: Failed to connect to remote host: Connection refused
+Additional GRPC error information from remote target coordination_service while calling /xla.coordination.CoordinationService/WatchTasks:
+:UNKNOWN:Error received from peer  {grpc_status:14, grpc_message:"failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.145:62421: Failed to connect to remote host: Connection refused"}
+W0821 16:11:55.512076 1550535 pjrt_client.cc:1613] WatchTasksAsync failed for task 8: UNAVAILABLE: failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.145:62421: Failed to connect to remote host: Connection refused
+Additional GRPC error information from remote target coordination_service while calling /xla.coordination.CoordinationService/WatchTasks:
+:UNKNOWN:Error received from peer  {grpc_message:"failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.145:62421: Failed to connect to remote host: Connection refused", grpc_status:14}
+W0821 16:11:55.512068 1550538 pjrt_client.cc:1613] WatchTasksAsync failed for task 9: UNAVAILABLE: failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.145:62421: Failed to connect to remote host: Connection refused
+Additional GRPC error information from remote target coordination_service while calling /xla.coordination.CoordinationService/WatchTasks:
+:UNKNOWN:Error received from peer  {grpc_message:"failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.145:62421: Failed to connect to remote host: Connection refused", grpc_status:14}
+W0821 16:11:55.512146 1559162 pjrt_client.cc:1613] WatchTasksAsync failed for task 13: UNAVAILABLE: failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.145:62421: Failed to connect to remote host: Connection refused
+Additional GRPC error information from remote target coordination_service while calling /xla.coordination.CoordinationService/WatchTasks:
+:UNKNOWN:Error received from peer  {grpc_message:"failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.145:62421: Failed to connect to remote host: Connection refused", grpc_status:14}
+W0821 16:11:55.512135  758569 pjrt_client.cc:1613] WatchTasksAsync failed for task 3: UNAVAILABLE: failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.145:62421: Failed to connect to remote host: Connection refused
+Additional GRPC error information from remote target coordination_service while calling /xla.coordination.CoordinationService/WatchTasks:
+:UNKNOWN:Error received from peer  {grpc_message:"failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.145:62421: Failed to connect to remote host: Connection refused", grpc_status:14}
+W0821 16:11:55.512189  758568 pjrt_client.cc:1613] WatchTasksAsync failed for task 0: UNAVAILABLE: failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.145:62421: Failed to connect to remote host: Connection refused
+Additional GRPC error information from remote target coordination_service while calling /xla.coordination.CoordinationService/WatchTasks:
+:UNKNOWN:Error received from peer  {grpc_message:"failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.145:62421: Failed to connect to remote host: Connection refused", grpc_status:14}
+W0821 16:11:55.512157 1536463 pjrt_client.cc:1613] WatchTasksAsync failed for task 7: UNAVAILABLE: failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.145:62421: Failed to connect to remote host: Connection refused
+Additional GRPC error information from remote target coordination_service while calling /xla.coordination.CoordinationService/WatchTasks:
+:UNKNOWN:Error received from peer  {grpc_message:"failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.145:62421: Failed to connect to remote host: Connection refused", grpc_status:14}
+W0821 16:11:55.512170 1536464 pjrt_client.cc:1613] WatchTasksAsync failed for task 5: UNAVAILABLE: failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.145:62421: Failed to connect to remote host: Connection refused
+Additional GRPC error information from remote target coordination_service while calling /xla.coordination.CoordinationService/WatchTasks:
+:UNKNOWN:Error received from peer  {grpc_message:"failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.145:62421: Failed to connect to remote host: Connection refused", grpc_status:14}
+W0821 16:11:55.512205  758571 pjrt_client.cc:1613] WatchTasksAsync failed for task 1: UNAVAILABLE: failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.145:62421: Failed to connect to remote host: Connection refused
+Additional GRPC error information from remote target coordination_service while calling /xla.coordination.CoordinationService/WatchTasks:
+:UNKNOWN:Error received from peer  {grpc_status:14, grpc_message:"failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.145:62421: Failed to connect to remote host: Connection refused"}
+W0821 16:11:55.512357  758570 pjrt_client.cc:1613] WatchTasksAsync failed for task 2: UNAVAILABLE: failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.145:62421: Failed to connect to remote host: Connection refused
+Additional GRPC error information from remote target coordination_service while calling /xla.coordination.CoordinationService/WatchTasks:
+:UNKNOWN:Error received from peer  {grpc_message:"failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.145:62421: Failed to connect to remote host: Connection refused", grpc_status:14}
+W0821 16:11:55.512284 1536466 pjrt_client.cc:1613] WatchTasksAsync failed for task 6: UNAVAILABLE: failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.145:62421: Failed to connect to remote host: Connection refused
+Additional GRPC error information from remote target coordination_service while calling /xla.coordination.CoordinationService/WatchTasks:
+:UNKNOWN:Error received from peer  {grpc_status:14, grpc_message:"failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.145:62421: Failed to connect to remote host: Connection refused"}
+W0821 16:11:55.512369 1536465 pjrt_client.cc:1613] WatchTasksAsync failed for task 4: UNAVAILABLE: failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.145:62421: Failed to connect to remote host: Connection refused
+Additional GRPC error information from remote target coordination_service while calling /xla.coordination.CoordinationService/WatchTasks:
+:UNKNOWN:Error received from peer  {grpc_message:"failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.145:62421: Failed to connect to remote host: Connection refused", grpc_status:14}
+W0821 16:11:55.512359 1559163 pjrt_client.cc:1613] WatchTasksAsync failed for task 15: UNAVAILABLE: failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.145:62421: Failed to connect to remote host: Connection refused
+Additional GRPC error information from remote target coordination_service while calling /xla.coordination.CoordinationService/WatchTasks:
+:UNKNOWN:Error received from peer  {grpc_message:"failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.145:62421: Failed to connect to remote host: Connection refused", grpc_status:14}
+W0821 16:11:55.512398 1559164 pjrt_client.cc:1613] WatchTasksAsync failed for task 12: UNAVAILABLE: failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.145:62421: Failed to connect to remote host: Connection refused
+Additional GRPC error information from remote target coordination_service while calling /xla.coordination.CoordinationService/WatchTasks:
+:UNKNOWN:Error received from peer  {grpc_status:14, grpc_message:"failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.145:62421: Failed to connect to remote host: Connection refused"}
+W0821 16:11:55.512480 1550537 pjrt_client.cc:1613] WatchTasksAsync failed for task 11: UNAVAILABLE: failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.145:62421: Failed to connect to remote host: Connection refused
+Additional GRPC error information from remote target coordination_service while calling /xla.coordination.CoordinationService/WatchTasks:
+:UNKNOWN:Error received from peer  {grpc_status:14, grpc_message:"failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.145:62421: Failed to connect to remote host: Connection refused"}
+srun: error: workergpu204: task 12: Exited with exit code 1
+srun: Terminating StepId=6923221.15
+slurmstepd: error: *** STEP 6923221.15 ON workergpu201 CANCELLED AT 2026-08-21T16:11:56 ***
+srun: error: workergpu201: tasks 0-1: Exited with exit code 1
+srun: error: workergpu203: tasks 8,10-11: Exited with exit code 1
+srun: error: workergpu202: tasks 5,7: Exited with exit code 1
+srun: error: workergpu201: task 2: Exited with exit code 1
+srun: error: workergpu201: task 3: Exited with exit code 1
+srun: error: workergpu204: tasks 13-15: Exited with exit code 1
+srun: error: workergpu202: task 6: Exited with exit code 1
+srun: error: workergpu202: task 4: Exited with exit code 1
+srun: error: workergpu203: task 9: Exited with exit code 1

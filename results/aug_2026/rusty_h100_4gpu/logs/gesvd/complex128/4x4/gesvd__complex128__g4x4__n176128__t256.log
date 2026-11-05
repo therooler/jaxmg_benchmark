@@ -1,0 +1,299 @@
+gesvd__complex128__g4x4__n176128__t256: cold 1/1 start
+E0823 07:50:14.685874 2738583 gpu_hlo_schedule.cc:971] The byte size of input/output arguments (93064626384) exceeds the base limit (79961155174). This indicates an error in the calculation!
+E0823 07:50:14.686424  147160 gpu_hlo_schedule.cc:971] The byte size of input/output arguments (93064626384) exceeds the base limit (79961155174). This indicates an error in the calculation!
+E0823 07:50:14.687013  147161 gpu_hlo_schedule.cc:971] The byte size of input/output arguments (93064626384) exceeds the base limit (79961155174). This indicates an error in the calculation!
+E0823 07:50:14.687143   63117 gpu_hlo_schedule.cc:971] The byte size of input/output arguments (93064626384) exceeds the base limit (79961155174). This indicates an error in the calculation!
+E0823 07:50:14.687323   63114 gpu_hlo_schedule.cc:971] The byte size of input/output arguments (93064626384) exceeds the base limit (79961155174). This indicates an error in the calculation!
+E0823 07:50:14.687366   63116 gpu_hlo_schedule.cc:971] The byte size of input/output arguments (93064626384) exceeds the base limit (79961155174). This indicates an error in the calculation!
+E0823 07:50:14.687624 2738582 gpu_hlo_schedule.cc:971] The byte size of input/output arguments (93064626384) exceeds the base limit (79961155174). This indicates an error in the calculation!
+E0823 07:50:14.687921 2738585 gpu_hlo_schedule.cc:971] The byte size of input/output arguments (93064626384) exceeds the base limit (79961155174). This indicates an error in the calculation!
+E0823 07:50:14.687871   63115 gpu_hlo_schedule.cc:971] The byte size of input/output arguments (93064626384) exceeds the base limit (79961155174). This indicates an error in the calculation!
+E0823 07:50:14.687755  100891 gpu_hlo_schedule.cc:971] The byte size of input/output arguments (93064626384) exceeds the base limit (79961155174). This indicates an error in the calculation!
+E0823 07:50:14.687756  100893 gpu_hlo_schedule.cc:971] The byte size of input/output arguments (93064626384) exceeds the base limit (79961155174). This indicates an error in the calculation!
+E0823 07:50:14.688662 2738584 gpu_hlo_schedule.cc:971] The byte size of input/output arguments (93064626384) exceeds the base limit (79961155174). This indicates an error in the calculation!
+E0823 07:50:14.688741  100892 gpu_hlo_schedule.cc:971] The byte size of input/output arguments (93064626384) exceeds the base limit (79961155174). This indicates an error in the calculation!
+E0823 07:50:14.688742  100894 gpu_hlo_schedule.cc:971] The byte size of input/output arguments (93064626384) exceeds the base limit (79961155174). This indicates an error in the calculation!
+E0823 07:50:14.689873  147162 gpu_hlo_schedule.cc:971] The byte size of input/output arguments (93064626384) exceeds the base limit (79961155174). This indicates an error in the calculation!
+E0823 07:50:14.692878  147159 gpu_hlo_schedule.cc:971] The byte size of input/output arguments (93064626384) exceeds the base limit (79961155174). This indicates an error in the calculation!
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 676, in <module>
+    main()
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 665, in main
+    payload = _run(args)
+              ^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 619, in _run
+    elapsed, metrics = run_iteration(
+                       ^^^^^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 463, in _gesvd_iteration
+    array.block_until_ready()
+jax.errors.JaxRuntimeError: INTERNAL: CUDA error 2 (out of memory) at jaxmg_backend/memory_redist/rectangle_pack.cc:300 [executable_name='jit_impl']
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 676, in <module>
+Traceback (most recent call last):
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 676, in <module>
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 676, in <module>
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 676, in <module>
+    main()
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 665, in main
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 676, in <module>
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 676, in <module>
+    main()
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 665, in main
+    payload = _run(args)
+              ^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 619, in _run
+    payload = _run(args)
+              ^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 619, in _run
+    main()
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 665, in main
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+    elapsed, metrics = run_iteration(
+  File "<frozen runpy>", line 88, in _run_code
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 676, in <module>
+                       ^^^^^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 463, in _gesvd_iteration
+    elapsed, metrics = run_iteration(
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 676, in <module>
+    main()
+                       ^^^^^^^^^^^^^^
+    payload = _run(args)
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 665, in main
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 463, in _gesvd_iteration
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+    array.block_until_ready()
+    main()
+  File "<frozen runpy>", line 88, in _run_code
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 676, in <module>
+              ^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 665, in main
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 619, in _run
+    main()
+jax.errors.JaxRuntimeError: INTERNAL: CUDA error 2 (out of memory) at jaxmg_backend/memory_redist/rectangle_pack.cc:300 [executable_name='jit_impl']
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 665, in main
+    array.block_until_ready()
+    main()
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 665, in main
+jax.errors.JaxRuntimeError: INTERNAL: CUDA error 2 (out of memory) at jaxmg_backend/memory_redist/rectangle_pack.cc:300 [executable_name='jit_impl']
+    elapsed, metrics = run_iteration(
+                       ^^^^^^^^^^^^^^
+    payload = _run(args)
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 463, in _gesvd_iteration
+              ^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 619, in _run
+    payload = _run(args)
+    payload = _run(args)
+    payload = _run(args)
+              ^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 619, in _run
+              ^^^^^^^^^^
+    array.block_until_ready()
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 619, in _run
+jax.errors.JaxRuntimeError: INTERNAL: CUDA error 2 (out of memory) at jaxmg_backend/memory_redist/rectangle_pack.cc:300 [executable_name='jit_impl']
+    elapsed, metrics = run_iteration(
+    main()
+                       ^^^^^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 463, in _gesvd_iteration
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+    main()
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 665, in main
+    elapsed, metrics = run_iteration(
+  File "<frozen runpy>", line 88, in _run_code
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 676, in <module>
+    elapsed, metrics = run_iteration(
+                       ^^^^^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 463, in _gesvd_iteration
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 665, in main
+                       ^^^^^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 463, in _gesvd_iteration
+    array.block_until_ready()
+jax.errors.JaxRuntimeError: INTERNAL: CUDA error 2 (out of memory) at jaxmg_backend/memory_redist/rectangle_pack.cc:300 [executable_name='jit_impl']
+    array.block_until_ready()
+jax.errors.JaxRuntimeError: INTERNAL: CUDA error 2 (out of memory) at jaxmg_backend/memory_redist/rectangle_pack.cc:300 [executable_name='jit_impl']
+              ^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 619, in _run
+    array.block_until_ready()
+jax.errors.JaxRuntimeError: INTERNAL: CUDA error 2 (out of memory) at jaxmg_backend/memory_redist/rectangle_pack.cc:300 [executable_name='jit_impl']
+Traceback (most recent call last):
+Traceback (most recent call last):
+    payload = _run(args)
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+              ^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 619, in _run
+    main()
+    payload = _run(args)
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 665, in main
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 676, in <module>
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+              ^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 619, in _run
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 676, in <module>
+    elapsed, metrics = run_iteration(
+                       ^^^^^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 463, in _gesvd_iteration
+    payload = _run(args)
+    elapsed, metrics = run_iteration(
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 676, in <module>
+    elapsed, metrics = run_iteration(
+              ^^^^^^^^^^
+                       ^^^^^^^^^^^^^^
+    array.block_until_ready()
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 619, in _run
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 463, in _gesvd_iteration
+jax.errors.JaxRuntimeError: INTERNAL: CUDA error 2 (out of memory) at jaxmg_backend/memory_redist/rectangle_pack.cc:300 [executable_name='jit_impl']
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+    elapsed, metrics = run_iteration(
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 676, in <module>
+    array.block_until_ready()
+jax.errors.JaxRuntimeError: INTERNAL: CUDA error 2 (out of memory) at jaxmg_backend/memory_redist/rectangle_pack.cc:300 [executable_name='jit_impl']
+                       ^^^^^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 463, in _gesvd_iteration
+    array.block_until_ready()
+    main()
+jax.errors.JaxRuntimeError: INTERNAL: CUDA error 2 (out of memory) at jaxmg_backend/memory_redist/rectangle_pack.cc:300 [executable_name='jit_impl']
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 665, in main
+                       ^^^^^^^^^^^^^^
+    main()
+    main()
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 463, in _gesvd_iteration
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 665, in main
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 665, in main
+    main()
+    payload = _run(args)
+    payload = _run(args)
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 665, in main
+    array.block_until_ready()
+              ^^^^^^^^^^
+              ^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 619, in _run
+    payload = _run(args)
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 619, in _run
+              ^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 619, in _run
+jax.errors.JaxRuntimeError: INTERNAL: CUDA error 2 (out of memory) at jaxmg_backend/memory_redist/rectangle_pack.cc:300 [executable_name='jit_impl']
+    payload = _run(args)
+              ^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 619, in _run
+    elapsed, metrics = run_iteration(
+                       ^^^^^^^^^^^^^^
+    elapsed, metrics = run_iteration(
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 463, in _gesvd_iteration
+                       ^^^^^^^^^^^^^^
+Traceback (most recent call last):
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 463, in _gesvd_iteration
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 676, in <module>
+    elapsed, metrics = run_iteration(
+    elapsed, metrics = run_iteration(
+    array.block_until_ready()
+                       ^^^^^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 463, in _gesvd_iteration
+jax.errors.JaxRuntimeError: INTERNAL: CUDA error 2 (out of memory) at jaxmg_backend/memory_redist/rectangle_pack.cc:300 [executable_name='jit_impl']
+    array.block_until_ready()
+                       ^^^^^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 463, in _gesvd_iteration
+    array.block_until_ready()
+jax.errors.JaxRuntimeError: INTERNAL: CUDA error 2 (out of memory) at jaxmg_backend/memory_redist/rectangle_pack.cc:300 [executable_name='jit_impl']
+jax.errors.JaxRuntimeError: INTERNAL: CUDA error 2 (out of memory) at jaxmg_backend/memory_redist/rectangle_pack.cc:300 [executable_name='jit_impl']
+    array.block_until_ready()
+jax.errors.JaxRuntimeError: INTERNAL: CUDA error 2 (out of memory) at jaxmg_backend/memory_redist/rectangle_pack.cc:300 [executable_name='jit_impl']
+    main()
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 665, in main
+    payload = _run(args)
+              ^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 619, in _run
+    elapsed, metrics = run_iteration(
+                       ^^^^^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 463, in _gesvd_iteration
+    array.block_until_ready()
+jax.errors.JaxRuntimeError: INTERNAL: CUDA error 2 (out of memory) at jaxmg_backend/memory_redist/rectangle_pack.cc:300 [executable_name='jit_impl']
+W0823 07:50:23.943848 2739760 pjrt_client.cc:1613] WatchTasksAsync failed for task 0: UNAVAILABLE: failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.145:64254: Failed to connect to remote host: Connection refused
+Additional GRPC error information from remote target coordination_service while calling /xla.coordination.CoordinationService/WatchTasks:
+:UNKNOWN:Error received from peer  {grpc_status:14, grpc_message:"failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.145:64254: Failed to connect to remote host: Connection refused"}
+W0823 07:50:23.943885   64278 pjrt_client.cc:1613] WatchTasksAsync failed for task 5: UNAVAILABLE: failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.145:64254: Failed to connect to remote host: Connection refused
+Additional GRPC error information from remote target coordination_service while calling /xla.coordination.CoordinationService/WatchTasks:
+:UNKNOWN:Error received from peer  {grpc_message:"failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.145:64254: Failed to connect to remote host: Connection refused", grpc_status:14}
+W0823 07:50:23.943931   64276 pjrt_client.cc:1613] WatchTasksAsync failed for task 7: UNAVAILABLE: failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.145:64254: Failed to connect to remote host: Connection refused
+Additional GRPC error information from remote target coordination_service while calling /xla.coordination.CoordinationService/WatchTasks:
+:UNKNOWN:Error received from peer  {grpc_status:14, grpc_message:"failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.145:64254: Failed to connect to remote host: Connection refused"}
+W0823 07:50:23.943990  148301 pjrt_client.cc:1613] WatchTasksAsync failed for task 9: UNAVAILABLE: failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.145:64254: Failed to connect to remote host: Connection refused
+Additional GRPC error information from remote target coordination_service while calling /xla.coordination.CoordinationService/WatchTasks:
+:UNKNOWN:Error received from peer  {grpc_status:14, grpc_message:"failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.145:64254: Failed to connect to remote host: Connection refused"}
+W0823 07:50:23.944042  148302 pjrt_client.cc:1613] WatchTasksAsync failed for task 10: UNAVAILABLE: failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.145:64254: Failed to connect to remote host: Connection refused
+Additional GRPC error information from remote target coordination_service while calling /xla.coordination.CoordinationService/WatchTasks:
+:UNKNOWN:Error received from peer  {grpc_status:14, grpc_message:"failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.145:64254: Failed to connect to remote host: Connection refused"}
+W0823 07:50:23.944173 2739771 pjrt_client.cc:1613] WatchTasksAsync failed for task 1: UNAVAILABLE: failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.145:64254: Failed to connect to remote host: Connection refused
+Additional GRPC error information from remote target coordination_service while calling /xla.coordination.CoordinationService/WatchTasks:
+:UNKNOWN:Error received from peer  {grpc_message:"failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.145:64254: Failed to connect to remote host: Connection refused", grpc_status:14}
+W0823 07:50:23.944186 2739770 pjrt_client.cc:1613] WatchTasksAsync failed for task 3: UNAVAILABLE: failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.145:64254: Failed to connect to remote host: Connection refused
+Additional GRPC error information from remote target coordination_service while calling /xla.coordination.CoordinationService/WatchTasks:
+:UNKNOWN:Error received from peer  {grpc_status:14, grpc_message:"failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.145:64254: Failed to connect to remote host: Connection refused"}
+W0823 07:50:23.944144  148303 pjrt_client.cc:1613] WatchTasksAsync failed for task 8: UNAVAILABLE: failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.145:64254: Failed to connect to remote host: Connection refused
+Additional GRPC error information from remote target coordination_service while calling /xla.coordination.CoordinationService/WatchTasks:
+:UNKNOWN:Error received from peer  {grpc_status:14, grpc_message:"failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.145:64254: Failed to connect to remote host: Connection refused"}
+W0823 07:50:23.944274 2739769 pjrt_client.cc:1613] WatchTasksAsync failed for task 2: UNAVAILABLE: failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.145:64254: Failed to connect to remote host: Connection refused
+Additional GRPC error information from remote target coordination_service while calling /xla.coordination.CoordinationService/WatchTasks:
+:UNKNOWN:Error received from peer  {grpc_status:14, grpc_message:"failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.145:64254: Failed to connect to remote host: Connection refused"}
+W0823 07:50:23.944235   64275 pjrt_client.cc:1613] WatchTasksAsync failed for task 6: UNAVAILABLE: failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.145:64254: Failed to connect to remote host: Connection refused
+Additional GRPC error information from remote target coordination_service while calling /xla.coordination.CoordinationService/WatchTasks:
+:UNKNOWN:Error received from peer  {grpc_message:"failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.145:64254: Failed to connect to remote host: Connection refused", grpc_status:14}
+W0823 07:50:23.944103  102034 pjrt_client.cc:1613] WatchTasksAsync failed for task 15: UNAVAILABLE: failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.145:64254: Failed to connect to remote host: Connection refused
+Additional GRPC error information from remote target coordination_service while calling /xla.coordination.CoordinationService/WatchTasks:
+:UNKNOWN:Error received from peer  {grpc_status:14, grpc_message:"failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.145:64254: Failed to connect to remote host: Connection refused"}
+W0823 07:50:23.944138  102033 pjrt_client.cc:1613] WatchTasksAsync failed for task 13: UNAVAILABLE: failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.145:64254: Failed to connect to remote host: Connection refused
+Additional GRPC error information from remote target coordination_service while calling /xla.coordination.CoordinationService/WatchTasks:
+:UNKNOWN:Error received from peer  {grpc_status:14, grpc_message:"failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.145:64254: Failed to connect to remote host: Connection refused"}
+W0823 07:50:23.944379  148304 pjrt_client.cc:1613] WatchTasksAsync failed for task 11: UNAVAILABLE: failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.145:64254: Failed to connect to remote host: Connection refused
+Additional GRPC error information from remote target coordination_service while calling /xla.coordination.CoordinationService/WatchTasks:
+:UNKNOWN:Error received from peer  {grpc_status:14, grpc_message:"failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.145:64254: Failed to connect to remote host: Connection refused"}
+W0823 07:50:23.944334  102036 pjrt_client.cc:1613] WatchTasksAsync failed for task 12: UNAVAILABLE: failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.145:64254: Failed to connect to remote host: Connection refused
+Additional GRPC error information from remote target coordination_service while calling /xla.coordination.CoordinationService/WatchTasks:
+:UNKNOWN:Error received from peer  {grpc_message:"failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.145:64254: Failed to connect to remote host: Connection refused", grpc_status:14}
+W0823 07:50:23.944364  102035 pjrt_client.cc:1613] WatchTasksAsync failed for task 14: UNAVAILABLE: failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.145:64254: Failed to connect to remote host: Connection refused
+Additional GRPC error information from remote target coordination_service while calling /xla.coordination.CoordinationService/WatchTasks:
+:UNKNOWN:Error received from peer  {grpc_status:14, grpc_message:"failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.145:64254: Failed to connect to remote host: Connection refused"}
+W0823 07:50:23.944474   64277 pjrt_client.cc:1613] WatchTasksAsync failed for task 4: UNAVAILABLE: failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.145:64254: Failed to connect to remote host: Connection refused
+Additional GRPC error information from remote target coordination_service while calling /xla.coordination.CoordinationService/WatchTasks:
+:UNKNOWN:Error received from peer  {grpc_message:"failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.145:64254: Failed to connect to remote host: Connection refused", grpc_status:14}
+srun: error: workergpu202: tasks 4-5: Exited with exit code 1
+srun: Terminating StepId=6929150.14
+srun: error: workergpu201: tasks 0,2-3: Exited with exit code 1
+slurmstepd: error: *** STEP 6929150.14 ON workergpu201 CANCELLED AT 2026-08-23T07:50:24 ***
+srun: error: workergpu204: tasks 13-15: Exited with exit code 1
+srun: error: workergpu202: task 7: Exited with exit code 1
+srun: error: workergpu204: task 12: Exited with exit code 1
+srun: error: workergpu201: task 1: Exited with exit code 1
+srun: error: workergpu203: tasks 8-11: Exited with exit code 1
+srun: error: workergpu202: task 6: Exited with exit code 1

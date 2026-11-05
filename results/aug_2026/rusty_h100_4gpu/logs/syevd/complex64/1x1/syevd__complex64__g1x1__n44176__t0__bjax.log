@@ -1,0 +1,17 @@
+syevd__complex64__g1x1__n44176__t0__bjax: cold 1/1 start
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 931, in <module>
+    main()
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 920, in main
+    payload = _run(args)
+              ^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 850, in _run
+    elapsed, metrics = run_iteration(
+                       ^^^^^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 716, in _native_syevd_iteration
+    array.block_until_ready()
+jax.errors.JaxRuntimeError: INTERNAL: jaxlib/gpu/solver_kernels_ffi.cc:686: operation cusolverDnXsyevBatched_bufferSize( handle.get(), params, jobz, uplo, n, aType, nullptr, n, wType, nullptr, aType, &workspaceInBytesOnDevice, &workspaceInBytesOnHost, std::min(batch, batch_step)) failed: cuSolver invalid value error [executable_name='jit_eigh']
+srun: error: workergpu222: task 0: Exited with exit code 1
+srun: Terminating StepId=6966151.12

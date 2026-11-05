@@ -1,0 +1,11 @@
+potrs__complex64__g4x4__n262144__t1024: cold 1/1 start
+potrs__complex64__g4x4__n262144__t1024: cold 1/1 complete (39.738 s)
+potrs__complex64__g4x4__n262144__t1024: warm 1/1 start
+potrs__complex64__g4x4__n262144__t1024: warm 1/1 complete (38.817 s)
+{"alignment_quantum": 4096, "allocator": "vmm", "allocator_budget_bytes": 97580482560, "allocator_fraction": 0.99, "case_id": "potrs__complex64__g4x4__n262144__t1024", "cold_seconds": [39.73776093701599], "dtype": "complex64", "global_matrix_bytes": 549755813888, "gpu_name": "NVIDIA H100", "jax_version": "0.10.1", "known_budget_fraction": 0.37412422093273157, "known_total_bytes": 36507222016, "local_matrix_budget_fraction": 0.3521169138190415, "local_matrix_bytes": 34359738368, "matrix_padding": false, "matrix_size": 262144, "max_abs_error": 2.9802322387695312e-08, "native_status_codes": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], "package_versions": {"jax": "0.10.1", "jaxlib": "0.10.1", "jaxmg": "1.1.0", "nvidia-cusolvermp-cu12": "0.9.0.6427"}, "pivot_bytes": 0, "process_cols": 4, "process_rows": 4, "processes": 16, "redistribution_scratch_bytes": 1610612736, "rhs_capacity_bytes": 536870912, "routine": "potrs", "slurm_job_id": "6907480", "slurm_node_list": "workergpu[202,207-209]", "solver_workspace_bytes": null, "status": "passed", "tile_size": 1024, "vector_output_bytes": 0, "visible_memory_mib": 94000, "warm_max_seconds": 38.81705763499485, "warm_median_seconds": 38.81705763499485, "warm_min_seconds": 38.81705763499485, "warm_seconds": [38.81705763499485]}
+W0820 06:00:08.670623 1644476 pjrt_client.cc:1613] WatchTasksAsync failed for task 2: CANCELLED: CANCELLED
+Additional GRPC error information from remote target coordination_service while calling /xla.coordination.CoordinationService/WatchTasks:
+:UNKNOWN:Error received from peer  {grpc_message:"CANCELLED", grpc_status:1} [type.googleapis.com/tensorflow.DerivedStatus='']
+W0820 06:00:13.671701 1644473 pjrt_client.cc:1613] WatchTasksAsync failed for task 0: UNAVAILABLE: Cancelling all calls
+Additional GRPC error information from remote target coordination_service while calling /xla.coordination.CoordinationService/WatchTasks:
+:UNKNOWN:Error received from peer  {grpc_message:"Cancelling all calls", grpc_status:14}

@@ -1,0 +1,49 @@
+{
+  "alignment_quantum": 1,
+  "allocator": "vmm",
+  "allocator_budget_bytes": 97580482560,
+  "allocator_fraction": 0.99,
+  "backend": "jax",
+  "case_id": "lu_solve__complex64__g1x1__n1024__t0__bjax",
+  "cold_seconds": [
+    0.1225017920078244
+  ],
+  "dtype": "complex64",
+  "global_matrix_bytes": 8388608,
+  "gpu_name": "NVIDIA H100",
+  "jax_version": "0.10.1",
+  "known_budget_fraction": 8.609197023425746e-05,
+  "known_total_bytes": 8400896,
+  "local_matrix_budget_fraction": 8.596604341285192e-05,
+  "local_matrix_bytes": 8388608,
+  "matrix_padding": false,
+  "matrix_size": 1024,
+  "max_abs_error": 9.934107481068821e-09,
+  "native_status_codes": [],
+  "package_versions": {
+    "jax": "0.10.1",
+    "jaxlib": "0.10.1",
+    "jaxmg": "1.1.0",
+    "nvidia-cusolvermp-cu12": "0.9.0.6427"
+  },
+  "pivot_bytes": 4096,
+  "process_cols": 1,
+  "process_rows": 1,
+  "processes": 1,
+  "redistribution_scratch_bytes": 0,
+  "rhs_capacity_bytes": 8192,
+  "routine": "lu_solve",
+  "slurm_job_id": "6966143",
+  "slurm_node_list": "workergpu207",
+  "solver_workspace_bytes": null,
+  "status": "passed",
+  "tile_size": 0,
+  "vector_output_bytes": 0,
+  "visible_memory_mib": 94000,
+  "warm_max_seconds": 0.0027149730012752116,
+  "warm_median_seconds": 0.0027149730012752116,
+  "warm_min_seconds": 0.0027149730012752116,
+  "warm_seconds": [
+    0.0027149730012752116
+  ]
+}

@@ -1,0 +1,349 @@
+lu_solve__float64__g4x4__n434176__t1024: cold 1/1 start
+E0820 21:29:52.448482 3131326 gpu_hlo_schedule.cc:971] The byte size of input/output arguments (94255267856) exceeds the base limit (79961155174). This indicates an error in the calculation!
+E0820 21:29:52.448716 3131329 gpu_hlo_schedule.cc:971] The byte size of input/output arguments (94255267856) exceeds the base limit (79961155174). This indicates an error in the calculation!
+E0820 21:29:52.450026 3171582 gpu_hlo_schedule.cc:971] The byte size of input/output arguments (94255267856) exceeds the base limit (79961155174). This indicates an error in the calculation!
+E0820 21:29:52.451284 3158937 gpu_hlo_schedule.cc:971] The byte size of input/output arguments (94255267856) exceeds the base limit (79961155174). This indicates an error in the calculation!
+E0820 21:29:52.451314 3158936 gpu_hlo_schedule.cc:971] The byte size of input/output arguments (94255267856) exceeds the base limit (79961155174). This indicates an error in the calculation!
+E0820 21:29:52.451314 3158938 gpu_hlo_schedule.cc:971] The byte size of input/output arguments (94255267856) exceeds the base limit (79961155174). This indicates an error in the calculation!
+E0820 21:29:52.451767 3131327 gpu_hlo_schedule.cc:971] The byte size of input/output arguments (94255267856) exceeds the base limit (79961155174). This indicates an error in the calculation!
+E0820 21:29:52.452041 3171581 gpu_hlo_schedule.cc:971] The byte size of input/output arguments (94255267856) exceeds the base limit (79961155174). This indicates an error in the calculation!
+E0820 21:29:52.452603 3171579 gpu_hlo_schedule.cc:971] The byte size of input/output arguments (94255267856) exceeds the base limit (79961155174). This indicates an error in the calculation!
+E0820 21:29:52.453472 3160094 gpu_hlo_schedule.cc:971] The byte size of input/output arguments (94255267856) exceeds the base limit (79961155174). This indicates an error in the calculation!
+E0820 21:29:52.454140 3160096 gpu_hlo_schedule.cc:971] The byte size of input/output arguments (94255267856) exceeds the base limit (79961155174). This indicates an error in the calculation!
+E0820 21:29:52.457175 3158939 gpu_hlo_schedule.cc:971] The byte size of input/output arguments (94255267856) exceeds the base limit (79961155174). This indicates an error in the calculation!
+E0820 21:29:52.459993 3171580 gpu_hlo_schedule.cc:971] The byte size of input/output arguments (94255267856) exceeds the base limit (79961155174). This indicates an error in the calculation!
+E0820 21:29:52.460050 3131328 gpu_hlo_schedule.cc:971] The byte size of input/output arguments (94255267856) exceeds the base limit (79961155174). This indicates an error in the calculation!
+E0820 21:29:52.463765 3160095 gpu_hlo_schedule.cc:971] The byte size of input/output arguments (94255267856) exceeds the base limit (79961155174). This indicates an error in the calculation!
+E0820 21:29:52.466654 3160097 gpu_hlo_schedule.cc:971] The byte size of input/output arguments (94255267856) exceeds the base limit (79961155174). This indicates an error in the calculation!
+W0820 21:29:52.483186 3131326 hlo_rematerialization.cc:3233] Can't reduce memory use below 87.78GiB (94255267856 bytes) by rematerialization; only reduced to 87.78GiB (94255267932 bytes), down from 87.78GiB (94255267932 bytes) originally
+W0820 21:29:52.483363 3131329 hlo_rematerialization.cc:3233] Can't reduce memory use below 87.78GiB (94255267856 bytes) by rematerialization; only reduced to 87.78GiB (94255267932 bytes), down from 87.78GiB (94255267932 bytes) originally
+W0820 21:29:52.485337 3171582 hlo_rematerialization.cc:3233] Can't reduce memory use below 87.78GiB (94255267856 bytes) by rematerialization; only reduced to 87.78GiB (94255267932 bytes), down from 87.78GiB (94255267932 bytes) originally
+W0820 21:29:52.486898 3158936 hlo_rematerialization.cc:3233] Can't reduce memory use below 87.78GiB (94255267856 bytes) by rematerialization; only reduced to 87.78GiB (94255267932 bytes), down from 87.78GiB (94255267932 bytes) originally
+W0820 21:29:52.486896 3158938 hlo_rematerialization.cc:3233] Can't reduce memory use below 87.78GiB (94255267856 bytes) by rematerialization; only reduced to 87.78GiB (94255267932 bytes), down from 87.78GiB (94255267932 bytes) originally
+W0820 21:29:52.486974 3158937 hlo_rematerialization.cc:3233] Can't reduce memory use below 87.78GiB (94255267856 bytes) by rematerialization; only reduced to 87.78GiB (94255267932 bytes), down from 87.78GiB (94255267932 bytes) originally
+W0820 21:29:52.487218 3131327 hlo_rematerialization.cc:3233] Can't reduce memory use below 87.78GiB (94255267856 bytes) by rematerialization; only reduced to 87.78GiB (94255267932 bytes), down from 87.78GiB (94255267932 bytes) originally
+W0820 21:29:52.487362 3171581 hlo_rematerialization.cc:3233] Can't reduce memory use below 87.78GiB (94255267856 bytes) by rematerialization; only reduced to 87.78GiB (94255267932 bytes), down from 87.78GiB (94255267932 bytes) originally
+W0820 21:29:52.487487 3171579 hlo_rematerialization.cc:3233] Can't reduce memory use below 87.78GiB (94255267856 bytes) by rematerialization; only reduced to 87.78GiB (94255267932 bytes), down from 87.78GiB (94255267932 bytes) originally
+W0820 21:29:52.488850 3160094 hlo_rematerialization.cc:3233] Can't reduce memory use below 87.78GiB (94255267856 bytes) by rematerialization; only reduced to 87.78GiB (94255267932 bytes), down from 87.78GiB (94255267932 bytes) originally
+W0820 21:29:52.489210 3160096 hlo_rematerialization.cc:3233] Can't reduce memory use below 87.78GiB (94255267856 bytes) by rematerialization; only reduced to 87.78GiB (94255267932 bytes), down from 87.78GiB (94255267932 bytes) originally
+W0820 21:29:52.491930 3158939 hlo_rematerialization.cc:3233] Can't reduce memory use below 87.78GiB (94255267856 bytes) by rematerialization; only reduced to 87.78GiB (94255267932 bytes), down from 87.78GiB (94255267932 bytes) originally
+W0820 21:29:52.494904 3171580 hlo_rematerialization.cc:3233] Can't reduce memory use below 87.78GiB (94255267856 bytes) by rematerialization; only reduced to 87.78GiB (94255267932 bytes), down from 87.78GiB (94255267932 bytes) originally
+W0820 21:29:52.494896 3131328 hlo_rematerialization.cc:3233] Can't reduce memory use below 87.78GiB (94255267856 bytes) by rematerialization; only reduced to 87.78GiB (94255267932 bytes), down from 87.78GiB (94255267932 bytes) originally
+W0820 21:29:52.499438 3160095 hlo_rematerialization.cc:3233] Can't reduce memory use below 87.78GiB (94255267856 bytes) by rematerialization; only reduced to 87.78GiB (94255267932 bytes), down from 87.78GiB (94255267932 bytes) originally
+W0820 21:29:52.501935 3160097 hlo_rematerialization.cc:3233] Can't reduce memory use below 87.78GiB (94255267856 bytes) by rematerialization; only reduced to 87.78GiB (94255267932 bytes), down from 87.78GiB (94255267932 bytes) originally
+E0820 21:30:04.991690 3171580 gpu_hlo_schedule.cc:971] The byte size of input/output arguments (94255268028) exceeds the base limit (79961155174). This indicates an error in the calculation!
+E0820 21:30:04.992666 3131327 gpu_hlo_schedule.cc:971] The byte size of input/output arguments (94255268028) exceeds the base limit (79961155174). This indicates an error in the calculation!
+E0820 21:30:04.992736 3171582 gpu_hlo_schedule.cc:971] The byte size of input/output arguments (94255268028) exceeds the base limit (79961155174). This indicates an error in the calculation!
+E0820 21:30:04.994619 3160095 gpu_hlo_schedule.cc:971] The byte size of input/output arguments (94255268028) exceeds the base limit (79961155174). This indicates an error in the calculation!
+E0820 21:30:04.995535 3171581 gpu_hlo_schedule.cc:971] The byte size of input/output arguments (94255268028) exceeds the base limit (79961155174). This indicates an error in the calculation!
+E0820 21:30:04.996010 3158938 gpu_hlo_schedule.cc:971] The byte size of input/output arguments (94255268028) exceeds the base limit (79961155174). This indicates an error in the calculation!
+E0820 21:30:04.997058 3160096 gpu_hlo_schedule.cc:971] The byte size of input/output arguments (94255268028) exceeds the base limit (79961155174). This indicates an error in the calculation!
+W0820 21:30:04.997715 3171580 hlo_rematerialization.cc:3233] Can't reduce memory use below 87.78GiB (94255268028 bytes) by rematerialization; only reduced to 89.44GiB (96033652948 bytes), down from 89.44GiB (96033652948 bytes) originally
+E0820 21:30:04.997958 3131328 gpu_hlo_schedule.cc:971] The byte size of input/output arguments (94255268028) exceeds the base limit (79961155174). This indicates an error in the calculation!
+E0820 21:30:04.998003 3160097 gpu_hlo_schedule.cc:971] The byte size of input/output arguments (94255268028) exceeds the base limit (79961155174). This indicates an error in the calculation!
+E0820 21:30:04.998146 3171579 gpu_hlo_schedule.cc:971] The byte size of input/output arguments (94255268028) exceeds the base limit (79961155174). This indicates an error in the calculation!
+W0820 21:30:04.998543 3131327 hlo_rematerialization.cc:3233] Can't reduce memory use below 87.78GiB (94255268028 bytes) by rematerialization; only reduced to 89.44GiB (96033652948 bytes), down from 89.44GiB (96033652948 bytes) originally
+E0820 21:30:04.998700 3131326 gpu_hlo_schedule.cc:971] The byte size of input/output arguments (94255268028) exceeds the base limit (79961155174). This indicates an error in the calculation!
+W0820 21:30:04.998814 3171582 hlo_rematerialization.cc:3233] Can't reduce memory use below 87.78GiB (94255268028 bytes) by rematerialization; only reduced to 89.44GiB (96033652948 bytes), down from 89.44GiB (96033652948 bytes) originally
+E0820 21:30:04.999122 3131329 gpu_hlo_schedule.cc:971] The byte size of input/output arguments (94255268028) exceeds the base limit (79961155174). This indicates an error in the calculation!
+E0820 21:30:04.999277 3158936 gpu_hlo_schedule.cc:971] The byte size of input/output arguments (94255268028) exceeds the base limit (79961155174). This indicates an error in the calculation!
+E0820 21:30:05.000148 3160094 gpu_hlo_schedule.cc:971] The byte size of input/output arguments (94255268028) exceeds the base limit (79961155174). This indicates an error in the calculation!
+W0820 21:30:05.000794 3160095 hlo_rematerialization.cc:3233] Can't reduce memory use below 87.78GiB (94255268028 bytes) by rematerialization; only reduced to 89.44GiB (96033652948 bytes), down from 89.44GiB (96033652948 bytes) originally
+W0820 21:30:05.001554 3171581 hlo_rematerialization.cc:3233] Can't reduce memory use below 87.78GiB (94255268028 bytes) by rematerialization; only reduced to 89.44GiB (96033652948 bytes), down from 89.44GiB (96033652948 bytes) originally
+W0820 21:30:05.001901 3158938 hlo_rematerialization.cc:3233] Can't reduce memory use below 87.78GiB (94255268028 bytes) by rematerialization; only reduced to 89.44GiB (96033652948 bytes), down from 89.44GiB (96033652948 bytes) originally
+E0820 21:30:05.001950 3158937 gpu_hlo_schedule.cc:971] The byte size of input/output arguments (94255268028) exceeds the base limit (79961155174). This indicates an error in the calculation!
+E0820 21:30:05.002886 3158939 gpu_hlo_schedule.cc:971] The byte size of input/output arguments (94255268028) exceeds the base limit (79961155174). This indicates an error in the calculation!
+W0820 21:30:05.003400 3160096 hlo_rematerialization.cc:3233] Can't reduce memory use below 87.78GiB (94255268028 bytes) by rematerialization; only reduced to 89.44GiB (96033652948 bytes), down from 89.44GiB (96033652948 bytes) originally
+W0820 21:30:05.004222 3160097 hlo_rematerialization.cc:3233] Can't reduce memory use below 87.78GiB (94255268028 bytes) by rematerialization; only reduced to 89.44GiB (96033652948 bytes), down from 89.44GiB (96033652948 bytes) originally
+W0820 21:30:05.004196 3131328 hlo_rematerialization.cc:3233] Can't reduce memory use below 87.78GiB (94255268028 bytes) by rematerialization; only reduced to 89.44GiB (96033652948 bytes), down from 89.44GiB (96033652948 bytes) originally
+W0820 21:30:05.004729 3171579 hlo_rematerialization.cc:3233] Can't reduce memory use below 87.78GiB (94255268028 bytes) by rematerialization; only reduced to 89.44GiB (96033652948 bytes), down from 89.44GiB (96033652948 bytes) originally
+W0820 21:30:05.005422 3158936 hlo_rematerialization.cc:3233] Can't reduce memory use below 87.78GiB (94255268028 bytes) by rematerialization; only reduced to 89.44GiB (96033652948 bytes), down from 89.44GiB (96033652948 bytes) originally
+W0820 21:30:05.004861 3131326 hlo_rematerialization.cc:3233] Can't reduce memory use below 87.78GiB (94255268028 bytes) by rematerialization; only reduced to 89.44GiB (96033652948 bytes), down from 89.44GiB (96033652948 bytes) originally
+W0820 21:30:05.005243 3131329 hlo_rematerialization.cc:3233] Can't reduce memory use below 87.78GiB (94255268028 bytes) by rematerialization; only reduced to 89.44GiB (96033652948 bytes), down from 89.44GiB (96033652948 bytes) originally
+W0820 21:30:05.006885 3160094 hlo_rematerialization.cc:3233] Can't reduce memory use below 87.78GiB (94255268028 bytes) by rematerialization; only reduced to 89.44GiB (96033652948 bytes), down from 89.44GiB (96033652948 bytes) originally
+W0820 21:30:05.008035 3158937 hlo_rematerialization.cc:3233] Can't reduce memory use below 87.78GiB (94255268028 bytes) by rematerialization; only reduced to 89.44GiB (96033652948 bytes), down from 89.44GiB (96033652948 bytes) originally
+W0820 21:30:05.009006 3158939 hlo_rematerialization.cc:3233] Can't reduce memory use below 87.78GiB (94255268028 bytes) by rematerialization; only reduced to 89.44GiB (96033652948 bytes), down from 89.44GiB (96033652948 bytes) originally
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 676, in <module>
+    main()
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 665, in main
+    payload = _run(args)
+              ^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 619, in _run
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 676, in <module>
+    elapsed, metrics = run_iteration(
+                       ^^^^^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 411, in _solve_iteration
+    out.block_until_ready()
+jax.errors.JaxRuntimeError: RESOURCE_EXHAUSTED: Unable to allocate CUDA scratch memory for cusolvermp_lu_solve_redistribution: requested 2667577344 bytes, cuda status 2 (out of memory) [executable_name='jit_impl']
+    main()
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 665, in main
+    payload = _run(args)
+              ^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 619, in _run
+    elapsed, metrics = run_iteration(
+                       ^^^^^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 411, in _solve_iteration
+    out.block_until_ready()
+jax.errors.JaxRuntimeError: RESOURCE_EXHAUSTED: Unable to allocate CUDA scratch memory for cusolvermp_lu_solve_redistribution: requested 2667577344 bytes, cuda status 2 (out of memory) [executable_name='jit_impl']
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 676, in <module>
+    main()
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 665, in main
+    payload = _run(args)
+              ^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 619, in _run
+    elapsed, metrics = run_iteration(
+                       ^^^^^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 411, in _solve_iteration
+    out.block_until_ready()
+jax.errors.JaxRuntimeError: RESOURCE_EXHAUSTED: Unable to allocate CUDA scratch memory for cusolvermp_lu_solve_redistribution: requested 2667577344 bytes, cuda status 2 (out of memory) [executable_name='jit_impl']
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 676, in <module>
+    main()
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 665, in main
+    payload = _run(args)
+              ^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 619, in _run
+    elapsed, metrics = run_iteration(
+                       ^^^^^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 411, in _solve_iteration
+    out.block_until_ready()
+jax.errors.JaxRuntimeError: RESOURCE_EXHAUSTED: Unable to allocate CUDA scratch memory for cusolvermp_lu_solve_redistribution: requested 2667577344 bytes, cuda status 2 (out of memory) [executable_name='jit_impl']
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 676, in <module>
+    main()
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 665, in main
+    payload = _run(args)
+              ^^^^^^^^^^
+Traceback (most recent call last):
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 619, in _run
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 676, in <module>
+    elapsed, metrics = run_iteration(
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+                       ^^^^^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 411, in _solve_iteration
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 676, in <module>
+    out.block_until_ready()
+jax.errors.JaxRuntimeError: RESOURCE_EXHAUSTED: Unable to allocate CUDA scratch memory for cusolvermp_lu_solve_redistribution: requested 2667577344 bytes, cuda status 2 (out of memory) [executable_name='jit_impl']
+    main()
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 665, in main
+    main()
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 665, in main
+    payload = _run(args)
+              ^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 619, in _run
+    payload = _run(args)
+              ^^^^^^^^^^
+    elapsed, metrics = run_iteration(
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 619, in _run
+                       ^^^^^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 411, in _solve_iteration
+    elapsed, metrics = run_iteration(
+                       ^^^^^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 411, in _solve_iteration
+    out.block_until_ready()
+jax.errors.JaxRuntimeError: RESOURCE_EXHAUSTED: Unable to allocate CUDA scratch memory for cusolvermp_lu_solve_redistribution: requested 2667577344 bytes, cuda status 2 (out of memory) [executable_name='jit_impl']
+    out.block_until_ready()
+jax.errors.JaxRuntimeError: RESOURCE_EXHAUSTED: Unable to allocate CUDA scratch memory for cusolvermp_lu_solve_redistribution: requested 2667577344 bytes, cuda status 2 (out of memory) [executable_name='jit_impl']
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 676, in <module>
+    main()
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 665, in main
+    payload = _run(args)
+              ^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 619, in _run
+    elapsed, metrics = run_iteration(
+                       ^^^^^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 411, in _solve_iteration
+    out.block_until_ready()
+jax.errors.JaxRuntimeError: RESOURCE_EXHAUSTED: Unable to allocate CUDA scratch memory for cusolvermp_lu_solve_redistribution: requested 2667577344 bytes, cuda status 2 (out of memory) [executable_name='jit_impl']
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 676, in <module>
+    main()
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 665, in main
+    payload = _run(args)
+              ^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 619, in _run
+    elapsed, metrics = run_iteration(
+                       ^^^^^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 411, in _solve_iteration
+    out.block_until_ready()
+jax.errors.JaxRuntimeError: RESOURCE_EXHAUSTED: Unable to allocate CUDA scratch memory for cusolvermp_lu_solve_redistribution: requested 2667577344 bytes, cuda status 2 (out of memory) [executable_name='jit_impl']
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 676, in <module>
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 676, in <module>
+    main()
+    main()
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 665, in main
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 665, in main
+    payload = _run(args)
+    payload = _run(args)
+              ^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 619, in _run
+              ^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 619, in _run
+    elapsed, metrics = run_iteration(
+    elapsed, metrics = run_iteration(
+                       ^^^^^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 411, in _solve_iteration
+                       ^^^^^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 411, in _solve_iteration
+    out.block_until_ready()
+    out.block_until_ready()
+jax.errors.JaxRuntimeError: RESOURCE_EXHAUSTED: Unable to allocate CUDA scratch memory for cusolvermp_lu_solve_redistribution: requested 2667577344 bytes, cuda status 2 (out of memory) [executable_name='jit_impl']
+jax.errors.JaxRuntimeError: RESOURCE_EXHAUSTED: Unable to allocate CUDA scratch memory for cusolvermp_lu_solve_redistribution: requested 2667577344 bytes, cuda status 2 (out of memory) [executable_name='jit_impl']
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 676, in <module>
+    main()
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 665, in main
+    payload = _run(args)
+              ^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 619, in _run
+    elapsed, metrics = run_iteration(
+                       ^^^^^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 411, in _solve_iteration
+    out.block_until_ready()
+jax.errors.JaxRuntimeError: RESOURCE_EXHAUSTED: Unable to allocate CUDA scratch memory for cusolvermp_lu_solve_redistribution: requested 2667577344 bytes, cuda status 2 (out of memory) [executable_name='jit_impl']
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 676, in <module>
+    main()
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 665, in main
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 676, in <module>
+    payload = _run(args)
+              ^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 619, in _run
+    elapsed, metrics = run_iteration(
+    main()
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 665, in main
+                       ^^^^^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 411, in _solve_iteration
+    out.block_until_ready()
+    payload = _run(args)
+jax.errors.JaxRuntimeError: RESOURCE_EXHAUSTED: Unable to allocate CUDA scratch memory for cusolvermp_lu_solve_redistribution: requested 2667577344 bytes, cuda status 2 (out of memory) [executable_name='jit_impl']
+              ^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 619, in _run
+    elapsed, metrics = run_iteration(
+                       ^^^^^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 411, in _solve_iteration
+    out.block_until_ready()
+jax.errors.JaxRuntimeError: RESOURCE_EXHAUSTED: Unable to allocate CUDA scratch memory for cusolvermp_lu_solve_redistribution: requested 2667577344 bytes, cuda status 2 (out of memory) [executable_name='jit_impl']
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 676, in <module>
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 676, in <module>
+    main()
+    main()
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 665, in main
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 665, in main
+    payload = _run(args)
+    payload = _run(args)
+              ^^^^^^^^^^
+              ^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 619, in _run
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 619, in _run
+    elapsed, metrics = run_iteration(
+    elapsed, metrics = run_iteration(
+                       ^^^^^^^^^^^^^^
+                       ^^^^^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 411, in _solve_iteration
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 411, in _solve_iteration
+    out.block_until_ready()
+    out.block_until_ready()
+jax.errors.JaxRuntimeError: RESOURCE_EXHAUSTED: Unable to allocate CUDA scratch memory for cusolvermp_lu_solve_redistribution: requested 2667577344 bytes, cuda status 2 (out of memory) [executable_name='jit_impl']
+jax.errors.JaxRuntimeError: RESOURCE_EXHAUSTED: Unable to allocate CUDA scratch memory for cusolvermp_lu_solve_redistribution: requested 2667577344 bytes, cuda status 2 (out of memory) [executable_name='jit_impl']
+W0820 21:30:05.610465 3160115 pjrt_client.cc:1613] WatchTasksAsync failed for task 6: UNAVAILABLE: failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.146:65526: Failed to connect to remote host: Connection refused
+Additional GRPC error information from remote target coordination_service while calling /xla.coordination.CoordinationService/WatchTasks:
+:UNKNOWN:Error received from peer  {grpc_status:14, grpc_message:"failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.146:65526: Failed to connect to remote host: Connection refused"}
+W0820 21:30:05.610500 3160113 pjrt_client.cc:1613] WatchTasksAsync failed for task 7: UNAVAILABLE: failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.146:65526: Failed to connect to remote host: Connection refused
+Additional GRPC error information from remote target coordination_service while calling /xla.coordination.CoordinationService/WatchTasks:
+:UNKNOWN:Error received from peer  {grpc_status:14, grpc_message:"failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.146:65526: Failed to connect to remote host: Connection refused"}
+W0820 21:30:05.610569 3132532 pjrt_client.cc:1613] WatchTasksAsync failed for task 1: UNAVAILABLE: failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.146:65526: Failed to connect to remote host: Connection refused
+Additional GRPC error information from remote target coordination_service while calling /xla.coordination.CoordinationService/WatchTasks:
+:UNKNOWN:Error received from peer  {grpc_message:"failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.146:65526: Failed to connect to remote host: Connection refused", grpc_status:14}
+W0820 21:30:05.610636 3132531 pjrt_client.cc:1613] WatchTasksAsync failed for task 3: UNAVAILABLE: failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.146:65526: Failed to connect to remote host: Connection refused
+Additional GRPC error information from remote target coordination_service while calling /xla.coordination.CoordinationService/WatchTasks:
+:UNKNOWN:Error received from peer  {grpc_status:14, grpc_message:"failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.146:65526: Failed to connect to remote host: Connection refused"}
+W0820 21:30:05.610667 3132526 pjrt_client.cc:1613] WatchTasksAsync failed for task 0: UNAVAILABLE: failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.146:65526: Failed to connect to remote host: Connection refused
+Additional GRPC error information from remote target coordination_service while calling /xla.coordination.CoordinationService/WatchTasks:
+:UNKNOWN:Error received from peer  {grpc_message:"failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.146:65526: Failed to connect to remote host: Connection refused", grpc_status:14}
+W0820 21:30:05.610728 3160114 pjrt_client.cc:1613] WatchTasksAsync failed for task 5: UNAVAILABLE: failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.146:65526: Failed to connect to remote host: Connection refused
+Additional GRPC error information from remote target coordination_service while calling /xla.coordination.CoordinationService/WatchTasks:
+:UNKNOWN:Error received from peer  {grpc_message:"failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.146:65526: Failed to connect to remote host: Connection refused", grpc_status:14}
+W0820 21:30:05.610838 3172686 pjrt_client.cc:1613] WatchTasksAsync failed for task 12: UNAVAILABLE: failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.146:65526: Failed to connect to remote host: Connection refused
+Additional GRPC error information from remote target coordination_service while calling /xla.coordination.CoordinationService/WatchTasks:
+:UNKNOWN:Error received from peer  {grpc_message:"failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.146:65526: Failed to connect to remote host: Connection refused", grpc_status:14}
+W0820 21:30:05.610814 3132533 pjrt_client.cc:1613] WatchTasksAsync failed for task 2: UNAVAILABLE: failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.146:65526: Failed to connect to remote host: Connection refused
+Additional GRPC error information from remote target coordination_service while calling /xla.coordination.CoordinationService/WatchTasks:
+:UNKNOWN:Error received from peer  {grpc_status:14, grpc_message:"failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.146:65526: Failed to connect to remote host: Connection refused"}
+W0820 21:30:05.610887 3172687 pjrt_client.cc:1613] WatchTasksAsync failed for task 15: UNAVAILABLE: failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.146:65526: Failed to connect to remote host: Connection refused
+Additional GRPC error information from remote target coordination_service while calling /xla.coordination.CoordinationService/WatchTasks:
+:UNKNOWN:Error received from peer  {grpc_message:"failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.146:65526: Failed to connect to remote host: Connection refused", grpc_status:14}
+W0820 21:30:05.610949 3160116 pjrt_client.cc:1613] WatchTasksAsync failed for task 4: UNAVAILABLE: failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.146:65526: Failed to connect to remote host: Connection refused
+Additional GRPC error information from remote target coordination_service while calling /xla.coordination.CoordinationService/WatchTasks:
+:UNKNOWN:Error received from peer  {grpc_message:"failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.146:65526: Failed to connect to remote host: Connection refused", grpc_status:14}
+W0820 21:30:05.610846 3161180 pjrt_client.cc:1613] WatchTasksAsync failed for task 8: UNAVAILABLE: failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.146:65526: Failed to connect to remote host: Connection refused
+Additional GRPC error information from remote target coordination_service while calling /xla.coordination.CoordinationService/WatchTasks:
+:UNKNOWN:Error received from peer  {grpc_status:14, grpc_message:"failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.146:65526: Failed to connect to remote host: Connection refused"}
+W0820 21:30:05.611025 3172688 pjrt_client.cc:1613] WatchTasksAsync failed for task 14: UNAVAILABLE: failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.146:65526: Failed to connect to remote host: Connection refused
+Additional GRPC error information from remote target coordination_service while calling /xla.coordination.CoordinationService/WatchTasks:
+:UNKNOWN:Error received from peer  {grpc_message:"failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.146:65526: Failed to connect to remote host: Connection refused", grpc_status:14}
+W0820 21:30:05.610967 3161179 pjrt_client.cc:1613] WatchTasksAsync failed for task 9: UNAVAILABLE: failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.146:65526: Failed to connect to remote host: Connection refused
+Additional GRPC error information from remote target coordination_service while calling /xla.coordination.CoordinationService/WatchTasks:
+:UNKNOWN:Error received from peer  {grpc_status:14, grpc_message:"failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.146:65526: Failed to connect to remote host: Connection refused"}
+W0820 21:30:05.611148 3172689 pjrt_client.cc:1613] WatchTasksAsync failed for task 13: UNAVAILABLE: failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.146:65526: Failed to connect to remote host: Connection refused
+Additional GRPC error information from remote target coordination_service while calling /xla.coordination.CoordinationService/WatchTasks:
+:UNKNOWN:Error received from peer  {grpc_message:"failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.146:65526: Failed to connect to remote host: Connection refused", grpc_status:14}
+W0820 21:30:05.611098 3161181 pjrt_client.cc:1613] WatchTasksAsync failed for task 11: UNAVAILABLE: failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.146:65526: Failed to connect to remote host: Connection refused
+Additional GRPC error information from remote target coordination_service while calling /xla.coordination.CoordinationService/WatchTasks:
+:UNKNOWN:Error received from peer  {grpc_message:"failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.146:65526: Failed to connect to remote host: Connection refused", grpc_status:14}
+W0820 21:30:05.611204 3161182 pjrt_client.cc:1613] WatchTasksAsync failed for task 10: UNAVAILABLE: failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.146:65526: Failed to connect to remote host: Connection refused
+Additional GRPC error information from remote target coordination_service while calling /xla.coordination.CoordinationService/WatchTasks:
+:UNKNOWN:Error received from peer  {grpc_message:"failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.146:65526: Failed to connect to remote host: Connection refused", grpc_status:14}
+srun: error: workergpu205: task 12: Exited with exit code 1
+srun: Terminating StepId=6914038.60
+slurmstepd: error: *** STEP 6914038.60 ON workergpu202 CANCELLED AT 2026-08-20T21:30:06 ***
+srun: error: workergpu204: task 8: Exited with exit code 1
+srun: error: workergpu202: tasks 0,2: Exited with exit code 1
+srun: error: workergpu203: tasks 5-6: Exited with exit code 1
+srun: error: workergpu202: task 1: Exited with exit code 1
+srun: error: workergpu203: task 4: Exited with exit code 1
+srun: error: workergpu205: tasks 13-15: Exited with exit code 1
+srun: error: workergpu202: task 3: Exited with exit code 1
+srun: error: workergpu203: task 7: Exited with exit code 1
+srun: error: workergpu204: tasks 9-11: Exited with exit code 1

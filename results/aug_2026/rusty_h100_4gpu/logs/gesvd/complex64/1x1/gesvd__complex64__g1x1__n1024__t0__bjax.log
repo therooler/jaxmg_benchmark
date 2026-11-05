@@ -1,0 +1,20 @@
+gesvd__complex64__g1x1__n1024__t0__bjax: cold 1/1 start
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 931, in <module>
+    main()
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 920, in main
+    payload = _run(args)
+              ^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 850, in _run
+    elapsed, metrics = run_iteration(
+                       ^^^^^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 675, in _native_gesvd_iteration
+    metrics = _validate_gesvd(
+              ^^^^^^^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 324, in _validate_gesvd
+    raise AssertionError(
+AssertionError: GESVD Frobenius identity failed: relative_error=0.000531483248259903 tolerance=0.0005
+srun: error: workergpu211: task 0: Exited with exit code 1
+srun: Terminating StepId=6966147.2

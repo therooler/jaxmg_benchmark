@@ -1,0 +1,395 @@
+potrs__float32__g4x4__n621568__t256: cold 1/1 start
+E0819 19:50:49.995824 2133862 gpu_hlo_schedule.cc:971] The byte size of input/output arguments (96587316240) exceeds the base limit (79961155174). This indicates an error in the calculation!
+E0819 19:50:49.997600 2138606 gpu_hlo_schedule.cc:971] The byte size of input/output arguments (96587316240) exceeds the base limit (79961155174). This indicates an error in the calculation!
+E0819 19:50:49.997596 2138608 gpu_hlo_schedule.cc:971] The byte size of input/output arguments (96587316240) exceeds the base limit (79961155174). This indicates an error in the calculation!
+E0819 19:50:49.997833 2107416 gpu_hlo_schedule.cc:971] The byte size of input/output arguments (96587316240) exceeds the base limit (79961155174). This indicates an error in the calculation!
+E0819 19:50:49.998631 2136224 gpu_hlo_schedule.cc:971] The byte size of input/output arguments (96587316240) exceeds the base limit (79961155174). This indicates an error in the calculation!
+E0819 19:50:50.000696 2136226 gpu_hlo_schedule.cc:971] The byte size of input/output arguments (96587316240) exceeds the base limit (79961155174). This indicates an error in the calculation!
+E0819 19:50:50.001553 2136225 gpu_hlo_schedule.cc:971] The byte size of input/output arguments (96587316240) exceeds the base limit (79961155174). This indicates an error in the calculation!
+E0819 19:50:50.001707 2133863 gpu_hlo_schedule.cc:971] The byte size of input/output arguments (96587316240) exceeds the base limit (79961155174). This indicates an error in the calculation!
+E0819 19:50:50.001709 2133864 gpu_hlo_schedule.cc:971] The byte size of input/output arguments (96587316240) exceeds the base limit (79961155174). This indicates an error in the calculation!
+E0819 19:50:50.001703 2136227 gpu_hlo_schedule.cc:971] The byte size of input/output arguments (96587316240) exceeds the base limit (79961155174). This indicates an error in the calculation!
+E0819 19:50:50.002518 2133865 gpu_hlo_schedule.cc:971] The byte size of input/output arguments (96587316240) exceeds the base limit (79961155174). This indicates an error in the calculation!
+E0819 19:50:50.005643 2107419 gpu_hlo_schedule.cc:971] The byte size of input/output arguments (96587316240) exceeds the base limit (79961155174). This indicates an error in the calculation!
+E0819 19:50:50.006369 2107417 gpu_hlo_schedule.cc:971] The byte size of input/output arguments (96587316240) exceeds the base limit (79961155174). This indicates an error in the calculation!
+E0819 19:50:50.006770 2138607 gpu_hlo_schedule.cc:971] The byte size of input/output arguments (96587316240) exceeds the base limit (79961155174). This indicates an error in the calculation!
+E0819 19:50:50.010720 2138605 gpu_hlo_schedule.cc:971] The byte size of input/output arguments (96587316240) exceeds the base limit (79961155174). This indicates an error in the calculation!
+E0819 19:50:50.013208 2107418 gpu_hlo_schedule.cc:971] The byte size of input/output arguments (96587316240) exceeds the base limit (79961155174). This indicates an error in the calculation!
+W0819 19:50:50.030730 2133862 hlo_rematerialization.cc:3233] Can't reduce memory use below 89.95GiB (96587316240 bytes) by rematerialization; only reduced to 89.95GiB (96587316336 bytes), down from 89.95GiB (96587316336 bytes) originally
+W0819 19:50:50.032343 2107416 hlo_rematerialization.cc:3233] Can't reduce memory use below 89.95GiB (96587316240 bytes) by rematerialization; only reduced to 89.95GiB (96587316336 bytes), down from 89.95GiB (96587316336 bytes) originally
+W0819 19:50:50.032894 2138606 hlo_rematerialization.cc:3233] Can't reduce memory use below 89.95GiB (96587316240 bytes) by rematerialization; only reduced to 89.95GiB (96587316336 bytes), down from 89.95GiB (96587316336 bytes) originally
+W0819 19:50:50.032894 2138608 hlo_rematerialization.cc:3233] Can't reduce memory use below 89.95GiB (96587316240 bytes) by rematerialization; only reduced to 89.95GiB (96587316336 bytes), down from 89.95GiB (96587316336 bytes) originally
+W0819 19:50:50.033811 2136224 hlo_rematerialization.cc:3233] Can't reduce memory use below 89.95GiB (96587316240 bytes) by rematerialization; only reduced to 89.95GiB (96587316336 bytes), down from 89.95GiB (96587316336 bytes) originally
+W0819 19:50:50.035827 2136226 hlo_rematerialization.cc:3233] Can't reduce memory use below 89.95GiB (96587316240 bytes) by rematerialization; only reduced to 89.95GiB (96587316336 bytes), down from 89.95GiB (96587316336 bytes) originally
+W0819 19:50:50.037172 2133863 hlo_rematerialization.cc:3233] Can't reduce memory use below 89.95GiB (96587316240 bytes) by rematerialization; only reduced to 89.95GiB (96587316336 bytes), down from 89.95GiB (96587316336 bytes) originally
+W0819 19:50:50.037173 2133864 hlo_rematerialization.cc:3233] Can't reduce memory use below 89.95GiB (96587316240 bytes) by rematerialization; only reduced to 89.95GiB (96587316336 bytes), down from 89.95GiB (96587316336 bytes) originally
+W0819 19:50:50.037659 2133865 hlo_rematerialization.cc:3233] Can't reduce memory use below 89.95GiB (96587316240 bytes) by rematerialization; only reduced to 89.95GiB (96587316336 bytes), down from 89.95GiB (96587316336 bytes) originally
+W0819 19:50:50.037986 2136225 hlo_rematerialization.cc:3233] Can't reduce memory use below 89.95GiB (96587316240 bytes) by rematerialization; only reduced to 89.95GiB (96587316336 bytes), down from 89.95GiB (96587316336 bytes) originally
+W0819 19:50:50.038130 2136227 hlo_rematerialization.cc:3233] Can't reduce memory use below 89.95GiB (96587316240 bytes) by rematerialization; only reduced to 89.95GiB (96587316336 bytes), down from 89.95GiB (96587316336 bytes) originally
+W0819 19:50:50.040670 2107419 hlo_rematerialization.cc:3233] Can't reduce memory use below 89.95GiB (96587316240 bytes) by rematerialization; only reduced to 89.95GiB (96587316336 bytes), down from 89.95GiB (96587316336 bytes) originally
+W0819 19:50:50.041164 2107417 hlo_rematerialization.cc:3233] Can't reduce memory use below 89.95GiB (96587316240 bytes) by rematerialization; only reduced to 89.95GiB (96587316336 bytes), down from 89.95GiB (96587316336 bytes) originally
+W0819 19:50:50.041570 2138607 hlo_rematerialization.cc:3233] Can't reduce memory use below 89.95GiB (96587316240 bytes) by rematerialization; only reduced to 89.95GiB (96587316336 bytes), down from 89.95GiB (96587316336 bytes) originally
+W0819 19:50:50.045812 2138605 hlo_rematerialization.cc:3233] Can't reduce memory use below 89.95GiB (96587316240 bytes) by rematerialization; only reduced to 89.95GiB (96587316336 bytes), down from 89.95GiB (96587316336 bytes) originally
+W0819 19:50:50.048489 2107418 hlo_rematerialization.cc:3233] Can't reduce memory use below 89.95GiB (96587316240 bytes) by rematerialization; only reduced to 89.95GiB (96587316336 bytes), down from 89.95GiB (96587316336 bytes) originally
+E0819 19:51:02.653779 2133862 gpu_hlo_schedule.cc:971] The byte size of input/output arguments (96587316408) exceeds the base limit (79961155174). This indicates an error in the calculation!
+E0819 19:51:02.653925 2138607 gpu_hlo_schedule.cc:971] The byte size of input/output arguments (96587316408) exceeds the base limit (79961155174). This indicates an error in the calculation!
+E0819 19:51:02.655164 2138606 gpu_hlo_schedule.cc:971] The byte size of input/output arguments (96587316408) exceeds the base limit (79961155174). This indicates an error in the calculation!
+E0819 19:51:02.655783 2138608 gpu_hlo_schedule.cc:971] The byte size of input/output arguments (96587316408) exceeds the base limit (79961155174). This indicates an error in the calculation!
+E0819 19:51:02.656087 2133865 gpu_hlo_schedule.cc:971] The byte size of input/output arguments (96587316408) exceeds the base limit (79961155174). This indicates an error in the calculation!
+E0819 19:51:02.656724 2133863 gpu_hlo_schedule.cc:971] The byte size of input/output arguments (96587316408) exceeds the base limit (79961155174). This indicates an error in the calculation!
+E0819 19:51:02.657024 2138605 gpu_hlo_schedule.cc:971] The byte size of input/output arguments (96587316408) exceeds the base limit (79961155174). This indicates an error in the calculation!
+E0819 19:51:02.658494 2107416 gpu_hlo_schedule.cc:971] The byte size of input/output arguments (96587316408) exceeds the base limit (79961155174). This indicates an error in the calculation!
+W0819 19:51:02.659655 2133862 hlo_rematerialization.cc:3233] Can't reduce memory use below 89.95GiB (96587316408 bytes) by rematerialization; only reduced to 90.25GiB (96905559248 bytes), down from 90.25GiB (96905559248 bytes) originally
+W0819 19:51:02.659763 2138607 hlo_rematerialization.cc:3233] Can't reduce memory use below 89.95GiB (96587316408 bytes) by rematerialization; only reduced to 90.25GiB (96905559248 bytes), down from 90.25GiB (96905559248 bytes) originally
+W0819 19:51:02.661153 2138606 hlo_rematerialization.cc:3233] Can't reduce memory use below 89.95GiB (96587316408 bytes) by rematerialization; only reduced to 90.25GiB (96905559248 bytes), down from 90.25GiB (96905559248 bytes) originally
+E0819 19:51:02.661176 2136224 gpu_hlo_schedule.cc:971] The byte size of input/output arguments (96587316408) exceeds the base limit (79961155174). This indicates an error in the calculation!
+E0819 19:51:02.661873 2107417 gpu_hlo_schedule.cc:971] The byte size of input/output arguments (96587316408) exceeds the base limit (79961155174). This indicates an error in the calculation!
+W0819 19:51:02.661902 2138608 hlo_rematerialization.cc:3233] Can't reduce memory use below 89.95GiB (96587316408 bytes) by rematerialization; only reduced to 90.25GiB (96905559248 bytes), down from 90.25GiB (96905559248 bytes) originally
+W0819 19:51:02.662136 2133865 hlo_rematerialization.cc:3233] Can't reduce memory use below 89.95GiB (96587316408 bytes) by rematerialization; only reduced to 90.25GiB (96905559248 bytes), down from 90.25GiB (96905559248 bytes) originally
+W0819 19:51:02.662815 2133863 hlo_rematerialization.cc:3233] Can't reduce memory use below 89.95GiB (96587316408 bytes) by rematerialization; only reduced to 90.25GiB (96905559248 bytes), down from 90.25GiB (96905559248 bytes) originally
+W0819 19:51:02.663178 2138605 hlo_rematerialization.cc:3233] Can't reduce memory use below 89.95GiB (96587316408 bytes) by rematerialization; only reduced to 90.25GiB (96905559248 bytes), down from 90.25GiB (96905559248 bytes) originally
+E0819 19:51:02.663162 2136225 gpu_hlo_schedule.cc:971] The byte size of input/output arguments (96587316408) exceeds the base limit (79961155174). This indicates an error in the calculation!
+E0819 19:51:02.663162 2136227 gpu_hlo_schedule.cc:971] The byte size of input/output arguments (96587316408) exceeds the base limit (79961155174). This indicates an error in the calculation!
+E0819 19:51:02.663285 2107419 gpu_hlo_schedule.cc:971] The byte size of input/output arguments (96587316408) exceeds the base limit (79961155174). This indicates an error in the calculation!
+W0819 19:51:02.664558 2107416 hlo_rematerialization.cc:3233] Can't reduce memory use below 89.95GiB (96587316408 bytes) by rematerialization; only reduced to 90.25GiB (96905559248 bytes), down from 90.25GiB (96905559248 bytes) originally
+E0819 19:51:02.665986 2107418 gpu_hlo_schedule.cc:971] The byte size of input/output arguments (96587316408) exceeds the base limit (79961155174). This indicates an error in the calculation!
+E0819 19:51:02.666643 2136226 gpu_hlo_schedule.cc:971] The byte size of input/output arguments (96587316408) exceeds the base limit (79961155174). This indicates an error in the calculation!
+E0819 19:51:02.667102 2133864 gpu_hlo_schedule.cc:971] The byte size of input/output arguments (96587316408) exceeds the base limit (79961155174). This indicates an error in the calculation!
+W0819 19:51:02.667215 2136224 hlo_rematerialization.cc:3233] Can't reduce memory use below 89.95GiB (96587316408 bytes) by rematerialization; only reduced to 90.25GiB (96905559248 bytes), down from 90.25GiB (96905559248 bytes) originally
+W0819 19:51:02.667928 2107417 hlo_rematerialization.cc:3233] Can't reduce memory use below 89.95GiB (96587316408 bytes) by rematerialization; only reduced to 90.25GiB (96905559248 bytes), down from 90.25GiB (96905559248 bytes) originally
+W0819 19:51:02.669310 2107419 hlo_rematerialization.cc:3233] Can't reduce memory use below 89.95GiB (96587316408 bytes) by rematerialization; only reduced to 90.25GiB (96905559248 bytes), down from 90.25GiB (96905559248 bytes) originally
+W0819 19:51:02.669311 2136227 hlo_rematerialization.cc:3233] Can't reduce memory use below 89.95GiB (96587316408 bytes) by rematerialization; only reduced to 90.25GiB (96905559248 bytes), down from 90.25GiB (96905559248 bytes) originally
+W0819 19:51:02.669625 2136225 hlo_rematerialization.cc:3233] Can't reduce memory use below 89.95GiB (96587316408 bytes) by rematerialization; only reduced to 90.25GiB (96905559248 bytes), down from 90.25GiB (96905559248 bytes) originally
+W0819 19:51:02.672084 2107418 hlo_rematerialization.cc:3233] Can't reduce memory use below 89.95GiB (96587316408 bytes) by rematerialization; only reduced to 90.25GiB (96905559248 bytes), down from 90.25GiB (96905559248 bytes) originally
+W0819 19:51:02.672538 2136226 hlo_rematerialization.cc:3233] Can't reduce memory use below 89.95GiB (96587316408 bytes) by rematerialization; only reduced to 90.25GiB (96905559248 bytes), down from 90.25GiB (96905559248 bytes) originally
+W0819 19:51:02.672961 2133864 hlo_rematerialization.cc:3233] Can't reduce memory use below 89.95GiB (96587316408 bytes) by rematerialization; only reduced to 90.25GiB (96905559248 bytes), down from 90.25GiB (96905559248 bytes) originally
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 769, in <module>
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 769, in <module>
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 769, in <module>
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 769, in <module>
+    main()
+    main()
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 758, in main
+    main()
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 758, in main
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 758, in main
+    main()
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 758, in main
+    payload = _run(args)
+              ^^^^^^^^^^
+    payload = _run(args)
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 712, in _run
+              ^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 712, in _run
+    payload = _run(args)
+              ^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 712, in _run
+    payload = _run(args)
+    elapsed, metrics = run_iteration(
+              ^^^^^^^^^^
+    elapsed, metrics = run_iteration(
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 712, in _run
+                       ^^^^^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 498, in _solve_iteration
+    elapsed, metrics = run_iteration(
+                       ^^^^^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 498, in _solve_iteration
+                       ^^^^^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 498, in _solve_iteration
+    metrics = _validate(
+    metrics = _validate(
+    elapsed, metrics = run_iteration(
+              ^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 271, in _validate
+                       ^^^^^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 498, in _solve_iteration
+              ^^^^^^^^^^
+    metrics = _validate(
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 271, in _validate
+    raise AssertionError(
+    raise AssertionError(
+              ^^^^^^^^^^
+AssertionError: solution validation failed: max_abs_error=0.9999983911655683
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 271, in _validate
+AssertionError: solution validation failed: max_abs_error=0.9999983911655683
+    metrics = _validate(
+    raise AssertionError(
+              ^^^^^^^^^^
+AssertionError: solution validation failed: max_abs_error=0.9999983911655683
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 271, in _validate
+    raise AssertionError(
+AssertionError: solution validation failed: max_abs_error=0.9999983911655683
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 769, in <module>
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 769, in <module>
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 769, in <module>
+    main()
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 758, in main
+    main()
+    payload = _run(args)
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 758, in main
+              ^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 712, in _run
+    payload = _run(args)
+              ^^^^^^^^^^
+    main()
+    elapsed, metrics = run_iteration(
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 712, in _run
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 758, in main
+                       ^^^^^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 498, in _solve_iteration
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+    elapsed, metrics = run_iteration(
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 769, in <module>
+                       ^^^^^^^^^^^^^^
+    payload = _run(args)
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 498, in _solve_iteration
+    metrics = _validate(
+              ^^^^^^^^^^
+              ^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 712, in _run
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 271, in _validate
+    metrics = _validate(
+    raise AssertionError(
+              ^^^^^^^^^^
+AssertionError: solution validation failed: max_abs_error=0.9999983911655683
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 271, in _validate
+    elapsed, metrics = run_iteration(
+                       ^^^^^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 498, in _solve_iteration
+    raise AssertionError(
+    main()
+AssertionError: solution validation failed: max_abs_error=0.9999983911655683
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 758, in main
+    metrics = _validate(
+              ^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 271, in _validate
+    payload = _run(args)
+    raise AssertionError(
+Traceback (most recent call last):
+AssertionError: solution validation failed: max_abs_error=0.9999983911655683
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+              ^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 712, in _run
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 769, in <module>
+    elapsed, metrics = run_iteration(
+                       ^^^^^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 498, in _solve_iteration
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 769, in <module>
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 769, in <module>
+    metrics = _validate(
+              ^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 271, in _validate
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 769, in <module>
+    main()
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 758, in main
+    raise AssertionError(
+AssertionError: solution validation failed: max_abs_error=0.9999983911655683
+    main()
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 758, in main
+    payload = _run(args)
+              ^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 712, in _run
+    payload = _run(args)
+    main()
+    main()
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 758, in main
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 758, in main
+              ^^^^^^^^^^
+    elapsed, metrics = run_iteration(
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 712, in _run
+                       ^^^^^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 498, in _solve_iteration
+    elapsed, metrics = run_iteration(
+    payload = _run(args)
+    payload = _run(args)
+                       ^^^^^^^^^^^^^^
+    metrics = _validate(
+              ^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 498, in _solve_iteration
+              ^^^^^^^^^^
+              ^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 712, in _run
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 271, in _validate
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 712, in _run
+    raise AssertionError(
+    metrics = _validate(
+AssertionError: solution validation failed: max_abs_error=0.9999983911655683
+    elapsed, metrics = run_iteration(
+    elapsed, metrics = run_iteration(
+              ^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 271, in _validate
+                       ^^^^^^^^^^^^^^
+                       ^^^^^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 498, in _solve_iteration
+    raise AssertionError(
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 498, in _solve_iteration
+AssertionError: solution validation failed: max_abs_error=0.9999983911655683
+    metrics = _validate(
+    metrics = _validate(
+              ^^^^^^^^^^
+              ^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 271, in _validate
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 271, in _validate
+    raise AssertionError(
+    raise AssertionError(
+AssertionError: solution validation failed: max_abs_error=0.9999983911655683
+AssertionError: solution validation failed: max_abs_error=0.9999983911655683
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 769, in <module>
+    main()
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 758, in main
+    payload = _run(args)
+              ^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 712, in _run
+    elapsed, metrics = run_iteration(
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 769, in <module>
+                       ^^^^^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 498, in _solve_iteration
+    metrics = _validate(
+              ^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 271, in _validate
+    raise AssertionError(
+AssertionError: solution validation failed: max_abs_error=0.9999983911655683
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 769, in <module>
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+    main()
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 769, in <module>
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 758, in main
+    payload = _run(args)
+              ^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 712, in _run
+    main()
+    elapsed, metrics = run_iteration(
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 758, in main
+    main()
+                       ^^^^^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 498, in _solve_iteration
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 758, in main
+    payload = _run(args)
+    metrics = _validate(
+              ^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 271, in _validate
+              ^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 712, in _run
+    payload = _run(args)
+    raise AssertionError(
+              ^^^^^^^^^^
+AssertionError: solution validation failed: max_abs_error=0.9999983911655683
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 712, in _run
+    elapsed, metrics = run_iteration(
+                       ^^^^^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 498, in _solve_iteration
+    elapsed, metrics = run_iteration(
+                       ^^^^^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 498, in _solve_iteration
+    metrics = _validate(
+              ^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 271, in _validate
+    metrics = _validate(
+    raise AssertionError(
+              ^^^^^^^^^^
+AssertionError: solution validation failed: max_abs_error=0.9999983911655683
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 271, in _validate
+    raise AssertionError(
+AssertionError: solution validation failed: max_abs_error=0.9999983911655683
+W0819 19:51:19.152726 2139599 pjrt_client.cc:1613] WatchTasksAsync failed for task 13: UNAVAILABLE: failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.146:63060: Failed to connect to remote host: Connection refused
+Additional GRPC error information from remote target coordination_service while calling /xla.coordination.CoordinationService/WatchTasks:
+:UNKNOWN:Error received from peer  {grpc_status:14, grpc_message:"failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.146:63060: Failed to connect to remote host: Connection refused"}
+W0819 19:51:19.152813 2108419 pjrt_client.cc:1613] WatchTasksAsync failed for task 0: UNAVAILABLE: failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.146:63060: Failed to connect to remote host: Connection refused
+Additional GRPC error information from remote target coordination_service while calling /xla.coordination.CoordinationService/WatchTasks:
+:UNKNOWN:Error received from peer  {grpc_status:14, grpc_message:"failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.146:63060: Failed to connect to remote host: Connection refused"}
+W0819 19:51:19.152754 2134873 pjrt_client.cc:1613] WatchTasksAsync failed for task 4: UNAVAILABLE: failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.146:63060: Failed to connect to remote host: Connection refused
+Additional GRPC error information from remote target coordination_service while calling /xla.coordination.CoordinationService/WatchTasks:
+:UNKNOWN:Error received from peer  {grpc_message:"failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.146:63060: Failed to connect to remote host: Connection refused", grpc_status:14}
+W0819 19:51:19.152924 2134875 pjrt_client.cc:1613] WatchTasksAsync failed for task 7: UNAVAILABLE: failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.146:63060: Failed to connect to remote host: Connection refused
+Additional GRPC error information from remote target coordination_service while calling /xla.coordination.CoordinationService/WatchTasks:
+:UNKNOWN:Error received from peer  {grpc_message:"failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.146:63060: Failed to connect to remote host: Connection refused", grpc_status:14}
+W0819 19:51:19.152918 2108423 pjrt_client.cc:1613] WatchTasksAsync failed for task 1: UNAVAILABLE: failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.146:63060: Failed to connect to remote host: Connection refused
+Additional GRPC error information from remote target coordination_service while calling /xla.coordination.CoordinationService/WatchTasks:
+:UNKNOWN:Error received from peer  {grpc_status:14, grpc_message:"failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.146:63060: Failed to connect to remote host: Connection refused"}
+W0819 19:51:19.152958 2108424 pjrt_client.cc:1613] WatchTasksAsync failed for task 3: UNAVAILABLE: failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.146:63060: Failed to connect to remote host: Connection refused
+Additional GRPC error information from remote target coordination_service while calling /xla.coordination.CoordinationService/WatchTasks:
+:UNKNOWN:Error received from peer  {grpc_message:"failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.146:63060: Failed to connect to remote host: Connection refused", grpc_status:14}
+W0819 19:51:19.152900 2137193 pjrt_client.cc:1613] WatchTasksAsync failed for task 8: UNAVAILABLE: failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.146:63060: Failed to connect to remote host: Connection refused
+Additional GRPC error information from remote target coordination_service while calling /xla.coordination.CoordinationService/WatchTasks:
+:UNKNOWN:Error received from peer  {grpc_message:"failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.146:63060: Failed to connect to remote host: Connection refused", grpc_status:14}
+W0819 19:51:19.152901 2139600 pjrt_client.cc:1613] WatchTasksAsync failed for task 12: UNAVAILABLE: failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.146:63060: Failed to connect to remote host: Connection refused
+Additional GRPC error information from remote target coordination_service while calling /xla.coordination.CoordinationService/WatchTasks:
+:UNKNOWN:Error received from peer  {grpc_message:"failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.146:63060: Failed to connect to remote host: Connection refused", grpc_status:14}
+W0819 19:51:19.153014 2134876 pjrt_client.cc:1613] WatchTasksAsync failed for task 6: UNAVAILABLE: failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.146:63060: Failed to connect to remote host: Connection refused
+Additional GRPC error information from remote target coordination_service while calling /xla.coordination.CoordinationService/WatchTasks:
+:UNKNOWN:Error received from peer  {grpc_message:"failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.146:63060: Failed to connect to remote host: Connection refused", grpc_status:14}
+W0819 19:51:19.153163 2134874 pjrt_client.cc:1613] WatchTasksAsync failed for task 5: UNAVAILABLE: failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.146:63060: Failed to connect to remote host: Connection refused
+Additional GRPC error information from remote target coordination_service while calling /xla.coordination.CoordinationService/WatchTasks:
+:UNKNOWN:Error received from peer  {grpc_message:"failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.146:63060: Failed to connect to remote host: Connection refused", grpc_status:14}
+W0819 19:51:19.153307 2108425 pjrt_client.cc:1613] WatchTasksAsync failed for task 2: UNAVAILABLE: failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.146:63060: Failed to connect to remote host: Connection refused
+Additional GRPC error information from remote target coordination_service while calling /xla.coordination.CoordinationService/WatchTasks:
+:UNKNOWN:Error received from peer  {grpc_status:14, grpc_message:"failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.146:63060: Failed to connect to remote host: Connection refused"}
+W0819 19:51:19.153208 2137194 pjrt_client.cc:1613] WatchTasksAsync failed for task 10: UNAVAILABLE: failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.146:63060: Failed to connect to remote host: Connection refused
+Additional GRPC error information from remote target coordination_service while calling /xla.coordination.CoordinationService/WatchTasks:
+:UNKNOWN:Error received from peer  {grpc_status:14, grpc_message:"failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.146:63060: Failed to connect to remote host: Connection refused"}
+W0819 19:51:19.153344 2137196 pjrt_client.cc:1613] WatchTasksAsync failed for task 9: UNAVAILABLE: failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.146:63060: Failed to connect to remote host: Connection refused
+Additional GRPC error information from remote target coordination_service while calling /xla.coordination.CoordinationService/WatchTasks:
+:UNKNOWN:Error received from peer  {grpc_message:"failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.146:63060: Failed to connect to remote host: Connection refused", grpc_status:14}
+W0819 19:51:19.153416 2139597 pjrt_client.cc:1613] WatchTasksAsync failed for task 15: UNAVAILABLE: failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.146:63060: Failed to connect to remote host: Connection refused
+Additional GRPC error information from remote target coordination_service while calling /xla.coordination.CoordinationService/WatchTasks:
+:UNKNOWN:Error received from peer  {grpc_message:"failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.146:63060: Failed to connect to remote host: Connection refused", grpc_status:14}
+W0819 19:51:19.153428 2137195 pjrt_client.cc:1613] WatchTasksAsync failed for task 11: UNAVAILABLE: failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.146:63060: Failed to connect to remote host: Connection refused
+Additional GRPC error information from remote target coordination_service while calling /xla.coordination.CoordinationService/WatchTasks:
+:UNKNOWN:Error received from peer  {grpc_message:"failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.146:63060: Failed to connect to remote host: Connection refused", grpc_status:14}
+W0819 19:51:19.153424 2139598 pjrt_client.cc:1613] WatchTasksAsync failed for task 14: UNAVAILABLE: failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.146:63060: Failed to connect to remote host: Connection refused
+Additional GRPC error information from remote target coordination_service while calling /xla.coordination.CoordinationService/WatchTasks:
+:UNKNOWN:Error received from peer  {grpc_message:"failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.146:63060: Failed to connect to remote host: Connection refused", grpc_status:14}
+srun: error: workergpu207: tasks 4,7: Exited with exit code 1
+srun: Terminating StepId=6907476.0
+slurmstepd: error: *** STEP 6907476.0 ON workergpu202 CANCELLED AT 2026-08-19T19:51:20 ***
+srun: error: workergpu208: tasks 8-9,11: Exited with exit code 1
+srun: error: workergpu202: tasks 0-2: Exited with exit code 1
+srun: error: workergpu209: tasks 12-13,15: Exited with exit code 1
+srun: error: workergpu202: task 3: Exited with exit code 1
+srun: error: workergpu209: task 14: Exited with exit code 1
+srun: error: workergpu208: task 10: Exited with exit code 1
+srun: error: workergpu207: tasks 5-6: Exited with exit code 1

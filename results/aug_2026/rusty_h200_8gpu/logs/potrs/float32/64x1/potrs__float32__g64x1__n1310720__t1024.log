@@ -1,0 +1,197 @@
+potrs__float32__g64x1__n1310720__t1024: cold 1/1 start
+potrs__float32__g64x1__n1310720__t1024: cold 1/1 complete (3062.635 s)
+potrs__float32__g64x1__n1310720__t1024: warm 1/1 start
+potrs__float32__g64x1__n1310720__t1024: warm 1/1 complete (3064.829 s)
+{"alignment_quantum": 65536, "allocator": "vmm", "allocator_budget_bytes": 149247271895, "allocator_fraction": 0.99, "case_id": "potrs__float32__g64x1__n1310720__t1024", "cold_seconds": [3062.6348868780187], "dtype": "float32", "global_matrix_bytes": 6871947673600, "gpu_name": "NVIDIA H200", "jax_version": "0.10.1", "known_budget_fraction": 0.8279159429254505, "known_total_bytes": 123564195840, "local_matrix_budget_fraction": 0.7194381581429576, "local_matrix_bytes": 107374182400, "matrix_padding": false, "matrix_size": 1310720, "max_abs_error": 2.9802322387695312e-08, "native_status_codes": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], "package_versions": {"jax": "0.10.1", "jaxlib": "0.10.1", "jaxmg": "1.1.0", "nvidia-cusolvermp-cu12": "0.9.0.6427"}, "pivot_bytes": 0, "process_cols": 1, "process_rows": 64, "processes": 64, "redistribution_scratch_bytes": 16106127360, "rhs_capacity_bytes": 83886080, "routine": "potrs", "slurm_job_id": "6958888", "slurm_node_list": "workergpu[316-323]", "solver_workspace_bytes": null, "status": "passed", "tile_size": 1024, "vector_output_bytes": 0, "visible_memory_mib": 143771, "warm_max_seconds": 3064.8288621210013, "warm_median_seconds": 3064.8288621210013, "warm_min_seconds": 3064.8288621210013, "warm_seconds": [3064.8288621210013]}
+W0828 19:40:11.266748  905832 pjrt_client.cc:1613] WatchTasksAsync failed for task 2: UNAVAILABLE: failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.196:65320: Failed to connect to remote host: Connection refused
+Additional GRPC error information from remote target coordination_service while calling /xla.coordination.CoordinationService/WatchTasks:
+:UNKNOWN:Error received from peer  {grpc_message:"failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.196:65320: Failed to connect to remote host: Connection refused", grpc_status:14}
+W0828 19:40:11.267766 3893298 pjrt_client.cc:1613] WatchTasksAsync failed for task 56: UNAVAILABLE: failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.196:65320: Failed to connect to remote host: Connection refused
+Additional GRPC error information from remote target coordination_service while calling /xla.coordination.CoordinationService/WatchTasks:
+:UNKNOWN:Error received from peer  {grpc_status:14, grpc_message:"failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.196:65320: Failed to connect to remote host: Connection refused"}
+W0828 19:40:11.267793 3893288 pjrt_client.cc:1613] WatchTasksAsync failed for task 58: UNAVAILABLE: failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.196:65320: Failed to connect to remote host: Connection refused
+Additional GRPC error information from remote target coordination_service while calling /xla.coordination.CoordinationService/WatchTasks:
+:UNKNOWN:Error received from peer  {grpc_message:"failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.196:65320: Failed to connect to remote host: Connection refused", grpc_status:14}
+W0828 19:40:11.268078 3893287 pjrt_client.cc:1613] WatchTasksAsync failed for task 61: UNAVAILABLE: failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.196:65320: Failed to connect to remote host: Connection refused
+Additional GRPC error information from remote target coordination_service while calling /xla.coordination.CoordinationService/WatchTasks:
+:UNKNOWN:Error received from peer  {grpc_message:"failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.196:65320: Failed to connect to remote host: Connection refused", grpc_status:14}
+W0828 19:40:11.268130 3893291 pjrt_client.cc:1613] WatchTasksAsync failed for task 63: UNAVAILABLE: failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.196:65320: Failed to connect to remote host: Connection refused
+Additional GRPC error information from remote target coordination_service while calling /xla.coordination.CoordinationService/WatchTasks:
+:UNKNOWN:Error received from peer  {grpc_message:"failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.196:65320: Failed to connect to remote host: Connection refused", grpc_status:14}
+W0828 19:40:11.268263 3893289 pjrt_client.cc:1613] WatchTasksAsync failed for task 57: UNAVAILABLE: failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.196:65320: Failed to connect to remote host: Connection refused
+Additional GRPC error information from remote target coordination_service while calling /xla.coordination.CoordinationService/WatchTasks:
+:UNKNOWN:Error received from peer  {grpc_message:"failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.196:65320: Failed to connect to remote host: Connection refused", grpc_status:14}
+W0828 19:40:11.268207  905831 pjrt_client.cc:1613] WatchTasksAsync failed for task 3: UNAVAILABLE: failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.196:65320: Failed to connect to remote host: Connection refused
+Additional GRPC error information from remote target coordination_service while calling /xla.coordination.CoordinationService/WatchTasks:
+:UNKNOWN:Error received from peer  {grpc_message:"failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.196:65320: Failed to connect to remote host: Connection refused", grpc_status:14}
+W0828 19:40:11.268021 3733310 pjrt_client.cc:1613] WatchTasksAsync failed for task 41: UNAVAILABLE: failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.196:65320: Failed to connect to remote host: Connection refused
+Additional GRPC error information from remote target coordination_service while calling /xla.coordination.CoordinationService/WatchTasks:
+:UNKNOWN:Error received from peer  {grpc_message:"failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.196:65320: Failed to connect to remote host: Connection refused", grpc_status:14}
+W0828 19:40:11.272185 3653983 pjrt_client.cc:1613] WatchTasksAsync failed for task 38: UNAVAILABLE: failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.196:65320: Failed to connect to remote host: Connection refused
+Additional GRPC error information from remote target coordination_service while calling /xla.coordination.CoordinationService/WatchTasks:
+:UNKNOWN:Error received from peer  {grpc_status:14, grpc_message:"failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.196:65320: Failed to connect to remote host: Connection refused"}
+W0828 19:40:11.270159 1012792 pjrt_client.cc:1613] WatchTasksAsync failed for task 48: UNAVAILABLE: failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.196:65320: Failed to connect to remote host: Connection refused
+Additional GRPC error information from remote target coordination_service while calling /xla.coordination.CoordinationService/WatchTasks:
+:UNKNOWN:Error received from peer  {grpc_status:14, grpc_message:"failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.196:65320: Failed to connect to remote host: Connection refused"}
+W0828 19:40:11.271905 2072547 pjrt_client.cc:1613] WatchTasksAsync failed for task 22: UNAVAILABLE: failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.196:65320: Failed to connect to remote host: Connection refused
+Additional GRPC error information from remote target coordination_service while calling /xla.coordination.CoordinationService/WatchTasks:
+:UNKNOWN:Error received from peer  {grpc_message:"failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.196:65320: Failed to connect to remote host: Connection refused", grpc_status:14}
+W0828 19:40:11.268750 3893283 pjrt_client.cc:1613] WatchTasksAsync failed for task 59: UNAVAILABLE: failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.196:65320: Failed to connect to remote host: Connection refused
+Additional GRPC error information from remote target coordination_service while calling /xla.coordination.CoordinationService/WatchTasks:
+:UNKNOWN:Error received from peer  {grpc_status:14, grpc_message:"failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.196:65320: Failed to connect to remote host: Connection refused"}
+W0828 19:40:11.268660  905838 pjrt_client.cc:1613] WatchTasksAsync failed for task 0: UNAVAILABLE: failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.196:65320: Failed to connect to remote host: Connection refused
+Additional GRPC error information from remote target coordination_service while calling /xla.coordination.CoordinationService/WatchTasks:
+:UNKNOWN:Error received from peer  {grpc_status:14, grpc_message:"failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.196:65320: Failed to connect to remote host: Connection refused"}
+W0828 19:40:11.268252 3733314 pjrt_client.cc:1613] WatchTasksAsync failed for task 45: UNAVAILABLE: failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.196:65320: Failed to connect to remote host: Connection refused
+Additional GRPC error information from remote target coordination_service while calling /xla.coordination.CoordinationService/WatchTasks:
+:UNKNOWN:Error received from peer  {grpc_message:"failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.196:65320: Failed to connect to remote host: Connection refused", grpc_status:14}
+W0828 19:40:11.270267 1012788 pjrt_client.cc:1613] WatchTasksAsync failed for task 51: UNAVAILABLE: failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.196:65320: Failed to connect to remote host: Connection refused
+Additional GRPC error information from remote target coordination_service while calling /xla.coordination.CoordinationService/WatchTasks:
+:UNKNOWN:Error received from peer  {grpc_status:14, grpc_message:"failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.196:65320: Failed to connect to remote host: Connection refused"}
+W0828 19:40:11.271878 2072549 pjrt_client.cc:1613] WatchTasksAsync failed for task 23: UNAVAILABLE: failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.196:65320: Failed to connect to remote host: Connection refused
+Additional GRPC error information from remote target coordination_service while calling /xla.coordination.CoordinationService/WatchTasks:
+:UNKNOWN:Error received from peer  {grpc_message:"failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.196:65320: Failed to connect to remote host: Connection refused", grpc_status:14}
+W0828 19:40:11.269724 3893285 pjrt_client.cc:1613] WatchTasksAsync failed for task 60: UNAVAILABLE: failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.196:65320: Failed to connect to remote host: Connection refused
+Additional GRPC error information from remote target coordination_service while calling /xla.coordination.CoordinationService/WatchTasks:
+:UNKNOWN:Error received from peer  {grpc_message:"failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.196:65320: Failed to connect to remote host: Connection refused", grpc_status:14}
+W0828 19:40:11.268784  905834 pjrt_client.cc:1613] WatchTasksAsync failed for task 1: UNAVAILABLE: failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.196:65320: Failed to connect to remote host: Connection refused
+Additional GRPC error information from remote target coordination_service while calling /xla.coordination.CoordinationService/WatchTasks:
+:UNKNOWN:Error received from peer  {grpc_status:14, grpc_message:"failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.196:65320: Failed to connect to remote host: Connection refused"}
+W0828 19:40:11.268827 3733313 pjrt_client.cc:1613] WatchTasksAsync failed for task 42: UNAVAILABLE: failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.196:65320: Failed to connect to remote host: Connection refused
+Additional GRPC error information from remote target coordination_service while calling /xla.coordination.CoordinationService/WatchTasks:
+:UNKNOWN:Error received from peer  {grpc_message:"failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.196:65320: Failed to connect to remote host: Connection refused", grpc_status:14}
+W0828 19:40:11.270624 1012790 pjrt_client.cc:1613] WatchTasksAsync failed for task 49: UNAVAILABLE: failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.196:65320: Failed to connect to remote host: Connection refused
+Additional GRPC error information from remote target coordination_service while calling /xla.coordination.CoordinationService/WatchTasks:
+:UNKNOWN:Error received from peer  {grpc_status:14, grpc_message:"failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.196:65320: Failed to connect to remote host: Connection refused"}
+W0828 19:40:11.271950 2072543 pjrt_client.cc:1613] WatchTasksAsync failed for task 18: UNAVAILABLE: failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.196:65320: Failed to connect to remote host: Connection refused
+Additional GRPC error information from remote target coordination_service while calling /xla.coordination.CoordinationService/WatchTasks:
+:UNKNOWN:Error received from peer  {grpc_status:14, grpc_message:"failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.196:65320: Failed to connect to remote host: Connection refused"}
+W0828 19:40:11.270502 3893308 pjrt_client.cc:1613] WatchTasksAsync failed for task 62: UNAVAILABLE: failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.196:65320: Failed to connect to remote host: Connection refused
+Additional GRPC error information from remote target coordination_service while calling /xla.coordination.CoordinationService/WatchTasks:
+:UNKNOWN:Error received from peer  {grpc_message:"failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.196:65320: Failed to connect to remote host: Connection refused", grpc_status:14}
+W0828 19:40:11.268860  905836 pjrt_client.cc:1613] WatchTasksAsync failed for task 7: UNAVAILABLE: failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.196:65320: Failed to connect to remote host: Connection refused
+Additional GRPC error information from remote target coordination_service while calling /xla.coordination.CoordinationService/WatchTasks:
+:UNKNOWN:Error received from peer  {grpc_status:14, grpc_message:"failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.196:65320: Failed to connect to remote host: Connection refused"}
+W0828 19:40:11.269160 3733308 pjrt_client.cc:1613] WatchTasksAsync failed for task 47: UNAVAILABLE: failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.196:65320: Failed to connect to remote host: Connection refused
+Additional GRPC error information from remote target coordination_service while calling /xla.coordination.CoordinationService/WatchTasks:
+:UNKNOWN:Error received from peer  {grpc_message:"failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.196:65320: Failed to connect to remote host: Connection refused", grpc_status:14}
+W0828 19:40:11.270704 1012789 pjrt_client.cc:1613] WatchTasksAsync failed for task 50: UNAVAILABLE: failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.196:65320: Failed to connect to remote host: Connection refused
+Additional GRPC error information from remote target coordination_service while calling /xla.coordination.CoordinationService/WatchTasks:
+:UNKNOWN:Error received from peer  {grpc_status:14, grpc_message:"failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.196:65320: Failed to connect to remote host: Connection refused"}
+W0828 19:40:11.272216 2072548 pjrt_client.cc:1613] WatchTasksAsync failed for task 20: UNAVAILABLE: failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.196:65320: Failed to connect to remote host: Connection refused
+Additional GRPC error information from remote target coordination_service while calling /xla.coordination.CoordinationService/WatchTasks:
+:UNKNOWN:Error received from peer  {grpc_status:14, grpc_message:"failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.196:65320: Failed to connect to remote host: Connection refused"}
+W0828 19:40:11.268919  905833 pjrt_client.cc:1613] WatchTasksAsync failed for task 4: UNAVAILABLE: failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.196:65320: Failed to connect to remote host: Connection refused
+Additional GRPC error information from remote target coordination_service while calling /xla.coordination.CoordinationService/WatchTasks:
+:UNKNOWN:Error received from peer  {grpc_message:"failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.196:65320: Failed to connect to remote host: Connection refused", grpc_status:14}
+W0828 19:40:11.269631 3733312 pjrt_client.cc:1613] WatchTasksAsync failed for task 46: UNAVAILABLE: failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.196:65320: Failed to connect to remote host: Connection refused
+Additional GRPC error information from remote target coordination_service while calling /xla.coordination.CoordinationService/WatchTasks:
+:UNKNOWN:Error received from peer  {grpc_message:"failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.196:65320: Failed to connect to remote host: Connection refused", grpc_status:14}
+W0828 19:40:11.270714 1012791 pjrt_client.cc:1613] WatchTasksAsync failed for task 55: UNAVAILABLE: failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.196:65320: Failed to connect to remote host: Connection refused
+Additional GRPC error information from remote target coordination_service while calling /xla.coordination.CoordinationService/WatchTasks:
+:UNKNOWN:Error received from peer  {grpc_message:"failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.196:65320: Failed to connect to remote host: Connection refused", grpc_status:14}
+W0828 19:40:11.272471 2072546 pjrt_client.cc:1613] WatchTasksAsync failed for task 17: UNAVAILABLE: failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.196:65320: Failed to connect to remote host: Connection refused
+Additional GRPC error information from remote target coordination_service while calling /xla.coordination.CoordinationService/WatchTasks:
+:UNKNOWN:Error received from peer  {grpc_status:14, grpc_message:"failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.196:65320: Failed to connect to remote host: Connection refused"}
+W0828 19:40:11.268923  905835 pjrt_client.cc:1613] WatchTasksAsync failed for task 5: UNAVAILABLE: failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.196:65320: Failed to connect to remote host: Connection refused
+Additional GRPC error information from remote target coordination_service while calling /xla.coordination.CoordinationService/WatchTasks:
+:UNKNOWN:Error received from peer  {grpc_status:14, grpc_message:"failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.196:65320: Failed to connect to remote host: Connection refused"}
+W0828 19:40:11.269674 3733309 pjrt_client.cc:1613] WatchTasksAsync failed for task 44: UNAVAILABLE: failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.196:65320: Failed to connect to remote host: Connection refused
+Additional GRPC error information from remote target coordination_service while calling /xla.coordination.CoordinationService/WatchTasks:
+:UNKNOWN:Error received from peer  {grpc_message:"failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.196:65320: Failed to connect to remote host: Connection refused", grpc_status:14}
+W0828 19:40:11.270735 1012787 pjrt_client.cc:1613] WatchTasksAsync failed for task 54: UNAVAILABLE: failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.196:65320: Failed to connect to remote host: Connection refused
+Additional GRPC error information from remote target coordination_service while calling /xla.coordination.CoordinationService/WatchTasks:
+:UNKNOWN:Error received from peer  {grpc_message:"failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.196:65320: Failed to connect to remote host: Connection refused", grpc_status:14}
+W0828 19:40:11.272471 2072545 pjrt_client.cc:1613] WatchTasksAsync failed for task 19: UNAVAILABLE: failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.196:65320: Failed to connect to remote host: Connection refused
+Additional GRPC error information from remote target coordination_service while calling /xla.coordination.CoordinationService/WatchTasks:
+:UNKNOWN:Error received from peer  {grpc_status:14, grpc_message:"failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.196:65320: Failed to connect to remote host: Connection refused"}
+W0828 19:40:11.269484  905837 pjrt_client.cc:1613] WatchTasksAsync failed for task 6: UNAVAILABLE: failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.196:65320: Failed to connect to remote host: Connection refused
+Additional GRPC error information from remote target coordination_service while calling /xla.coordination.CoordinationService/WatchTasks:
+:UNKNOWN:Error received from peer  {grpc_message:"failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.196:65320: Failed to connect to remote host: Connection refused", grpc_status:14}
+W0828 19:40:11.270169 3733307 pjrt_client.cc:1613] WatchTasksAsync failed for task 43: UNAVAILABLE: failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.196:65320: Failed to connect to remote host: Connection refused
+Additional GRPC error information from remote target coordination_service while calling /xla.coordination.CoordinationService/WatchTasks:
+:UNKNOWN:Error received from peer  {grpc_message:"failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.196:65320: Failed to connect to remote host: Connection refused", grpc_status:14}
+W0828 19:40:11.270828 1012786 pjrt_client.cc:1613] WatchTasksAsync failed for task 52: UNAVAILABLE: failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.196:65320: Failed to connect to remote host: Connection refused
+Additional GRPC error information from remote target coordination_service while calling /xla.coordination.CoordinationService/WatchTasks:
+:UNKNOWN:Error received from peer  {grpc_message:"failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.196:65320: Failed to connect to remote host: Connection refused", grpc_status:14}
+W0828 19:40:11.272590 2072542 pjrt_client.cc:1613] WatchTasksAsync failed for task 21: UNAVAILABLE: failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.196:65320: Failed to connect to remote host: Connection refused
+Additional GRPC error information from remote target coordination_service while calling /xla.coordination.CoordinationService/WatchTasks:
+:UNKNOWN:Error received from peer  {grpc_message:"failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.196:65320: Failed to connect to remote host: Connection refused", grpc_status:14}
+W0828 19:40:11.270667 3733311 pjrt_client.cc:1613] WatchTasksAsync failed for task 40: UNAVAILABLE: failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.196:65320: Failed to connect to remote host: Connection refused
+Additional GRPC error information from remote target coordination_service while calling /xla.coordination.CoordinationService/WatchTasks:
+:UNKNOWN:Error received from peer  {grpc_status:14, grpc_message:"failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.196:65320: Failed to connect to remote host: Connection refused"}
+W0828 19:40:11.271690 1012793 pjrt_client.cc:1613] WatchTasksAsync failed for task 53: UNAVAILABLE: failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.196:65320: Failed to connect to remote host: Connection refused
+Additional GRPC error information from remote target coordination_service while calling /xla.coordination.CoordinationService/WatchTasks:
+:UNKNOWN:Error received from peer  {grpc_message:"failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.196:65320: Failed to connect to remote host: Connection refused", grpc_status:14}
+W0828 19:40:11.272876 2072544 pjrt_client.cc:1613] WatchTasksAsync failed for task 16: UNAVAILABLE: failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.196:65320: Failed to connect to remote host: Connection refused
+Additional GRPC error information from remote target coordination_service while calling /xla.coordination.CoordinationService/WatchTasks:
+:UNKNOWN:Error received from peer  {grpc_message:"failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.196:65320: Failed to connect to remote host: Connection refused", grpc_status:14}
+W0828 19:40:11.272615 1649857 pjrt_client.cc:1613] WatchTasksAsync failed for task 8: UNAVAILABLE: failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.196:65320: Failed to connect to remote host: Connection refused
+Additional GRPC error information from remote target coordination_service while calling /xla.coordination.CoordinationService/WatchTasks:
+:UNKNOWN:Error received from peer  {grpc_message:"failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.196:65320: Failed to connect to remote host: Connection refused", grpc_status:14}
+W0828 19:40:11.272867 1649859 pjrt_client.cc:1613] WatchTasksAsync failed for task 11: UNAVAILABLE: failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.196:65320: Failed to connect to remote host: Connection refused
+Additional GRPC error information from remote target coordination_service while calling /xla.coordination.CoordinationService/WatchTasks:
+:UNKNOWN:Error received from peer  {grpc_message:"failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.196:65320: Failed to connect to remote host: Connection refused", grpc_status:14}
+W0828 19:40:11.272724 1649855 pjrt_client.cc:1613] WatchTasksAsync failed for task 14: UNAVAILABLE: failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.196:65320: Failed to connect to remote host: Connection refused
+Additional GRPC error information from remote target coordination_service while calling /xla.coordination.CoordinationService/WatchTasks:
+:UNKNOWN:Error received from peer  {grpc_status:14, grpc_message:"failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.196:65320: Failed to connect to remote host: Connection refused"}
+W0828 19:40:11.273085 1649854 pjrt_client.cc:1613] WatchTasksAsync failed for task 9: UNAVAILABLE: failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.196:65320: Failed to connect to remote host: Connection refused
+Additional GRPC error information from remote target coordination_service while calling /xla.coordination.CoordinationService/WatchTasks:
+:UNKNOWN:Error received from peer  {grpc_status:14, grpc_message:"failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.196:65320: Failed to connect to remote host: Connection refused"}
+W0828 19:40:11.273172 1649856 pjrt_client.cc:1613] WatchTasksAsync failed for task 12: UNAVAILABLE: failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.196:65320: Failed to connect to remote host: Connection refused
+Additional GRPC error information from remote target coordination_service while calling /xla.coordination.CoordinationService/WatchTasks:
+:UNKNOWN:Error received from peer  {grpc_status:14, grpc_message:"failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.196:65320: Failed to connect to remote host: Connection refused"}
+W0828 19:40:11.273493 1649858 pjrt_client.cc:1613] WatchTasksAsync failed for task 10: UNAVAILABLE: failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.196:65320: Failed to connect to remote host: Connection refused
+Additional GRPC error information from remote target coordination_service while calling /xla.coordination.CoordinationService/WatchTasks:
+:UNKNOWN:Error received from peer  {grpc_status:14, grpc_message:"failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.196:65320: Failed to connect to remote host: Connection refused"}
+W0828 19:40:11.273784 3653985 pjrt_client.cc:1613] WatchTasksAsync failed for task 37: UNAVAILABLE: failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.196:65320: Failed to connect to remote host: Connection refused
+Additional GRPC error information from remote target coordination_service while calling /xla.coordination.CoordinationService/WatchTasks:
+:UNKNOWN:Error received from peer  {grpc_status:14, grpc_message:"failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.196:65320: Failed to connect to remote host: Connection refused"}
+W0828 19:40:11.273344 2812817 pjrt_client.cc:1613] WatchTasksAsync failed for task 30: UNAVAILABLE: failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.196:65320: Failed to connect to remote host: Connection refused
+Additional GRPC error information from remote target coordination_service while calling /xla.coordination.CoordinationService/WatchTasks:
+:UNKNOWN:Error received from peer  {grpc_message:"failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.196:65320: Failed to connect to remote host: Connection refused", grpc_status:14}
+W0828 19:40:11.273964 2812816 pjrt_client.cc:1613] WatchTasksAsync failed for task 25: UNAVAILABLE: failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.196:65320: Failed to connect to remote host: Connection refused
+Additional GRPC error information from remote target coordination_service while calling /xla.coordination.CoordinationService/WatchTasks:
+:UNKNOWN:Error received from peer  {grpc_status:14, grpc_message:"failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.196:65320: Failed to connect to remote host: Connection refused"}
+W0828 19:40:11.273970 1649852 pjrt_client.cc:1613] WatchTasksAsync failed for task 13: UNAVAILABLE: failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.196:65320: Failed to connect to remote host: Connection refused
+Additional GRPC error information from remote target coordination_service while calling /xla.coordination.CoordinationService/WatchTasks:
+:UNKNOWN:Error received from peer  {grpc_status:14, grpc_message:"failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.196:65320: Failed to connect to remote host: Connection refused"}
+W0828 19:40:11.274466 3653986 pjrt_client.cc:1613] WatchTasksAsync failed for task 35: UNAVAILABLE: failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.196:65320: Failed to connect to remote host: Connection refused
+Additional GRPC error information from remote target coordination_service while calling /xla.coordination.CoordinationService/WatchTasks:
+:UNKNOWN:Error received from peer  {grpc_status:14, grpc_message:"failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.196:65320: Failed to connect to remote host: Connection refused"}
+W0828 19:40:11.274186 1649853 pjrt_client.cc:1613] WatchTasksAsync failed for task 15: UNAVAILABLE: failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.196:65320: Failed to connect to remote host: Connection refused
+Additional GRPC error information from remote target coordination_service while calling /xla.coordination.CoordinationService/WatchTasks:
+:UNKNOWN:Error received from peer  {grpc_message:"failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.196:65320: Failed to connect to remote host: Connection refused", grpc_status:14}
+W0828 19:40:11.274550 3653984 pjrt_client.cc:1613] WatchTasksAsync failed for task 33: UNAVAILABLE: failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.196:65320: Failed to connect to remote host: Connection refused
+Additional GRPC error information from remote target coordination_service while calling /xla.coordination.CoordinationService/WatchTasks:
+:UNKNOWN:Error received from peer  {grpc_message:"failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.196:65320: Failed to connect to remote host: Connection refused", grpc_status:14}
+W0828 19:40:11.274741 3653987 pjrt_client.cc:1613] WatchTasksAsync failed for task 34: UNAVAILABLE: failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.196:65320: Failed to connect to remote host: Connection refused
+Additional GRPC error information from remote target coordination_service while calling /xla.coordination.CoordinationService/WatchTasks:
+:UNKNOWN:Error received from peer  {grpc_status:14, grpc_message:"failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.196:65320: Failed to connect to remote host: Connection refused"}
+W0828 19:40:11.275213 3653989 pjrt_client.cc:1613] WatchTasksAsync failed for task 36: UNAVAILABLE: failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.196:65320: Failed to connect to remote host: Connection refused
+Additional GRPC error information from remote target coordination_service while calling /xla.coordination.CoordinationService/WatchTasks:
+:UNKNOWN:Error received from peer  {grpc_message:"failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.196:65320: Failed to connect to remote host: Connection refused", grpc_status:14}
+W0828 19:40:11.275313 3653988 pjrt_client.cc:1613] WatchTasksAsync failed for task 39: UNAVAILABLE: failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.196:65320: Failed to connect to remote host: Connection refused
+Additional GRPC error information from remote target coordination_service while calling /xla.coordination.CoordinationService/WatchTasks:
+:UNKNOWN:Error received from peer  {grpc_message:"failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.196:65320: Failed to connect to remote host: Connection refused", grpc_status:14}
+W0828 19:40:11.274929 2812821 pjrt_client.cc:1613] WatchTasksAsync failed for task 28: UNAVAILABLE: failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.196:65320: Failed to connect to remote host: Connection refused
+Additional GRPC error information from remote target coordination_service while calling /xla.coordination.CoordinationService/WatchTasks:
+:UNKNOWN:Error received from peer  {grpc_status:14, grpc_message:"failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.196:65320: Failed to connect to remote host: Connection refused"}
+W0828 19:40:11.275005 2812818 pjrt_client.cc:1613] WatchTasksAsync failed for task 31: UNAVAILABLE: failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.196:65320: Failed to connect to remote host: Connection refused
+Additional GRPC error information from remote target coordination_service while calling /xla.coordination.CoordinationService/WatchTasks:
+:UNKNOWN:Error received from peer  {grpc_status:14, grpc_message:"failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.196:65320: Failed to connect to remote host: Connection refused"}
+W0828 19:40:11.275242 2812815 pjrt_client.cc:1613] WatchTasksAsync failed for task 24: UNAVAILABLE: failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.196:65320: Failed to connect to remote host: Connection refused
+Additional GRPC error information from remote target coordination_service while calling /xla.coordination.CoordinationService/WatchTasks:
+:UNKNOWN:Error received from peer  {grpc_status:14, grpc_message:"failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.196:65320: Failed to connect to remote host: Connection refused"}
+W0828 19:40:11.275285 2812819 pjrt_client.cc:1613] WatchTasksAsync failed for task 26: UNAVAILABLE: failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.196:65320: Failed to connect to remote host: Connection refused
+Additional GRPC error information from remote target coordination_service while calling /xla.coordination.CoordinationService/WatchTasks:
+:UNKNOWN:Error received from peer  {grpc_status:14, grpc_message:"failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.196:65320: Failed to connect to remote host: Connection refused"}
+W0828 19:40:11.275466 2812820 pjrt_client.cc:1613] WatchTasksAsync failed for task 27: UNAVAILABLE: failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.196:65320: Failed to connect to remote host: Connection refused
+Additional GRPC error information from remote target coordination_service while calling /xla.coordination.CoordinationService/WatchTasks:
+:UNKNOWN:Error received from peer  {grpc_message:"failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.196:65320: Failed to connect to remote host: Connection refused", grpc_status:14}
+W0828 19:40:11.275546 2812814 pjrt_client.cc:1613] WatchTasksAsync failed for task 29: UNAVAILABLE: failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.196:65320: Failed to connect to remote host: Connection refused
+Additional GRPC error information from remote target coordination_service while calling /xla.coordination.CoordinationService/WatchTasks:
+:UNKNOWN:Error received from peer  {grpc_message:"failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.196:65320: Failed to connect to remote host: Connection refused", grpc_status:14}
+W0828 19:40:11.276918 3653990 pjrt_client.cc:1613] WatchTasksAsync failed for task 32: UNAVAILABLE: failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.196:65320: Failed to connect to remote host: Connection refused
+Additional GRPC error information from remote target coordination_service while calling /xla.coordination.CoordinationService/WatchTasks:
+:UNKNOWN:Error received from peer  {grpc_message:"failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.196:65320: Failed to connect to remote host: Connection refused", grpc_status:14}

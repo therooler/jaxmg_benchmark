@@ -1,0 +1,348 @@
+potrs__float32__g4x4__n622592__t4096: cold 1/1 start
+E0819 20:41:44.026107 2455628 gpu_hlo_schedule.cc:971] The byte size of input/output arguments (96905822224) exceeds the base limit (79961155174). This indicates an error in the calculation!
+E0819 20:41:44.026473 2453263 gpu_hlo_schedule.cc:971] The byte size of input/output arguments (96905822224) exceeds the base limit (79961155174). This indicates an error in the calculation!
+E0819 20:41:44.026544 2458154 gpu_hlo_schedule.cc:971] The byte size of input/output arguments (96905822224) exceeds the base limit (79961155174). This indicates an error in the calculation!
+E0819 20:41:44.026631 2428220 gpu_hlo_schedule.cc:971] The byte size of input/output arguments (96905822224) exceeds the base limit (79961155174). This indicates an error in the calculation!
+E0819 20:41:44.026657 2428223 gpu_hlo_schedule.cc:971] The byte size of input/output arguments (96905822224) exceeds the base limit (79961155174). This indicates an error in the calculation!
+E0819 20:41:44.026772 2428221 gpu_hlo_schedule.cc:971] The byte size of input/output arguments (96905822224) exceeds the base limit (79961155174). This indicates an error in the calculation!
+E0819 20:41:44.027428 2453264 gpu_hlo_schedule.cc:971] The byte size of input/output arguments (96905822224) exceeds the base limit (79961155174). This indicates an error in the calculation!
+E0819 20:41:44.027565 2458155 gpu_hlo_schedule.cc:971] The byte size of input/output arguments (96905822224) exceeds the base limit (79961155174). This indicates an error in the calculation!
+E0819 20:41:44.028501 2455629 gpu_hlo_schedule.cc:971] The byte size of input/output arguments (96905822224) exceeds the base limit (79961155174). This indicates an error in the calculation!
+E0819 20:41:44.029170 2455627 gpu_hlo_schedule.cc:971] The byte size of input/output arguments (96905822224) exceeds the base limit (79961155174). This indicates an error in the calculation!
+E0819 20:41:44.030686 2458153 gpu_hlo_schedule.cc:971] The byte size of input/output arguments (96905822224) exceeds the base limit (79961155174). This indicates an error in the calculation!
+E0819 20:41:44.035062 2455630 gpu_hlo_schedule.cc:971] The byte size of input/output arguments (96905822224) exceeds the base limit (79961155174). This indicates an error in the calculation!
+E0819 20:41:44.035914 2453262 gpu_hlo_schedule.cc:971] The byte size of input/output arguments (96905822224) exceeds the base limit (79961155174). This indicates an error in the calculation!
+E0819 20:41:44.035943 2428222 gpu_hlo_schedule.cc:971] The byte size of input/output arguments (96905822224) exceeds the base limit (79961155174). This indicates an error in the calculation!
+E0819 20:41:44.036630 2458156 gpu_hlo_schedule.cc:971] The byte size of input/output arguments (96905822224) exceeds the base limit (79961155174). This indicates an error in the calculation!
+E0819 20:41:44.038961 2453265 gpu_hlo_schedule.cc:971] The byte size of input/output arguments (96905822224) exceeds the base limit (79961155174). This indicates an error in the calculation!
+W0819 20:41:44.061342 2455628 hlo_rematerialization.cc:3233] Can't reduce memory use below 90.25GiB (96905822224 bytes) by rematerialization; only reduced to 90.25GiB (96905822320 bytes), down from 90.25GiB (96905822320 bytes) originally
+W0819 20:41:44.061495 2428220 hlo_rematerialization.cc:3233] Can't reduce memory use below 90.25GiB (96905822224 bytes) by rematerialization; only reduced to 90.25GiB (96905822320 bytes), down from 90.25GiB (96905822320 bytes) originally
+W0819 20:41:44.061504 2458154 hlo_rematerialization.cc:3233] Can't reduce memory use below 90.25GiB (96905822224 bytes) by rematerialization; only reduced to 90.25GiB (96905822320 bytes), down from 90.25GiB (96905822320 bytes) originally
+W0819 20:41:44.061527 2453263 hlo_rematerialization.cc:3233] Can't reduce memory use below 90.25GiB (96905822224 bytes) by rematerialization; only reduced to 90.25GiB (96905822320 bytes), down from 90.25GiB (96905822320 bytes) originally
+W0819 20:41:44.061587 2428221 hlo_rematerialization.cc:3233] Can't reduce memory use below 90.25GiB (96905822224 bytes) by rematerialization; only reduced to 90.25GiB (96905822320 bytes), down from 90.25GiB (96905822320 bytes) originally
+W0819 20:41:44.061896 2428223 hlo_rematerialization.cc:3233] Can't reduce memory use below 90.25GiB (96905822224 bytes) by rematerialization; only reduced to 90.25GiB (96905822320 bytes), down from 90.25GiB (96905822320 bytes) originally
+W0819 20:41:44.062251 2458155 hlo_rematerialization.cc:3233] Can't reduce memory use below 90.25GiB (96905822224 bytes) by rematerialization; only reduced to 90.25GiB (96905822320 bytes), down from 90.25GiB (96905822320 bytes) originally
+W0819 20:41:44.062852 2453264 hlo_rematerialization.cc:3233] Can't reduce memory use below 90.25GiB (96905822224 bytes) by rematerialization; only reduced to 90.25GiB (96905822320 bytes), down from 90.25GiB (96905822320 bytes) originally
+W0819 20:41:44.063466 2455629 hlo_rematerialization.cc:3233] Can't reduce memory use below 90.25GiB (96905822224 bytes) by rematerialization; only reduced to 90.25GiB (96905822320 bytes), down from 90.25GiB (96905822320 bytes) originally
+W0819 20:41:44.064243 2455627 hlo_rematerialization.cc:3233] Can't reduce memory use below 90.25GiB (96905822224 bytes) by rematerialization; only reduced to 90.25GiB (96905822320 bytes), down from 90.25GiB (96905822320 bytes) originally
+W0819 20:41:44.066055 2458153 hlo_rematerialization.cc:3233] Can't reduce memory use below 90.25GiB (96905822224 bytes) by rematerialization; only reduced to 90.25GiB (96905822320 bytes), down from 90.25GiB (96905822320 bytes) originally
+W0819 20:41:44.069862 2455630 hlo_rematerialization.cc:3233] Can't reduce memory use below 90.25GiB (96905822224 bytes) by rematerialization; only reduced to 90.25GiB (96905822320 bytes), down from 90.25GiB (96905822320 bytes) originally
+W0819 20:41:44.070699 2453262 hlo_rematerialization.cc:3233] Can't reduce memory use below 90.25GiB (96905822224 bytes) by rematerialization; only reduced to 90.25GiB (96905822320 bytes), down from 90.25GiB (96905822320 bytes) originally
+W0819 20:41:44.071149 2428222 hlo_rematerialization.cc:3233] Can't reduce memory use below 90.25GiB (96905822224 bytes) by rematerialization; only reduced to 90.25GiB (96905822320 bytes), down from 90.25GiB (96905822320 bytes) originally
+W0819 20:41:44.071278 2458156 hlo_rematerialization.cc:3233] Can't reduce memory use below 90.25GiB (96905822224 bytes) by rematerialization; only reduced to 90.25GiB (96905822320 bytes), down from 90.25GiB (96905822320 bytes) originally
+W0819 20:41:44.074362 2453265 hlo_rematerialization.cc:3233] Can't reduce memory use below 90.25GiB (96905822224 bytes) by rematerialization; only reduced to 90.25GiB (96905822320 bytes), down from 90.25GiB (96905822320 bytes) originally
+E0819 20:41:56.642021 2428220 gpu_hlo_schedule.cc:971] The byte size of input/output arguments (96905822392) exceeds the base limit (79961155174). This indicates an error in the calculation!
+E0819 20:41:56.642555 2428223 gpu_hlo_schedule.cc:971] The byte size of input/output arguments (96905822392) exceeds the base limit (79961155174). This indicates an error in the calculation!
+E0819 20:41:56.642576 2428221 gpu_hlo_schedule.cc:971] The byte size of input/output arguments (96905822392) exceeds the base limit (79961155174). This indicates an error in the calculation!
+E0819 20:41:56.642635 2453263 gpu_hlo_schedule.cc:971] The byte size of input/output arguments (96905822392) exceeds the base limit (79961155174). This indicates an error in the calculation!
+E0819 20:41:56.642829 2458153 gpu_hlo_schedule.cc:971] The byte size of input/output arguments (96905822392) exceeds the base limit (79961155174). This indicates an error in the calculation!
+E0819 20:41:56.643064 2453264 gpu_hlo_schedule.cc:971] The byte size of input/output arguments (96905822392) exceeds the base limit (79961155174). This indicates an error in the calculation!
+E0819 20:41:56.645427 2453262 gpu_hlo_schedule.cc:971] The byte size of input/output arguments (96905822392) exceeds the base limit (79961155174). This indicates an error in the calculation!
+E0819 20:41:56.645964 2453265 gpu_hlo_schedule.cc:971] The byte size of input/output arguments (96905822392) exceeds the base limit (79961155174). This indicates an error in the calculation!
+E0819 20:41:56.646142 2428222 gpu_hlo_schedule.cc:971] The byte size of input/output arguments (96905822392) exceeds the base limit (79961155174). This indicates an error in the calculation!
+W0819 20:41:56.647999 2428220 hlo_rematerialization.cc:3233] Can't reduce memory use below 90.25GiB (96905822392 bytes) by rematerialization; only reduced to 95.00GiB (102006096080 bytes), down from 95.00GiB (102006096080 bytes) originally
+W0819 20:41:56.648392 2428223 hlo_rematerialization.cc:3233] Can't reduce memory use below 90.25GiB (96905822392 bytes) by rematerialization; only reduced to 95.00GiB (102006096080 bytes), down from 95.00GiB (102006096080 bytes) originally
+W0819 20:41:56.648684 2453263 hlo_rematerialization.cc:3233] Can't reduce memory use below 90.25GiB (96905822392 bytes) by rematerialization; only reduced to 95.00GiB (102006096080 bytes), down from 95.00GiB (102006096080 bytes) originally
+W0819 20:41:56.648774 2458153 hlo_rematerialization.cc:3233] Can't reduce memory use below 90.25GiB (96905822392 bytes) by rematerialization; only reduced to 95.00GiB (102006096080 bytes), down from 95.00GiB (102006096080 bytes) originally
+W0819 20:41:56.648997 2453264 hlo_rematerialization.cc:3233] Can't reduce memory use below 90.25GiB (96905822392 bytes) by rematerialization; only reduced to 95.00GiB (102006096080 bytes), down from 95.00GiB (102006096080 bytes) originally
+W0819 20:41:56.650322 2428221 hlo_rematerialization.cc:3233] Can't reduce memory use below 90.25GiB (96905822392 bytes) by rematerialization; only reduced to 95.00GiB (102006096080 bytes), down from 95.00GiB (102006096080 bytes) originally
+E0819 20:41:56.650335 2458154 gpu_hlo_schedule.cc:971] The byte size of input/output arguments (96905822392) exceeds the base limit (79961155174). This indicates an error in the calculation!
+E0819 20:41:56.650949 2455628 gpu_hlo_schedule.cc:971] The byte size of input/output arguments (96905822392) exceeds the base limit (79961155174). This indicates an error in the calculation!
+W0819 20:41:56.651468 2453262 hlo_rematerialization.cc:3233] Can't reduce memory use below 90.25GiB (96905822392 bytes) by rematerialization; only reduced to 95.00GiB (102006096080 bytes), down from 95.00GiB (102006096080 bytes) originally
+W0819 20:41:56.652007 2453265 hlo_rematerialization.cc:3233] Can't reduce memory use below 90.25GiB (96905822392 bytes) by rematerialization; only reduced to 95.00GiB (102006096080 bytes), down from 95.00GiB (102006096080 bytes) originally
+W0819 20:41:56.652252 2428222 hlo_rematerialization.cc:3233] Can't reduce memory use below 90.25GiB (96905822392 bytes) by rematerialization; only reduced to 95.00GiB (102006096080 bytes), down from 95.00GiB (102006096080 bytes) originally
+E0819 20:41:56.654505 2455630 gpu_hlo_schedule.cc:971] The byte size of input/output arguments (96905822392) exceeds the base limit (79961155174). This indicates an error in the calculation!
+E0819 20:41:56.655215 2458155 gpu_hlo_schedule.cc:971] The byte size of input/output arguments (96905822392) exceeds the base limit (79961155174). This indicates an error in the calculation!
+E0819 20:41:56.655372 2458156 gpu_hlo_schedule.cc:971] The byte size of input/output arguments (96905822392) exceeds the base limit (79961155174). This indicates an error in the calculation!
+E0819 20:41:56.656045 2455629 gpu_hlo_schedule.cc:971] The byte size of input/output arguments (96905822392) exceeds the base limit (79961155174). This indicates an error in the calculation!
+E0819 20:41:56.656114 2455627 gpu_hlo_schedule.cc:971] The byte size of input/output arguments (96905822392) exceeds the base limit (79961155174). This indicates an error in the calculation!
+W0819 20:41:56.656425 2458154 hlo_rematerialization.cc:3233] Can't reduce memory use below 90.25GiB (96905822392 bytes) by rematerialization; only reduced to 95.00GiB (102006096080 bytes), down from 95.00GiB (102006096080 bytes) originally
+W0819 20:41:56.656977 2455628 hlo_rematerialization.cc:3233] Can't reduce memory use below 90.25GiB (96905822392 bytes) by rematerialization; only reduced to 95.00GiB (102006096080 bytes), down from 95.00GiB (102006096080 bytes) originally
+W0819 20:41:56.661038 2455630 hlo_rematerialization.cc:3233] Can't reduce memory use below 90.25GiB (96905822392 bytes) by rematerialization; only reduced to 95.00GiB (102006096080 bytes), down from 95.00GiB (102006096080 bytes) originally
+W0819 20:41:56.661820 2458156 hlo_rematerialization.cc:3233] Can't reduce memory use below 90.25GiB (96905822392 bytes) by rematerialization; only reduced to 95.00GiB (102006096080 bytes), down from 95.00GiB (102006096080 bytes) originally
+W0819 20:41:56.661937 2458155 hlo_rematerialization.cc:3233] Can't reduce memory use below 90.25GiB (96905822392 bytes) by rematerialization; only reduced to 95.00GiB (102006096080 bytes), down from 95.00GiB (102006096080 bytes) originally
+W0819 20:41:56.662197 2455627 hlo_rematerialization.cc:3233] Can't reduce memory use below 90.25GiB (96905822392 bytes) by rematerialization; only reduced to 95.00GiB (102006096080 bytes), down from 95.00GiB (102006096080 bytes) originally
+W0819 20:41:56.662197 2455629 hlo_rematerialization.cc:3233] Can't reduce memory use below 90.25GiB (96905822392 bytes) by rematerialization; only reduced to 95.00GiB (102006096080 bytes), down from 95.00GiB (102006096080 bytes) originally
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 769, in <module>
+    main()
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 758, in main
+    payload = _run(args)
+              ^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 712, in _run
+    elapsed, metrics = run_iteration(
+                       ^^^^^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 494, in _solve_iteration
+    out.block_until_ready()
+jax.errors.JaxRuntimeError: RESOURCE_EXHAUSTED: Not enough PA budget for allocation: pa_allocated=96911491072B, rounded_size=2552233984B, pa_budget=98951930481B [executable_name='jit_impl']
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 769, in <module>
+    main()
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 758, in main
+    payload = _run(args)
+              ^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 712, in _run
+    elapsed, metrics = run_iteration(
+                       ^^^^^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 494, in _solve_iteration
+    out.block_until_ready()
+jax.errors.JaxRuntimeError: RESOURCE_EXHAUSTED: Not enough PA budget for allocation: pa_allocated=96911491072B, rounded_size=2552233984B, pa_budget=98951930481B [executable_name='jit_impl']
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 769, in <module>
+    main()
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 758, in main
+    payload = _run(args)
+              ^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 712, in _run
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 769, in <module>
+    elapsed, metrics = run_iteration(
+                       ^^^^^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 494, in _solve_iteration
+    out.block_until_ready()
+jax.errors.JaxRuntimeError: RESOURCE_EXHAUSTED: Not enough PA budget for allocation: pa_allocated=96911491072B, rounded_size=2552233984B, pa_budget=98951930481B [executable_name='jit_impl']
+    main()
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 758, in main
+    payload = _run(args)
+              ^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 712, in _run
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 769, in <module>
+    elapsed, metrics = run_iteration(
+                       ^^^^^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 494, in _solve_iteration
+    main()
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 758, in main
+    out.block_until_ready()
+jax.errors.JaxRuntimeError: RESOURCE_EXHAUSTED: Not enough PA budget for allocation: pa_allocated=96911491072B, rounded_size=2552233984B, pa_budget=98951930481B [executable_name='jit_impl']
+    payload = _run(args)
+              ^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 712, in _run
+    elapsed, metrics = run_iteration(
+                       ^^^^^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 494, in _solve_iteration
+    out.block_until_ready()
+jax.errors.JaxRuntimeError: RESOURCE_EXHAUSTED: Not enough PA budget for allocation: pa_allocated=96911491072B, rounded_size=2552233984B, pa_budget=98951930481B [executable_name='jit_impl']
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 769, in <module>
+    main()
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 758, in main
+    payload = _run(args)
+              ^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 712, in _run
+    elapsed, metrics = run_iteration(
+                       ^^^^^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 494, in _solve_iteration
+    out.block_until_ready()
+jax.errors.JaxRuntimeError: RESOURCE_EXHAUSTED: Not enough PA budget for allocation: pa_allocated=96911491072B, rounded_size=2552233984B, pa_budget=98951930481B [executable_name='jit_impl']
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 769, in <module>
+    main()
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 758, in main
+    payload = _run(args)
+              ^^^^^^^^^^
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 712, in _run
+  File "<frozen runpy>", line 88, in _run_code
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 769, in <module>
+    elapsed, metrics = run_iteration(
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 769, in <module>
+                       ^^^^^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 494, in _solve_iteration
+    main()
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 769, in <module>
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 758, in main
+    out.block_until_ready()
+jax.errors.JaxRuntimeError: RESOURCE_EXHAUSTED: Not enough PA budget for allocation: pa_allocated=96911491072B, rounded_size=2552233984B, pa_budget=98951930481B [executable_name='jit_impl']
+    payload = _run(args)
+    main()
+              ^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 712, in _run
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 758, in main
+    main()
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 758, in main
+    elapsed, metrics = run_iteration(
+    payload = _run(args)
+                       ^^^^^^^^^^^^^^
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 769, in <module>
+              ^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 494, in _solve_iteration
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 712, in _run
+    payload = _run(args)
+    out.block_until_ready()
+              ^^^^^^^^^^
+jax.errors.JaxRuntimeError: RESOURCE_EXHAUSTED: Not enough PA budget for allocation: pa_allocated=96911491072B, rounded_size=2552233984B, pa_budget=98951930481B [executable_name='jit_impl']
+    elapsed, metrics = run_iteration(
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 712, in _run
+                       ^^^^^^^^^^^^^^
+    main()
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 494, in _solve_iteration
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 758, in main
+    elapsed, metrics = run_iteration(
+    out.block_until_ready()
+                       ^^^^^^^^^^^^^^
+jax.errors.JaxRuntimeError: RESOURCE_EXHAUSTED: Not enough PA budget for allocation: pa_allocated=96911491072B, rounded_size=2552233984B, pa_budget=98951930481B [executable_name='jit_impl']
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 494, in _solve_iteration
+    payload = _run(args)
+    out.block_until_ready()
+jax.errors.JaxRuntimeError: RESOURCE_EXHAUSTED: Not enough PA budget for allocation: pa_allocated=96911491072B, rounded_size=2552233984B, pa_budget=98951930481B [executable_name='jit_impl']
+              ^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 712, in _run
+    elapsed, metrics = run_iteration(
+                       ^^^^^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 494, in _solve_iteration
+    out.block_until_ready()
+jax.errors.JaxRuntimeError: RESOURCE_EXHAUSTED: Not enough PA budget for allocation: pa_allocated=96911491072B, rounded_size=2552233984B, pa_budget=98951930481B [executable_name='jit_impl']
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 769, in <module>
+    main()
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 758, in main
+    payload = _run(args)
+              ^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 712, in _run
+    elapsed, metrics = run_iteration(
+                       ^^^^^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 494, in _solve_iteration
+    out.block_until_ready()
+jax.errors.JaxRuntimeError: RESOURCE_EXHAUSTED: Not enough PA budget for allocation: pa_allocated=96911491072B, rounded_size=2552233984B, pa_budget=98951930481B [executable_name='jit_impl']
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 769, in <module>
+    main()
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 758, in main
+    payload = _run(args)
+              ^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 712, in _run
+    elapsed, metrics = run_iteration(
+                       ^^^^^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 494, in _solve_iteration
+    out.block_until_ready()
+jax.errors.JaxRuntimeError: RESOURCE_EXHAUSTED: Not enough PA budget for allocation: pa_allocated=96911491072B, rounded_size=2552233984B, pa_budget=98951930481B [executable_name='jit_impl']
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 769, in <module>
+    main()
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 758, in main
+    payload = _run(args)
+              ^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 712, in _run
+    elapsed, metrics = run_iteration(
+                       ^^^^^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 494, in _solve_iteration
+    out.block_until_ready()
+jax.errors.JaxRuntimeError: RESOURCE_EXHAUSTED: Not enough PA budget for allocation: pa_allocated=96911491072B, rounded_size=2552233984B, pa_budget=98951930481B [executable_name='jit_impl']
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 769, in <module>
+    main()
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 758, in main
+    payload = _run(args)
+              ^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 712, in _run
+    elapsed, metrics = run_iteration(
+                       ^^^^^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 494, in _solve_iteration
+    out.block_until_ready()
+jax.errors.JaxRuntimeError: RESOURCE_EXHAUSTED: Not enough PA budget for allocation: pa_allocated=96911491072B, rounded_size=2552233984B, pa_budget=98951930481B [executable_name='jit_impl']
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 769, in <module>
+    main()
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 758, in main
+    payload = _run(args)
+              ^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 712, in _run
+    elapsed, metrics = run_iteration(
+                       ^^^^^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 494, in _solve_iteration
+    out.block_until_ready()
+jax.errors.JaxRuntimeError: RESOURCE_EXHAUSTED: Not enough PA budget for allocation: pa_allocated=96911491072B, rounded_size=2552233984B, pa_budget=98951930481B [executable_name='jit_impl']
+W0819 20:41:56.726141 2429330 pjrt_client.cc:1613] WatchTasksAsync failed for task 3: UNAVAILABLE: failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.146:63060: Failed to connect to remote host: Connection refused
+Additional GRPC error information from remote target coordination_service while calling /xla.coordination.CoordinationService/WatchTasks:
+:UNKNOWN:Error received from peer  {grpc_message:"failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.146:63060: Failed to connect to remote host: Connection refused", grpc_status:14}
+W0819 20:41:56.726171 2429328 pjrt_client.cc:1613] WatchTasksAsync failed for task 0: UNAVAILABLE: failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.146:63060: Failed to connect to remote host: Connection refused
+Additional GRPC error information from remote target coordination_service while calling /xla.coordination.CoordinationService/WatchTasks:
+:UNKNOWN:Error received from peer  {grpc_status:14, grpc_message:"failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.146:63060: Failed to connect to remote host: Connection refused"}
+W0819 20:41:56.726220 2456720 pjrt_client.cc:1613] WatchTasksAsync failed for task 9: UNAVAILABLE: failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.146:63060: Failed to connect to remote host: Connection refused
+Additional GRPC error information from remote target coordination_service while calling /xla.coordination.CoordinationService/WatchTasks:
+:UNKNOWN:Error received from peer  {grpc_message:"failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.146:63060: Failed to connect to remote host: Connection refused", grpc_status:14}
+W0819 20:41:56.726202 2429329 pjrt_client.cc:1613] WatchTasksAsync failed for task 1: UNAVAILABLE: failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.146:63060: Failed to connect to remote host: Connection refused
+Additional GRPC error information from remote target coordination_service while calling /xla.coordination.CoordinationService/WatchTasks:
+:UNKNOWN:Error received from peer  {grpc_status:14, grpc_message:"failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.146:63060: Failed to connect to remote host: Connection refused"}
+W0819 20:41:56.726187 2429331 pjrt_client.cc:1613] WatchTasksAsync failed for task 2: UNAVAILABLE: failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.146:63060: Failed to connect to remote host: Connection refused
+Additional GRPC error information from remote target coordination_service while calling /xla.coordination.CoordinationService/WatchTasks:
+:UNKNOWN:Error received from peer  {grpc_message:"failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.146:63060: Failed to connect to remote host: Connection refused", grpc_status:14}
+W0819 20:41:56.726123 2459220 pjrt_client.cc:1613] WatchTasksAsync failed for task 13: UNAVAILABLE: failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.146:63060: Failed to connect to remote host: Connection refused
+Additional GRPC error information from remote target coordination_service while calling /xla.coordination.CoordinationService/WatchTasks:
+:UNKNOWN:Error received from peer  {grpc_status:14, grpc_message:"failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.146:63060: Failed to connect to remote host: Connection refused"}
+W0819 20:41:56.726315 2454353 pjrt_client.cc:1613] WatchTasksAsync failed for task 6: UNAVAILABLE: failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.146:63060: Failed to connect to remote host: Connection refused
+Additional GRPC error information from remote target coordination_service while calling /xla.coordination.CoordinationService/WatchTasks:
+:UNKNOWN:Error received from peer  {grpc_message:"failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.146:63060: Failed to connect to remote host: Connection refused", grpc_status:14}
+W0819 20:41:56.726402 2456723 pjrt_client.cc:1613] WatchTasksAsync failed for task 8: UNAVAILABLE: failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.146:63060: Failed to connect to remote host: Connection refused
+Additional GRPC error information from remote target coordination_service while calling /xla.coordination.CoordinationService/WatchTasks:
+:UNKNOWN:Error received from peer  {grpc_status:14, grpc_message:"failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.146:63060: Failed to connect to remote host: Connection refused"}
+W0819 20:41:56.726293 2459221 pjrt_client.cc:1613] WatchTasksAsync failed for task 15: UNAVAILABLE: failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.146:63060: Failed to connect to remote host: Connection refused
+Additional GRPC error information from remote target coordination_service while calling /xla.coordination.CoordinationService/WatchTasks:
+:UNKNOWN:Error received from peer  {grpc_status:14, grpc_message:"failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.146:63060: Failed to connect to remote host: Connection refused"}
+W0819 20:41:56.726363 2454351 pjrt_client.cc:1613] WatchTasksAsync failed for task 5: UNAVAILABLE: failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.146:63060: Failed to connect to remote host: Connection refused
+Additional GRPC error information from remote target coordination_service while calling /xla.coordination.CoordinationService/WatchTasks:
+:UNKNOWN:Error received from peer  {grpc_message:"failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.146:63060: Failed to connect to remote host: Connection refused", grpc_status:14}
+W0819 20:41:56.726353 2454354 pjrt_client.cc:1613] WatchTasksAsync failed for task 7: UNAVAILABLE: failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.146:63060: Failed to connect to remote host: Connection refused
+Additional GRPC error information from remote target coordination_service while calling /xla.coordination.CoordinationService/WatchTasks:
+:UNKNOWN:Error received from peer  {grpc_message:"failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.146:63060: Failed to connect to remote host: Connection refused", grpc_status:14}
+W0819 20:41:56.726426 2454352 pjrt_client.cc:1613] WatchTasksAsync failed for task 4: UNAVAILABLE: failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.146:63060: Failed to connect to remote host: Connection refused
+Additional GRPC error information from remote target coordination_service while calling /xla.coordination.CoordinationService/WatchTasks:
+:UNKNOWN:Error received from peer  {grpc_status:14, grpc_message:"failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.146:63060: Failed to connect to remote host: Connection refused"}
+W0819 20:41:56.726487 2456721 pjrt_client.cc:1613] WatchTasksAsync failed for task 11: UNAVAILABLE: failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.146:63060: Failed to connect to remote host: Connection refused
+Additional GRPC error information from remote target coordination_service while calling /xla.coordination.CoordinationService/WatchTasks:
+:UNKNOWN:Error received from peer  {grpc_message:"failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.146:63060: Failed to connect to remote host: Connection refused", grpc_status:14}
+W0819 20:41:56.726572 2459222 pjrt_client.cc:1613] WatchTasksAsync failed for task 14: UNAVAILABLE: failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.146:63060: Failed to connect to remote host: Connection refused
+Additional GRPC error information from remote target coordination_service while calling /xla.coordination.CoordinationService/WatchTasks:
+:UNKNOWN:Error received from peer  {grpc_status:14, grpc_message:"failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.146:63060: Failed to connect to remote host: Connection refused"}
+W0819 20:41:56.726622 2456722 pjrt_client.cc:1613] WatchTasksAsync failed for task 10: UNAVAILABLE: failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.146:63060: Failed to connect to remote host: Connection refused
+Additional GRPC error information from remote target coordination_service while calling /xla.coordination.CoordinationService/WatchTasks:
+:UNKNOWN:Error received from peer  {grpc_status:14, grpc_message:"failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.146:63060: Failed to connect to remote host: Connection refused"}
+W0819 20:41:56.726643 2459223 pjrt_client.cc:1613] WatchTasksAsync failed for task 12: UNAVAILABLE: failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.146:63060: Failed to connect to remote host: Connection refused
+Additional GRPC error information from remote target coordination_service while calling /xla.coordination.CoordinationService/WatchTasks:
+:UNKNOWN:Error received from peer  {grpc_status:14, grpc_message:"failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.146:63060: Failed to connect to remote host: Connection refused"}
+srun: error: workergpu202: task 1: Exited with exit code 1
+srun: Terminating StepId=6907476.26
+slurmstepd: error: *** STEP 6907476.26 ON workergpu202 CANCELLED AT 2026-08-19T20:41:57 ***
+srun: error: workergpu209: tasks 12-13: Exited with exit code 1
+srun: error: workergpu208: tasks 8-9,11: Exited with exit code 1
+srun: error: workergpu207: tasks 4-6: Exited with exit code 1
+srun: error: workergpu209: task 15: Exited with exit code 1
+srun: error: workergpu202: tasks 0,2-3: Exited with exit code 1
+srun: error: workergpu209: task 14: Exited with exit code 1
+srun: error: workergpu207: task 7: Exited with exit code 1
+srun: error: workergpu208: task 10: Exited with exit code 1

@@ -1,0 +1,615 @@
+potrs__float32__g4x4__n622592__t1024: cold 1/1 start
+E0819 20:08:32.726214 2216716 gpu_hlo_schedule.cc:971] The byte size of input/output arguments (96905822224) exceeds the base limit (79961155174). This indicates an error in the calculation!
+E0819 20:08:32.727937 2216714 gpu_hlo_schedule.cc:971] The byte size of input/output arguments (96905822224) exceeds the base limit (79961155174). This indicates an error in the calculation!
+E0819 20:08:32.729393 2245302 gpu_hlo_schedule.cc:971] The byte size of input/output arguments (96905822224) exceeds the base limit (79961155174). This indicates an error in the calculation!
+E0819 20:08:32.730758 2242965 gpu_hlo_schedule.cc:971] The byte size of input/output arguments (96905822224) exceeds the base limit (79961155174). This indicates an error in the calculation!
+E0819 20:08:32.731797 2216717 gpu_hlo_schedule.cc:971] The byte size of input/output arguments (96905822224) exceeds the base limit (79961155174). This indicates an error in the calculation!
+E0819 20:08:32.732111 2216715 gpu_hlo_schedule.cc:971] The byte size of input/output arguments (96905822224) exceeds the base limit (79961155174). This indicates an error in the calculation!
+E0819 20:08:32.733148 2247732 gpu_hlo_schedule.cc:971] The byte size of input/output arguments (96905822224) exceeds the base limit (79961155174). This indicates an error in the calculation!
+E0819 20:08:32.733330 2247733 gpu_hlo_schedule.cc:971] The byte size of input/output arguments (96905822224) exceeds the base limit (79961155174). This indicates an error in the calculation!
+E0819 20:08:32.733839 2245304 gpu_hlo_schedule.cc:971] The byte size of input/output arguments (96905822224) exceeds the base limit (79961155174). This indicates an error in the calculation!
+E0819 20:08:32.734135 2242966 gpu_hlo_schedule.cc:971] The byte size of input/output arguments (96905822224) exceeds the base limit (79961155174). This indicates an error in the calculation!
+E0819 20:08:32.734221 2242963 gpu_hlo_schedule.cc:971] The byte size of input/output arguments (96905822224) exceeds the base limit (79961155174). This indicates an error in the calculation!
+E0819 20:08:32.734270 2242964 gpu_hlo_schedule.cc:971] The byte size of input/output arguments (96905822224) exceeds the base limit (79961155174). This indicates an error in the calculation!
+E0819 20:08:32.733985 2247734 gpu_hlo_schedule.cc:971] The byte size of input/output arguments (96905822224) exceeds the base limit (79961155174). This indicates an error in the calculation!
+E0819 20:08:32.734018 2247735 gpu_hlo_schedule.cc:971] The byte size of input/output arguments (96905822224) exceeds the base limit (79961155174). This indicates an error in the calculation!
+E0819 20:08:32.734140 2245305 gpu_hlo_schedule.cc:971] The byte size of input/output arguments (96905822224) exceeds the base limit (79961155174). This indicates an error in the calculation!
+E0819 20:08:32.739553 2245303 gpu_hlo_schedule.cc:971] The byte size of input/output arguments (96905822224) exceeds the base limit (79961155174). This indicates an error in the calculation!
+W0819 20:08:32.761166 2216716 hlo_rematerialization.cc:3233] Can't reduce memory use below 90.25GiB (96905822224 bytes) by rematerialization; only reduced to 90.25GiB (96905822320 bytes), down from 90.25GiB (96905822320 bytes) originally
+W0819 20:08:32.762330 2216714 hlo_rematerialization.cc:3233] Can't reduce memory use below 90.25GiB (96905822224 bytes) by rematerialization; only reduced to 90.25GiB (96905822320 bytes), down from 90.25GiB (96905822320 bytes) originally
+W0819 20:08:32.764442 2245302 hlo_rematerialization.cc:3233] Can't reduce memory use below 90.25GiB (96905822224 bytes) by rematerialization; only reduced to 90.25GiB (96905822320 bytes), down from 90.25GiB (96905822320 bytes) originally
+W0819 20:08:32.765939 2242965 hlo_rematerialization.cc:3233] Can't reduce memory use below 90.25GiB (96905822224 bytes) by rematerialization; only reduced to 90.25GiB (96905822320 bytes), down from 90.25GiB (96905822320 bytes) originally
+W0819 20:08:32.767025 2216717 hlo_rematerialization.cc:3233] Can't reduce memory use below 90.25GiB (96905822224 bytes) by rematerialization; only reduced to 90.25GiB (96905822320 bytes), down from 90.25GiB (96905822320 bytes) originally
+W0819 20:08:32.767255 2216715 hlo_rematerialization.cc:3233] Can't reduce memory use below 90.25GiB (96905822224 bytes) by rematerialization; only reduced to 90.25GiB (96905822320 bytes), down from 90.25GiB (96905822320 bytes) originally
+W0819 20:08:32.767931 2247732 hlo_rematerialization.cc:3233] Can't reduce memory use below 90.25GiB (96905822224 bytes) by rematerialization; only reduced to 90.25GiB (96905822320 bytes), down from 90.25GiB (96905822320 bytes) originally
+W0819 20:08:32.768324 2247733 hlo_rematerialization.cc:3233] Can't reduce memory use below 90.25GiB (96905822224 bytes) by rematerialization; only reduced to 90.25GiB (96905822320 bytes), down from 90.25GiB (96905822320 bytes) originally
+W0819 20:08:32.769190 2245304 hlo_rematerialization.cc:3233] Can't reduce memory use below 90.25GiB (96905822224 bytes) by rematerialization; only reduced to 90.25GiB (96905822320 bytes), down from 90.25GiB (96905822320 bytes) originally
+W0819 20:08:32.769042 2247734 hlo_rematerialization.cc:3233] Can't reduce memory use below 90.25GiB (96905822224 bytes) by rematerialization; only reduced to 90.25GiB (96905822320 bytes), down from 90.25GiB (96905822320 bytes) originally
+W0819 20:08:32.769042 2247735 hlo_rematerialization.cc:3233] Can't reduce memory use below 90.25GiB (96905822224 bytes) by rematerialization; only reduced to 90.25GiB (96905822320 bytes), down from 90.25GiB (96905822320 bytes) originally
+W0819 20:08:32.769542 2242963 hlo_rematerialization.cc:3233] Can't reduce memory use below 90.25GiB (96905822224 bytes) by rematerialization; only reduced to 90.25GiB (96905822320 bytes), down from 90.25GiB (96905822320 bytes) originally
+W0819 20:08:32.769542 2242964 hlo_rematerialization.cc:3233] Can't reduce memory use below 90.25GiB (96905822224 bytes) by rematerialization; only reduced to 90.25GiB (96905822320 bytes), down from 90.25GiB (96905822320 bytes) originally
+W0819 20:08:32.769607 2245305 hlo_rematerialization.cc:3233] Can't reduce memory use below 90.25GiB (96905822224 bytes) by rematerialization; only reduced to 90.25GiB (96905822320 bytes), down from 90.25GiB (96905822320 bytes) originally
+W0819 20:08:32.770675 2242966 hlo_rematerialization.cc:3233] Can't reduce memory use below 90.25GiB (96905822224 bytes) by rematerialization; only reduced to 90.25GiB (96905822320 bytes), down from 90.25GiB (96905822320 bytes) originally
+W0819 20:08:32.774433 2245303 hlo_rematerialization.cc:3233] Can't reduce memory use below 90.25GiB (96905822224 bytes) by rematerialization; only reduced to 90.25GiB (96905822320 bytes), down from 90.25GiB (96905822320 bytes) originally
+E0819 20:08:45.345799 2247733 gpu_hlo_schedule.cc:971] The byte size of input/output arguments (96905822392) exceeds the base limit (79961155174). This indicates an error in the calculation!
+E0819 20:08:45.347402 2216716 gpu_hlo_schedule.cc:971] The byte size of input/output arguments (96905822392) exceeds the base limit (79961155174). This indicates an error in the calculation!
+E0819 20:08:45.347972 2245303 gpu_hlo_schedule.cc:971] The byte size of input/output arguments (96905822392) exceeds the base limit (79961155174). This indicates an error in the calculation!
+E0819 20:08:45.348966 2216717 gpu_hlo_schedule.cc:971] The byte size of input/output arguments (96905822392) exceeds the base limit (79961155174). This indicates an error in the calculation!
+E0819 20:08:45.348978 2216714 gpu_hlo_schedule.cc:971] The byte size of input/output arguments (96905822392) exceeds the base limit (79961155174). This indicates an error in the calculation!
+E0819 20:08:45.348892 2247735 gpu_hlo_schedule.cc:971] The byte size of input/output arguments (96905822392) exceeds the base limit (79961155174). This indicates an error in the calculation!
+E0819 20:08:45.350156 2247732 gpu_hlo_schedule.cc:971] The byte size of input/output arguments (96905822392) exceeds the base limit (79961155174). This indicates an error in the calculation!
+E0819 20:08:45.350331 2247734 gpu_hlo_schedule.cc:971] The byte size of input/output arguments (96905822392) exceeds the base limit (79961155174). This indicates an error in the calculation!
+E0819 20:08:45.351034 2245305 gpu_hlo_schedule.cc:971] The byte size of input/output arguments (96905822392) exceeds the base limit (79961155174). This indicates an error in the calculation!
+E0819 20:08:45.351568 2245304 gpu_hlo_schedule.cc:971] The byte size of input/output arguments (96905822392) exceeds the base limit (79961155174). This indicates an error in the calculation!
+W0819 20:08:45.351760 2247733 hlo_rematerialization.cc:3233] Can't reduce memory use below 90.25GiB (96905822392 bytes) by rematerialization; only reduced to 91.44GiB (98180890832 bytes), down from 91.44GiB (98180890832 bytes) originally
+E0819 20:08:45.352192 2245302 gpu_hlo_schedule.cc:971] The byte size of input/output arguments (96905822392) exceeds the base limit (79961155174). This indicates an error in the calculation!
+W0819 20:08:45.353273 2216716 hlo_rematerialization.cc:3233] Can't reduce memory use below 90.25GiB (96905822392 bytes) by rematerialization; only reduced to 91.44GiB (98180890832 bytes), down from 91.44GiB (98180890832 bytes) originally
+E0819 20:08:45.353649 2216715 gpu_hlo_schedule.cc:971] The byte size of input/output arguments (96905822392) exceeds the base limit (79961155174). This indicates an error in the calculation!
+W0819 20:08:45.354086 2245303 hlo_rematerialization.cc:3233] Can't reduce memory use below 90.25GiB (96905822392 bytes) by rematerialization; only reduced to 91.44GiB (98180890832 bytes), down from 91.44GiB (98180890832 bytes) originally
+W0819 20:08:45.354861 2216714 hlo_rematerialization.cc:3233] Can't reduce memory use below 90.25GiB (96905822392 bytes) by rematerialization; only reduced to 91.44GiB (98180890832 bytes), down from 91.44GiB (98180890832 bytes) originally
+W0819 20:08:45.355295 2216717 hlo_rematerialization.cc:3233] Can't reduce memory use below 90.25GiB (96905822392 bytes) by rematerialization; only reduced to 91.44GiB (98180890832 bytes), down from 91.44GiB (98180890832 bytes) originally
+W0819 20:08:45.355037 2247735 hlo_rematerialization.cc:3233] Can't reduce memory use below 90.25GiB (96905822392 bytes) by rematerialization; only reduced to 91.44GiB (98180890832 bytes), down from 91.44GiB (98180890832 bytes) originally
+W0819 20:08:45.356266 2247732 hlo_rematerialization.cc:3233] Can't reduce memory use below 90.25GiB (96905822392 bytes) by rematerialization; only reduced to 91.44GiB (98180890832 bytes), down from 91.44GiB (98180890832 bytes) originally
+W0819 20:08:45.356338 2247734 hlo_rematerialization.cc:3233] Can't reduce memory use below 90.25GiB (96905822392 bytes) by rematerialization; only reduced to 91.44GiB (98180890832 bytes), down from 91.44GiB (98180890832 bytes) originally
+E0819 20:08:45.356618 2242965 gpu_hlo_schedule.cc:971] The byte size of input/output arguments (96905822392) exceeds the base limit (79961155174). This indicates an error in the calculation!
+E0819 20:08:45.356861 2242964 gpu_hlo_schedule.cc:971] The byte size of input/output arguments (96905822392) exceeds the base limit (79961155174). This indicates an error in the calculation!
+E0819 20:08:45.356946 2242963 gpu_hlo_schedule.cc:971] The byte size of input/output arguments (96905822392) exceeds the base limit (79961155174). This indicates an error in the calculation!
+W0819 20:08:45.357058 2245305 hlo_rematerialization.cc:3233] Can't reduce memory use below 90.25GiB (96905822392 bytes) by rematerialization; only reduced to 91.44GiB (98180890832 bytes), down from 91.44GiB (98180890832 bytes) originally
+W0819 20:08:45.357757 2245304 hlo_rematerialization.cc:3233] Can't reduce memory use below 90.25GiB (96905822392 bytes) by rematerialization; only reduced to 91.44GiB (98180890832 bytes), down from 91.44GiB (98180890832 bytes) originally
+W0819 20:08:45.358210 2245302 hlo_rematerialization.cc:3233] Can't reduce memory use below 90.25GiB (96905822392 bytes) by rematerialization; only reduced to 91.44GiB (98180890832 bytes), down from 91.44GiB (98180890832 bytes) originally
+E0819 20:08:45.359463 2242966 gpu_hlo_schedule.cc:971] The byte size of input/output arguments (96905822392) exceeds the base limit (79961155174). This indicates an error in the calculation!
+W0819 20:08:45.359756 2216715 hlo_rematerialization.cc:3233] Can't reduce memory use below 90.25GiB (96905822392 bytes) by rematerialization; only reduced to 91.44GiB (98180890832 bytes), down from 91.44GiB (98180890832 bytes) originally
+W0819 20:08:45.362734 2242965 hlo_rematerialization.cc:3233] Can't reduce memory use below 90.25GiB (96905822392 bytes) by rematerialization; only reduced to 91.44GiB (98180890832 bytes), down from 91.44GiB (98180890832 bytes) originally
+W0819 20:08:45.363065 2242963 hlo_rematerialization.cc:3233] Can't reduce memory use below 90.25GiB (96905822392 bytes) by rematerialization; only reduced to 91.44GiB (98180890832 bytes), down from 91.44GiB (98180890832 bytes) originally
+W0819 20:08:45.363311 2242964 hlo_rematerialization.cc:3233] Can't reduce memory use below 90.25GiB (96905822392 bytes) by rematerialization; only reduced to 91.44GiB (98180890832 bytes), down from 91.44GiB (98180890832 bytes) originally
+W0819 20:08:45.366027 2242966 hlo_rematerialization.cc:3233] Can't reduce memory use below 90.25GiB (96905822392 bytes) by rematerialization; only reduced to 91.44GiB (98180890832 bytes), down from 91.44GiB (98180890832 bytes) originally
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 769, in <module>
+    main()
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 758, in main
+    payload = _run(args)
+              ^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 712, in _run
+    elapsed, metrics = run_iteration(
+                       ^^^^^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 494, in _solve_iteration
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 769, in <module>
+    out.block_until_ready()
+jax.errors.JaxRuntimeError: RESOURCE_EXHAUSTED: Unable to allocate CUDA scratch memory for cusolvermp_potrs_redistribution: requested 1912602624 bytes, cuda status 2 (out of memory) [executable_name='jit_impl']
+    main()
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 758, in main
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 769, in <module>
+    payload = _run(args)
+              ^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 712, in _run
+    elapsed, metrics = run_iteration(
+                       ^^^^^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 494, in _solve_iteration
+    main()
+    out.block_until_ready()
+jax.errors.JaxRuntimeError: RESOURCE_EXHAUSTED: Unable to allocate CUDA scratch memory for cusolvermp_potrs_redistribution: requested 1912602624 bytes, cuda status 2 (out of memory) [executable_name='jit_impl']
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 758, in main
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 769, in <module>
+    payload = _run(args)
+              ^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 712, in _run
+    elapsed, metrics = run_iteration(
+    main()
+                       ^^^^^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 494, in _solve_iteration
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 758, in main
+    out.block_until_ready()
+jax.errors.JaxRuntimeError: RESOURCE_EXHAUSTED: Unable to allocate CUDA scratch memory for cusolvermp_potrs_redistribution: requested 1912602624 bytes, cuda status 2 (out of memory) [executable_name='jit_impl']
+    payload = _run(args)
+              ^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 712, in _run
+    elapsed, metrics = run_iteration(
+                       ^^^^^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 494, in _solve_iteration
+    out.block_until_ready()
+jax.errors.JaxRuntimeError: RESOURCE_EXHAUSTED: Unable to allocate CUDA scratch memory for cusolvermp_potrs_redistribution: requested 1912602624 bytes, cuda status 2 (out of memory) [executable_name='jit_impl']
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 769, in <module>
+    main()
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 758, in main
+    payload = _run(args)
+              ^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 712, in _run
+    elapsed, metrics = run_iteration(
+Traceback (most recent call last):
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "<frozen runpy>", line 88, in _run_code
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 769, in <module>
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 769, in <module>
+                       ^^^^^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 494, in _solve_iteration
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 769, in <module>
+    out.block_until_ready()
+jax.errors.JaxRuntimeError: RESOURCE_EXHAUSTED: Unable to allocate CUDA scratch memory for cusolvermp_potrs_redistribution: requested 1912602624 bytes, cuda status 2 (out of memory) [executable_name='jit_impl']
+    main()
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 758, in main
+    main()
+    main()
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 758, in main
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 758, in main
+    payload = _run(args)
+              ^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 712, in _run
+    payload = _run(args)
+    payload = _run(args)
+              ^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 712, in _run
+              ^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 712, in _run
+    elapsed, metrics = run_iteration(
+                       ^^^^^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 494, in _solve_iteration
+    elapsed, metrics = run_iteration(
+    elapsed, metrics = run_iteration(
+                       ^^^^^^^^^^^^^^
+                       ^^^^^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 494, in _solve_iteration
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 494, in _solve_iteration
+    out.block_until_ready()
+jax.errors.JaxRuntimeError: RESOURCE_EXHAUSTED: Unable to allocate CUDA scratch memory for cusolvermp_potrs_redistribution: requested 1912602624 bytes, cuda status 2 (out of memory) [executable_name='jit_impl']
+    out.block_until_ready()
+    out.block_until_ready()
+jax.errors.JaxRuntimeError: RESOURCE_EXHAUSTED: Unable to allocate CUDA scratch memory for cusolvermp_potrs_redistribution: requested 1912602624 bytes, cuda status 2 (out of memory) [executable_name='jit_impl']
+jax.errors.JaxRuntimeError: RESOURCE_EXHAUSTED: Unable to allocate CUDA scratch memory for cusolvermp_potrs_redistribution: requested 1912602624 bytes, cuda status 2 (out of memory) [executable_name='jit_impl']
+E0819 20:08:45.918135 2245438 nccl_collectives.cc:414] [3] [rank=3] Failed to create NCCL communicator: INTERNAL: NCCL operation ncclCommInitRankConfig( &comm, num_ranks, nccl_unique_ids[0], rank.value(), &comm_config) failed: unhandled cuda error (run with NCCL_DEBUG=INFO for details). Last NCCL warning(error) log entry (may be unrelated) 'Failed to CUDA calloc 268435456 bytes'.
+E0819 20:08:45.918263 2242966 gpu_cliques.cc:428] Failed to initialize GPU clique devices=4:[4,5,6,7]; local_participants=1; communication_id=0; incarnations=[]: INTERNAL: NCCL operation ncclCommInitRankConfig( &comm, num_ranks, nccl_unique_ids[0], rank.value(), &comm_config) failed: unhandled cuda error (run with NCCL_DEBUG=INFO for details). Last NCCL warning(error) log entry (may be unrelated) 'Failed to CUDA calloc 268435456 bytes'.
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 769, in <module>
+    main()
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 758, in main
+    payload = _run(args)
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 769, in <module>
+              ^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 712, in _run
+Traceback (most recent call last):
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 769, in <module>
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 769, in <module>
+    elapsed, metrics = run_iteration(
+                       ^^^^^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 494, in _solve_iteration
+    out.block_until_ready()
+jax.errors.JaxRuntimeError: INTERNAL: NCCL operation ncclCommInitRankConfig( &comm, num_ranks, nccl_unique_ids[0], rank.value(), &comm_config) failed: unhandled cuda error (run with NCCL_DEBUG=INFO for details). Last NCCL warning(error) log entry (may be unrelated) 'Failed to CUDA calloc 268435456 bytes'. [executable_name='jit_impl']
+    main()
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 769, in <module>
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 758, in main
+    main()
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 758, in main
+    main()
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 758, in main
+    payload = _run(args)
+              ^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 712, in _run
+    payload = _run(args)
+    payload = _run(args)
+              ^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 712, in _run
+              ^^^^^^^^^^
+    elapsed, metrics = run_iteration(
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 712, in _run
+    main()
+                       ^^^^^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 494, in _solve_iteration
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 758, in main
+    elapsed, metrics = run_iteration(
+    elapsed, metrics = run_iteration(
+                       ^^^^^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 494, in _solve_iteration
+    out.block_until_ready()
+                       ^^^^^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 494, in _solve_iteration
+jax.errors.JaxRuntimeError: RESOURCE_EXHAUSTED: Unable to allocate CUDA scratch memory for cusolvermp_potrs_redistribution: requested 1912602624 bytes, cuda status 2 (out of memory) [executable_name='jit_impl']
+    payload = _run(args)
+    out.block_until_ready()
+              ^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 712, in _run
+jax.errors.JaxRuntimeError: RESOURCE_EXHAUSTED: Unable to allocate CUDA scratch memory for cusolvermp_potrs_redistribution: requested 1912602624 bytes, cuda status 2 (out of memory) [executable_name='jit_impl']
+    out.block_until_ready()
+jax.errors.JaxRuntimeError: RESOURCE_EXHAUSTED: Unable to allocate CUDA scratch memory for cusolvermp_potrs_redistribution: requested 1912602624 bytes, cuda status 2 (out of memory) [executable_name='jit_impl']
+    elapsed, metrics = run_iteration(
+                       ^^^^^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 494, in _solve_iteration
+    out.block_until_ready()
+jax.errors.JaxRuntimeError: RESOURCE_EXHAUSTED: Unable to allocate CUDA scratch memory for cusolvermp_potrs_redistribution: requested 1912602624 bytes, cuda status 2 (out of memory) [executable_name='jit_impl']
+E0819 20:13:46.537175 2216836 coordination_service.cc:1519] [6507498920711061669] Shutdown barrier in coordination service has failed:
+DEADLINE_EXCEEDED: Barrier timed out. Id: Shutdown::6507498920711061669::0. This usually happens because a task triggered the barrier too early or too slowly. Please look at the task logs (both timed out and first task) to debug further.
+# of tasks that reached the barrier: 13/16.
+The first task at the barrier: 11. Some timed out task names:
+4
+5
+ [type.googleapis.com/tensorflow.CoordinationServiceError=''] [type.googleapis.com/tensorflow.BarrierError='\n\x1dShutdown::6507498920711061669']
+This suggests that the workers are out of sync. Either at least one worker (a) crashed early due to program error or scheduler events (e.g. preemption, eviction), (b) was too fast in its execution, or (c) too slow / hanging. Check the logs (both the program and scheduler events) for an earlier error to identify the root cause.
+E0819 20:13:46.537225 2216836 coordination_service.cc:1548] [6507498920711061669] Use error polling to propagate the following error to all tasks: INTERNAL: Shutdown barrier has failed.
+Barrier result: 'DEADLINE_EXCEEDED: Barrier timed out. Id: Shutdown::6507498920711061669::0. This usually happens because a task triggered the barrier too early or too slowly. Please look at the task logs (both timed out and first task) to debug further.
+# of tasks that reached the barrier: 13/16.
+The first task at the barrier: 11. Some timed out task names:
+4
+5
+ [type.googleapis.com/tensorflow.CoordinationServiceError=''] [type.googleapis.com/tensorflow.BarrierError='\n\x1dShutdown::6507498920711061669'] [type.googleapis.com/tensorflow.CoordinationServiceError='']
+F0819 20:13:46.537504 2245302 client.h:80] Terminating process because the JAX distributed service detected fatal errors. This most likely indicates that another task died; see the other task logs for more details. Disable Python buffering, i.e. `python -u`, to be sure to see all the previous output. absl::Status: INTERNAL: Failed to disconnect from coordination service with status: INTERNAL: Shutdown barrier has failed.
+Barrier result: 'DEADLINE_EXCEEDED: Barrier timed out. Id: Shutdown::6507498920711061669::0. This usually happens because a task triggered the barrier too early or too slowly. Please look at the task logs (both timed out and first task) to debug further.
+# of tasks that reached the barrier: 13/16.
+The first task at the barrier: 11. Some timed out task names:
+4
+5
+ [type.googleapis.com/tensorflow.CoordinationServiceError=''] [type.googleapis.com/tensorflow.BarrierError='\n\x1dShutdown::6507498920711061669']
+
+RPC: /xla.coordination.CoordinationService/ShutdownTask [type.googleapis.com/tensorflow.CoordinationServiceError='']Proceeding with agent shutdown anyway. This is usually caused by an earlier error during execution. Check the logs of (a) this task, (b) the leader (usually slice 0 task 0) and (c) the scheduler (e.g. preemption, eviction) for an earlier error to debug further. [type.googleapis.com/tensorflow.CoordinationServiceError='']
+E0819 20:13:46.537294 2247929 coordination_service_agent.cc:289] Polled an error from coordination service (this can be an error from this or another task).
+E0819 20:13:46.537546 2245488 coordination_service_agent.cc:289] Polled an error from coordination service (this can be an error from this or another task).
+F0819 20:13:46.537565 2245304 client.h:80] Terminating process because the JAX distributed service detected fatal errors. This most likely indicates that another task died; see the other task logs for more details. Disable Python buffering, i.e. `python -u`, to be sure to see all the previous output. absl::Status: INTERNAL: Failed to disconnect from coordination service with status: INTERNAL: Shutdown barrier has failed.
+Barrier result: 'DEADLINE_EXCEEDED: Barrier timed out. Id: Shutdown::6507498920711061669::0. This usually happens because a task triggered the barrier too early or too slowly. Please look at the task logs (both timed out and first task) to debug further.
+# of tasks that reached the barrier: 13/16.
+The first task at the barrier: 11. Some timed out task names:
+4
+5
+F0819 20:13:46.537337 2247732 client.h:80] Terminating process because the JAX distributed service detected fatal errors. This most likely indicates that another task died; see the other task logs for more details. Disable Python buffering, i.e. `python -u`, to be sure to see all the previous output. absl::Status: INTERNAL: Failed to disconnect from coordination service with status: INTERNAL: Shutdown barrier has failed.
+Barrier result: 'DEADLINE_EXCEEDED: Barrier timed out. Id: Shutdown::6507498920711061669::0. This usually happens because a task triggered the barrier too early or too slowly. Please look at the task logs (both timed out and first task) to debug further.
+# of tasks that reached the barrier: 13/16.
+The first task at the barrier: 11. Some timed out task names:
+4
+5
+ [type.googleapis.com/tensorflow.CoordinationServiceError=''] [type.googleapis.com/tensorflow.BarrierError='\n\x1dShutdown::6507498920711061669']
+
+ [type.googleapis.com/tensorflow.CoordinationServiceError=''] [type.googleapis.com/tensorflow.BarrierError='\n\x1dShutdown::6507498920711061669']
+
+RPC: /xla.coordination.CoordinationService/ShutdownTask [type.googleapis.com/tensorflow.CoordinationServiceError='']Proceeding with agent shutdown anyway. This is usually caused by an earlier error during execution. Check the logs of (a) this task, (b) the leader (usually slice 0 task 0) and (c) the scheduler (e.g. preemption, eviction) for an earlier error to debug further. [type.googleapis.com/tensorflow.CoordinationServiceError='']
+E0819 20:13:46.537576 2216906 coordination_service_agent.cc:289] Polled an error from coordination service (this can be an error from this or another task).
+F0819 20:13:46.537582 2216716 client.h:80] Terminating process because the JAX distributed service detected fatal errors. This most likely indicates that another task died; see the other task logs for more details. Disable Python buffering, i.e. `python -u`, to be sure to see all the previous output. absl::Status: INTERNAL: Failed to disconnect from coordination service with status: INTERNAL: Shutdown barrier has failed.
+Barrier result: 'DEADLINE_EXCEEDED: Barrier timed out. Id: Shutdown::6507498920711061669::0. This usually happens because a task triggered the barrier too early or too slowly. Please look at the task logs (both timed out and first task) to debug further.
+# of tasks that reached the barrier: 13/16.
+The first task at the barrier: 11. Some timed out task names:
+4
+5
+F0819 20:13:46.537592 2245305 client.h:80] Terminating process because the JAX distributed service detected fatal errors. This most likely indicates that another task died; see the other task logs for more details. Disable Python buffering, i.e. `python -u`, to be sure to see all the previous output. absl::Status: INTERNAL: Failed to disconnect from coordination service with status: INTERNAL: Shutdown barrier has failed.
+Barrier result: 'DEADLINE_EXCEEDED: Barrier timed out. Id: Shutdown::6507498920711061669::0. This usually happens because a task triggered the barrier too early or too slowly. Please look at the task logs (both timed out and first task) to debug further.
+# of tasks that reached the barrier: 13/16.
+The first task at the barrier: 11. Some timed out task names:
+4
+5
+ [type.googleapis.com/tensorflow.CoordinationServiceError=''] [type.googleapis.com/tensorflow.BarrierError='\n\x1dShutdown::6507498920711061669']
+
+ [type.googleapis.com/tensorflow.CoordinationServiceError=''] [type.googleapis.com/tensorflow.BarrierError='\n\x1dShutdown::6507498920711061669']
+
+RPC: /xla.coordination.CoordinationService/ShutdownTask [type.googleapis.com/tensorflow.CoordinationServiceError='']Proceeding with agent shutdown anyway. This is usually caused by an earlier error during execution. Check the logs of (a) this task, (b) the leader (usually slice 0 task 0) and (c) the scheduler (e.g. preemption, eviction) for an earlier error to debug further. [type.googleapis.com/tensorflow.CoordinationServiceError='']
+RPC: /xla.coordination.CoordinationService/ShutdownTask [type.googleapis.com/tensorflow.CoordinationServiceError='']Proceeding with agent shutdown anyway. This is usually caused by an earlier error during execution. Check the logs of (a) this task, (b) the leader (usually slice 0 task 0) and (c) the scheduler (e.g. preemption, eviction) for an earlier error to debug further. [type.googleapis.com/tensorflow.CoordinationServiceError='']
+RPC: /xla.coordination.CoordinationService/ShutdownTask [type.googleapis.com/tensorflow.CoordinationServiceError='']Proceeding with agent shutdown anyway. This is usually caused by an earlier error during execution. Check the logs of (a) this task, (b) the leader (usually slice 0 task 0) and (c) the scheduler (e.g. preemption, eviction) for an earlier error to debug further. [type.googleapis.com/tensorflow.CoordinationServiceError='']
+F0819 20:13:46.537609 2216714 client.h:80] Terminating process because the JAX distributed service detected fatal errors. This most likely indicates that another task died; see the other task logs for more details. Disable Python buffering, i.e. `python -u`, to be sure to see all the previous output. absl::Status: INTERNAL: Failed to disconnect from coordination service with status: INTERNAL: Shutdown barrier has failed.
+Barrier result: 'DEADLINE_EXCEEDED: Barrier timed out. Id: Shutdown::6507498920711061669::0. This usually happens because a task triggered the barrier too early or too slowly. Please look at the task logs (both timed out and first task) to debug further.
+# of tasks that reached the barrier: 13/16.
+The first task at the barrier: 11. Some timed out task names:
+4
+5
+ [type.googleapis.com/tensorflow.CoordinationServiceError=''] [type.googleapis.com/tensorflow.BarrierError='\n\x1dShutdown::6507498920711061669']
+
+F0819 20:13:46.537329 2247734 client.h:80] Terminating process because the JAX distributed service detected fatal errors. This most likely indicates that another task died; see the other task logs for more details. Disable Python buffering, i.e. `python -u`, to be sure to see all the previous output. absl::Status: INTERNAL: Failed to disconnect from coordination service with status: INTERNAL: Shutdown barrier has failed.
+Barrier result: 'DEADLINE_EXCEEDED: Barrier timed out. Id: Shutdown::6507498920711061669::0. This usually happens because a task triggered the barrier too early or too slowly. Please look at the task logs (both timed out and first task) to debug further.
+# of tasks that reached the barrier: 13/16.
+The first task at the barrier: 11. Some timed out task names:
+4
+5
+ [type.googleapis.com/tensorflow.CoordinationServiceError=''] [type.googleapis.com/tensorflow.BarrierError='\n\x1dShutdown::6507498920711061669']
+
+F0819 20:13:46.537588 2245303 client.h:80] Terminating process because the JAX distributed service detected fatal errors. This most likely indicates that another task died; see the other task logs for more details. Disable Python buffering, i.e. `python -u`, to be sure to see all the previous output. absl::Status: INTERNAL: Failed to disconnect from coordination service with status: INTERNAL: Shutdown barrier has failed.
+Barrier result: 'DEADLINE_EXCEEDED: Barrier timed out. Id: Shutdown::6507498920711061669::0. This usually happens because a task triggered the barrier too early or too slowly. Please look at the task logs (both timed out and first task) to debug further.
+# of tasks that reached the barrier: 13/16.
+The first task at the barrier: 11. Some timed out task names:
+4
+5
+ [type.googleapis.com/tensorflow.CoordinationServiceError=''] [type.googleapis.com/tensorflow.BarrierError='\n\x1dShutdown::6507498920711061669']
+
+RPC: /xla.coordination.CoordinationService/ShutdownTask [type.googleapis.com/tensorflow.CoordinationServiceError='']Proceeding with agent shutdown anyway. This is usually caused by an earlier error during execution. Check the logs of (a) this task, (b) the leader (usually slice 0 task 0) and (c) the scheduler (e.g. preemption, eviction) for an earlier error to debug further. [type.googleapis.com/tensorflow.CoordinationServiceError='']
+RPC: /xla.coordination.CoordinationService/ShutdownTask [type.googleapis.com/tensorflow.CoordinationServiceError='']Proceeding with agent shutdown anyway. This is usually caused by an earlier error during execution. Check the logs of (a) this task, (b) the leader (usually slice 0 task 0) and (c) the scheduler (e.g. preemption, eviction) for an earlier error to debug further. [type.googleapis.com/tensorflow.CoordinationServiceError='']
+RPC: /xla.coordination.CoordinationService/ShutdownTask [type.googleapis.com/tensorflow.CoordinationServiceError='']Proceeding with agent shutdown anyway. This is usually caused by an earlier error during execution. Check the logs of (a) this task, (b) the leader (usually slice 0 task 0) and (c) the scheduler (e.g. preemption, eviction) for an earlier error to debug further. [type.googleapis.com/tensorflow.CoordinationServiceError='']
+F0819 20:13:46.537586 2216715 client.h:80] Terminating process because the JAX distributed service detected fatal errors. This most likely indicates that another task died; see the other task logs for more details. Disable Python buffering, i.e. `python -u`, to be sure to see all the previous output. absl::Status: INTERNAL: Failed to disconnect from coordination service with status: INTERNAL: Shutdown barrier has failed.
+Barrier result: 'DEADLINE_EXCEEDED: Barrier timed out. Id: Shutdown::6507498920711061669::0. This usually happens because a task triggered the barrier too early or too slowly. Please look at the task logs (both timed out and first task) to debug further.
+# of tasks that reached the barrier: 13/16.
+The first task at the barrier: 11. Some timed out task names:
+4
+5
+ [type.googleapis.com/tensorflow.CoordinationServiceError=''] [type.googleapis.com/tensorflow.BarrierError='\n\x1dShutdown::6507498920711061669']
+
+E0819 20:13:46.537677 2243156 coordination_service_agent.cc:289] Polled an error from coordination service (this can be an error from this or another task).
+F0819 20:13:46.537338 2247735 client.h:80] Terminating process because the JAX distributed service detected fatal errors. This most likely indicates that another task died; see the other task logs for more details. Disable Python buffering, i.e. `python -u`, to be sure to see all the previous output. absl::Status: INTERNAL: Failed to disconnect from coordination service with status: INTERNAL: Shutdown barrier has failed.
+Barrier result: 'DEADLINE_EXCEEDED: Barrier timed out. Id: Shutdown::6507498920711061669::0. This usually happens because a task triggered the barrier too early or too slowly. Please look at the task logs (both timed out and first task) to debug further.
+# of tasks that reached the barrier: 13/16.
+The first task at the barrier: 11. Some timed out task names:
+4
+5
+ [type.googleapis.com/tensorflow.CoordinationServiceError=''] [type.googleapis.com/tensorflow.BarrierError='\n\x1dShutdown::6507498920711061669']
+
+RPC: /xla.coordination.CoordinationService/ShutdownTask [type.googleapis.com/tensorflow.CoordinationServiceError='']Proceeding with agent shutdown anyway. This is usually caused by an earlier error during execution. Check the logs of (a) this task, (b) the leader (usually slice 0 task 0) and (c) the scheduler (e.g. preemption, eviction) for an earlier error to debug further. [type.googleapis.com/tensorflow.CoordinationServiceError='']
+E0819 20:13:46.537638 2216910 coordination_service_agent.cc:289] Polled an error from coordination service (this can be an error from this or another task).
+RPC: /xla.coordination.CoordinationService/ShutdownTask [type.googleapis.com/tensorflow.CoordinationServiceError='']Proceeding with agent shutdown anyway. This is usually caused by an earlier error during execution. Check the logs of (a) this task, (b) the leader (usually slice 0 task 0) and (c) the scheduler (e.g. preemption, eviction) for an earlier error to debug further. [type.googleapis.com/tensorflow.CoordinationServiceError='']
+E0819 20:13:46.537837 2245482 coordination_service_agent.cc:289] Polled an error from coordination service (this can be an error from this or another task).
+F0819 20:13:46.537588 2216717 client.h:80] Terminating process because the JAX distributed service detected fatal errors. This most likely indicates that another task died; see the other task logs for more details. Disable Python buffering, i.e. `python -u`, to be sure to see all the previous output. absl::Status: INTERNAL: Failed to disconnect from coordination service with status: INTERNAL: Shutdown barrier has failed.
+Barrier result: 'DEADLINE_EXCEEDED: Barrier timed out. Id: Shutdown::6507498920711061669::0. This usually happens because a task triggered the barrier too early or too slowly. Please look at the task logs (both timed out and first task) to debug further.
+# of tasks that reached the barrier: 13/16.
+The first task at the barrier: 11. Some timed out task names:
+4
+5
+ [type.googleapis.com/tensorflow.CoordinationServiceError=''] [type.googleapis.com/tensorflow.BarrierError='\n\x1dShutdown::6507498920711061669']
+
+F0819 20:13:46.537796 2243156 client.h:80] Terminating process because the JAX distributed service detected fatal errors. This most likely indicates that another task died; see the other task logs for more details. Disable Python buffering, i.e. `python -u`, to be sure to see all the previous output. absl::Status: INTERNAL: Shutdown barrier has failed.
+Barrier result: 'DEADLINE_EXCEEDED: Barrier timed out. Id: Shutdown::6507498920711061669::0. This usually happens because a task triggered the barrier too early or too slowly. Please look at the task logs (both timed out and first task) to debug further.
+# of tasks that reached the barrier: 13/16.
+The first task at the barrier: 11. Some timed out task names:
+4
+5
+ [type.googleapis.com/tensorflow.CoordinationServiceError=''] [type.googleapis.com/tensorflow.BarrierError='\n\x1dShutdown::6507498920711061669']
+
+RPC: /xla.coordination.CoordinationService/PollForError [type.googleapis.com/tensorflow.CoordinationServiceError='']
+F0819 20:13:46.537397 2247929 client.h:80] Terminating process because the JAX distributed service detected fatal errors. This most likely indicates that another task died; see the other task logs for more details. Disable Python buffering, i.e. `python -u`, to be sure to see all the previous output. absl::Status: INTERNAL: Shutdown barrier has failed.
+Barrier result: 'DEADLINE_EXCEEDED: Barrier timed out. Id: Shutdown::6507498920711061669::0. This usually happens because a task triggered the barrier too early or too slowly. Please look at the task logs (both timed out and first task) to debug further.
+# of tasks that reached the barrier: 13/16.
+The first task at the barrier: 11. Some timed out task names:
+4
+5
+ [type.googleapis.com/tensorflow.CoordinationServiceError=''] [type.googleapis.com/tensorflow.BarrierError='\n\x1dShutdown::6507498920711061669']
+
+RPC: /xla.coordination.CoordinationService/PollForError [type.googleapis.com/tensorflow.CoordinationServiceError='']
+RPC: /xla.coordination.CoordinationService/ShutdownTask [type.googleapis.com/tensorflow.CoordinationServiceError='']Proceeding with agent shutdown anyway. This is usually caused by an earlier error during execution. Check the logs of (a) this task, (b) the leader (usually slice 0 task 0) and (c) the scheduler (e.g. preemption, eviction) for an earlier error to debug further. [type.googleapis.com/tensorflow.CoordinationServiceError='']
+E0819 20:13:46.537421 2247923 coordination_service_agent.cc:289] Polled an error from coordination service (this can be an error from this or another task).
+E0819 20:13:46.537651 2216913 coordination_service_agent.cc:289] Polled an error from coordination service (this can be an error from this or another task).
+E0819 20:13:46.537579 2247928 coordination_service_agent.cc:289] Polled an error from coordination service (this can be an error from this or another task).
+E0819 20:13:46.537851 2216911 coordination_service_agent.cc:289] Polled an error from coordination service (this can be an error from this or another task).
+E0819 20:13:46.537682 2247930 coordination_service_agent.cc:289] Polled an error from coordination service (this can be an error from this or another task).
+E0819 20:13:46.537862 2245495 coordination_service_agent.cc:289] Polled an error from coordination service (this can be an error from this or another task).
+E0819 20:13:46.537954 2245494 coordination_service_agent.cc:289] Polled an error from coordination service (this can be an error from this or another task).
+E0819 20:13:46.537834 2243155 coordination_service_agent.cc:289] Polled an error from coordination service (this can be an error from this or another task).
+E0819 20:13:46.537967 2243143 coordination_service_agent.cc:289] Polled an error from coordination service (this can be an error from this or another task).
+E0819 20:13:46.537945 2243154 coordination_service_agent.cc:289] Polled an error from coordination service (this can be an error from this or another task).
+F0819 20:13:46.538095 2243155 client.h:80] Terminating process because the JAX distributed service detected fatal errors. This most likely indicates that another task died; see the other task logs for more details. Disable Python buffering, i.e. `python -u`, to be sure to see all the previous output. absl::Status: INTERNAL: Shutdown barrier has failed.
+Barrier result: 'DEADLINE_EXCEEDED: Barrier timed out. Id: Shutdown::6507498920711061669::0. This usually happens because a task triggered the barrier too early or too slowly. Please look at the task logs (both timed out and first task) to debug further.
+# of tasks that reached the barrier: 13/16.
+The first task at the barrier: 11. Some timed out task names:
+4
+5
+ [type.googleapis.com/tensorflow.CoordinationServiceError=''] [type.googleapis.com/tensorflow.BarrierError='\n\x1dShutdown::6507498920711061669']
+
+RPC: /xla.coordination.CoordinationService/PollForError [type.googleapis.com/tensorflow.CoordinationServiceError='']
+F0819 20:13:46.538093 2243143 client.h:80] Terminating process because the JAX distributed service detected fatal errors. This most likely indicates that another task died; see the other task logs for more details. Disable Python buffering, i.e. `python -u`, to be sure to see all the previous output. absl::Status: INTERNAL: Shutdown barrier has failed.
+Barrier result: 'DEADLINE_EXCEEDED: Barrier timed out. Id: Shutdown::6507498920711061669::0. This usually happens because a task triggered the barrier too early or too slowly. Please look at the task logs (both timed out and first task) to debug further.
+# of tasks that reached the barrier: 13/16.
+The first task at the barrier: 11. Some timed out task names:
+4
+5
+ [type.googleapis.com/tensorflow.CoordinationServiceError=''] [type.googleapis.com/tensorflow.BarrierError='\n\x1dShutdown::6507498920711061669']
+
+RPC: /xla.coordination.CoordinationService/PollForError [type.googleapis.com/tensorflow.CoordinationServiceError='']
+F0819 20:13:46.538121 2243154 client.h:80] Terminating process because the JAX distributed service detected fatal errors. This most likely indicates that another task died; see the other task logs for more details. Disable Python buffering, i.e. `python -u`, to be sure to see all the previous output. absl::Status: INTERNAL: Shutdown barrier has failed.
+Barrier result: 'DEADLINE_EXCEEDED: Barrier timed out. Id: Shutdown::6507498920711061669::0. This usually happens because a task triggered the barrier too early or too slowly. Please look at the task logs (both timed out and first task) to debug further.
+# of tasks that reached the barrier: 13/16.
+The first task at the barrier: 11. Some timed out task names:
+4
+5
+ [type.googleapis.com/tensorflow.CoordinationServiceError=''] [type.googleapis.com/tensorflow.BarrierError='\n\x1dShutdown::6507498920711061669']
+
+RPC: /xla.coordination.CoordinationService/PollForError [type.googleapis.com/tensorflow.CoordinationServiceError='']
+*** Check failure stack trace: ***
+    @     0x1555495c8104  absl::lts_20260107::log_internal::LogMessage::SendToLog()
+    @     0x1555495c8086  absl::lts_20260107::log_internal::LogMessage::Flush()
+    @     0x155549621f9e  std::_Function_handler<>::_M_invoke()
+    @     0x155545cdcf25  std::_Function_handler<>::_M_invoke()
+    @     0x155545cf5b0e  xla::CoordinationServiceAgent::SetError()
+    @     0x155545cfe35b  std::_Function_handler<>::_M_invoke()
+    @     0x155545cfe77b  std::_Function_handler<>::_M_invoke()
+    @     0x155545ce1d41  tsl::RPCState<>::OnCompleted()
+    @     0x155545ce0129  absl::lts_20260107::internal_any_invocable::LocalInvoker<>()
+    @     0x1555494408ff  tsl::(anonymous namespace)::PThread::ThreadFn()
+    @     0x15555488b699  start_thread
+*** Check failure stack trace: ***
+    @     0x1555495c8104  absl::lts_20260107::log_internal::LogMessage::SendToLog()
+    @     0x1555495c8086  absl::lts_20260107::log_internal::LogMessage::Flush()
+    @     0x155549621f9e  std::_Function_handler<>::_M_invoke()
+    @     0x155545cdcf25  std::_Function_handler<>::_M_invoke()
+    @     0x155545cf5b0e  xla::CoordinationServiceAgent::SetError()
+    @     0x155545cfe35b  std::_Function_handler<>::_M_invoke()
+    @     0x155545cfe77b  std::_Function_handler<>::_M_invoke()
+    @     0x155545ce1d41  tsl::RPCState<>::OnCompleted()
+    @     0x155545ce0129  absl::lts_20260107::internal_any_invocable::LocalInvoker<>()
+    @     0x1555494408ff  tsl::(anonymous namespace)::PThread::ThreadFn()
+    @     0x15555488b699  start_thread
+*** Check failure stack trace: ***
+    @     0x1555495c8104  absl::lts_20260107::log_internal::LogMessage::SendToLog()
+    @     0x1555495c8086  absl::lts_20260107::log_internal::LogMessage::Flush()
+    @     0x155549621f9e  std::_Function_handler<>::_M_invoke()
+    @     0x155545cdcf25  std::_Function_handler<>::_M_invoke()
+    @     0x155545cf5b0e  xla::CoordinationServiceAgent::SetError()
+    @     0x155545cfe35b  std::_Function_handler<>::_M_invoke()
+    @     0x155545cfe77b  std::_Function_handler<>::_M_invoke()
+    @     0x155545ce1d41  tsl::RPCState<>::OnCompleted()
+    @     0x155545ce0129  absl::lts_20260107::internal_any_invocable::LocalInvoker<>()
+    @     0x1555494408ff  tsl::(anonymous namespace)::PThread::ThreadFn()
+    @     0x15555488b699  start_thread
+*** Check failure stack trace: ***
+    @     0x1555495c8104  absl::lts_20260107::log_internal::LogMessage::SendToLog()
+    @     0x1555495c8086  absl::lts_20260107::log_internal::LogMessage::Flush()
+    @     0x155549621f9e  std::_Function_handler<>::_M_invoke()
+    @     0x155545cdcf25  std::_Function_handler<>::_M_invoke()
+    @     0x155545cf5b0e  xla::CoordinationServiceAgent::SetError()
+    @     0x155545cf7ecf  xla::CoordinationServiceAgent::Shutdown()
+    @     0x155545cdbbbd  xla::DistributedRuntimeCoordinationServiceClient::Shutdown()
+    @     0x15554961dc63  nanobind::detail::func_create<>()::{lambda()#1}::__invoke()
+    @     0x155545c1f7ad  nanobind::detail::nb_func_vectorcall_simple_1()
+    @     0x155554f54f03  PyObject_Vectorcall
+*** Check failure stack trace: ***
+    @     0x1555495c8104  absl::lts_20260107::log_internal::LogMessage::SendToLog()
+    @     0x1555495c8086  absl::lts_20260107::log_internal::LogMessage::Flush()
+    @     0x155549621f9e  std::_Function_handler<>::_M_invoke()
+    @     0x155545cdcf25  std::_Function_handler<>::_M_invoke()
+    @     0x155545cf5b0e  xla::CoordinationServiceAgent::SetError()
+    @     0x155545cf7ecf  xla::CoordinationServiceAgent::Shutdown()
+    @     0x155545cdbbbd  xla::DistributedRuntimeCoordinationServiceClient::Shutdown()
+    @     0x15554961dc63  nanobind::detail::func_create<>()::{lambda()#1}::__invoke()
+    @     0x155545c1f7ad  nanobind::detail::nb_func_vectorcall_simple_1()
+    @     0x155554f54f03  PyObject_Vectorcall
+*** Check failure stack trace: ***
+    @     0x1555495c8104  absl::lts_20260107::log_internal::LogMessage::SendToLog()
+    @     0x1555495c8086  absl::lts_20260107::log_internal::LogMessage::Flush()
+    @     0x155549621f9e  std::_Function_handler<>::_M_invoke()
+    @     0x155545cdcf25  std::_Function_handler<>::_M_invoke()
+    @     0x155545cf5b0e  xla::CoordinationServiceAgent::SetError()
+    @     0x155545cf7ecf  xla::CoordinationServiceAgent::Shutdown()
+    @     0x155545cdbbbd  xla::DistributedRuntimeCoordinationServiceClient::Shutdown()
+    @     0x15554961dc63  nanobind::detail::func_create<>()::{lambda()#1}::__invoke()
+    @     0x155545c1f7ad  nanobind::detail::nb_func_vectorcall_simple_1()
+    @     0x155554f54f03  PyObject_Vectorcall
+*** Check failure stack trace: ***
+    @     0x1555495c8104  absl::lts_20260107::log_internal::LogMessage::SendToLog()
+    @     0x1555495c8086  absl::lts_20260107::log_internal::LogMessage::Flush()
+    @     0x155549621f9e  std::_Function_handler<>::_M_invoke()
+    @     0x155545cdcf25  std::_Function_handler<>::_M_invoke()
+    @     0x155545cf5b0e  xla::CoordinationServiceAgent::SetError()
+    @     0x155545cf7ecf  xla::CoordinationServiceAgent::Shutdown()
+    @     0x155545cdbbbd  xla::DistributedRuntimeCoordinationServiceClient::Shutdown()
+    @     0x15554961dc63  nanobind::detail::func_create<>()::{lambda()#1}::__invoke()
+    @     0x155545c1f7ad  nanobind::detail::nb_func_vectorcall_simple_1()
+    @     0x155554f54f03  PyObject_Vectorcall
+*** Check failure stack trace: ***
+    @     0x1555495c8104  absl::lts_20260107::log_internal::LogMessage::SendToLog()
+    @     0x1555495c8086  absl::lts_20260107::log_internal::LogMessage::Flush()
+    @     0x155549621f9e  std::_Function_handler<>::_M_invoke()
+    @     0x155545cdcf25  std::_Function_handler<>::_M_invoke()
+    @     0x155545cf5b0e  xla::CoordinationServiceAgent::SetError()
+    @     0x155545cfe35b  std::_Function_handler<>::_M_invoke()
+    @     0x155545cfe77b  std::_Function_handler<>::_M_invoke()
+    @     0x155545ce1d41  tsl::RPCState<>::OnCompleted()
+    @     0x155545ce0129  absl::lts_20260107::internal_any_invocable::LocalInvoker<>()
+    @     0x1555494408ff  tsl::(anonymous namespace)::PThread::ThreadFn()
+    @     0x15555488b699  start_thread
+*** Check failure stack trace: ***
+    @     0x1555495c8104  absl::lts_20260107::log_internal::LogMessage::SendToLog()
+    @     0x1555495c8086  absl::lts_20260107::log_internal::LogMessage::Flush()
+    @     0x155549621f9e  std::_Function_handler<>::_M_invoke()
+    @     0x155545cdcf25  std::_Function_handler<>::_M_invoke()
+    @     0x155545cf5b0e  xla::CoordinationServiceAgent::SetError()
+    @     0x155545cf7ecf  xla::CoordinationServiceAgent::Shutdown()
+    @     0x155545cdbbbd  xla::DistributedRuntimeCoordinationServiceClient::Shutdown()
+    @     0x15554961dc63  nanobind::detail::func_create<>()::{lambda()#1}::__invoke()
+    @     0x155545c1f7ad  nanobind::detail::nb_func_vectorcall_simple_1()
+    @     0x155554f54f03  PyObject_Vectorcall
+*** Check failure stack trace: ***
+    @     0x1555495c8104  absl::lts_20260107::log_internal::LogMessage::SendToLog()
+    @     0x1555495c8086  absl::lts_20260107::log_internal::LogMessage::Flush()
+    @     0x155549621f9e  std::_Function_handler<>::_M_invoke()
+    @     0x155545cdcf25  std::_Function_handler<>::_M_invoke()
+    @     0x155545cf5b0e  xla::CoordinationServiceAgent::SetError()
+    @     0x155545cf7ecf  xla::CoordinationServiceAgent::Shutdown()
+    @     0x155545cdbbbd  xla::DistributedRuntimeCoordinationServiceClient::Shutdown()
+    @     0x15554961dc63  nanobind::detail::func_create<>()::{lambda()#1}::__invoke()
+    @     0x155545c1f7ad  nanobind::detail::nb_func_vectorcall_simple_1()
+    @     0x155554f54f03  PyObject_Vectorcall
+*** Check failure stack trace: ***
+    @     0x1555495c8104  absl::lts_20260107::log_internal::LogMessage::SendToLog()
+    @     0x1555495c8086  absl::lts_20260107::log_internal::LogMessage::Flush()
+    @     0x155549621f9e  std::_Function_handler<>::_M_invoke()
+    @     0x155545cdcf25  std::_Function_handler<>::_M_invoke()
+    @     0x155545cf5b0e  xla::CoordinationServiceAgent::SetError()
+    @     0x155545cf7ecf  xla::CoordinationServiceAgent::Shutdown()
+    @     0x155545cdbbbd  xla::DistributedRuntimeCoordinationServiceClient::Shutdown()
+    @     0x15554961dc63  nanobind::detail::func_create<>()::{lambda()#1}::__invoke()
+    @     0x155545c1f7ad  nanobind::detail::nb_func_vectorcall_simple_1()
+    @     0x155554f54f03  PyObject_Vectorcall
+*** Check failure stack trace: ***
+    @     0x1555495c8104  absl::lts_20260107::log_internal::LogMessage::SendToLog()
+    @     0x1555495c8086  absl::lts_20260107::log_internal::LogMessage::Flush()
+    @     0x155549621f9e  std::_Function_handler<>::_M_invoke()
+    @     0x155545cdcf25  std::_Function_handler<>::_M_invoke()
+    @     0x155545cf5b0e  xla::CoordinationServiceAgent::SetError()
+    @     0x155545cf7ecf  xla::CoordinationServiceAgent::Shutdown()
+    @     0x155545cdbbbd  xla::DistributedRuntimeCoordinationServiceClient::Shutdown()
+    @     0x15554961dc63  nanobind::detail::func_create<>()::{lambda()#1}::__invoke()
+    @     0x155545c1f7ad  nanobind::detail::nb_func_vectorcall_simple_1()
+    @     0x155554f54f03  PyObject_Vectorcall
+*** Check failure stack trace: ***
+    @     0x1555495c8104  absl::lts_20260107::log_internal::LogMessage::SendToLog()
+    @     0x1555495c8086  absl::lts_20260107::log_internal::LogMessage::Flush()
+    @     0x155549621f9e  std::_Function_handler<>::_M_invoke()
+    @     0x155545cdcf25  std::_Function_handler<>::_M_invoke()
+    @     0x155545cf5b0e  xla::CoordinationServiceAgent::SetError()
+    @     0x155545cfe35b  std::_Function_handler<>::_M_invoke()
+    @     0x155545cfe77b  std::_Function_handler<>::_M_invoke()
+    @     0x155545ce1d41  tsl::RPCState<>::OnCompleted()
+    @     0x155545ce0129  absl::lts_20260107::internal_any_invocable::LocalInvoker<>()
+    @     0x1555494408ff  tsl::(anonymous namespace)::PThread::ThreadFn()
+    @     0x15555488b699  start_thread
+*** Check failure stack trace: ***
+    @     0x1555495c8104  absl::lts_20260107::log_internal::LogMessage::SendToLog()
+    @     0x1555495c8086  absl::lts_20260107::log_internal::LogMessage::Flush()
+    @     0x155549621f9e  std::_Function_handler<>::_M_invoke()
+    @     0x155545cdcf25  std::_Function_handler<>::_M_invoke()
+    @     0x155545cf5b0e  xla::CoordinationServiceAgent::SetError()
+    @     0x155545cf7ecf  xla::CoordinationServiceAgent::Shutdown()
+    @     0x155545cdbbbd  xla::DistributedRuntimeCoordinationServiceClient::Shutdown()
+    @     0x15554961dc63  nanobind::detail::func_create<>()::{lambda()#1}::__invoke()
+    @     0x155545c1f7ad  nanobind::detail::nb_func_vectorcall_simple_1()
+    @     0x155554f54f03  PyObject_Vectorcall
+*** Check failure stack trace: ***
+    @     0x1555495c8104  absl::lts_20260107::log_internal::LogMessage::SendToLog()
+    @     0x1555495c8086  absl::lts_20260107::log_internal::LogMessage::Flush()
+    @     0x155549621f9e  std::_Function_handler<>::_M_invoke()
+    @     0x155545cdcf25  std::_Function_handler<>::_M_invoke()
+    @     0x155545cf5b0e  xla::CoordinationServiceAgent::SetError()
+    @     0x155545cf7ecf  xla::CoordinationServiceAgent::Shutdown()
+    @     0x155545cdbbbd  xla::DistributedRuntimeCoordinationServiceClient::Shutdown()
+    @     0x15554961dc63  nanobind::detail::func_create<>()::{lambda()#1}::__invoke()
+    @     0x155545c1f7ad  nanobind::detail::nb_func_vectorcall_simple_1()
+    @     0x155554f54f03  PyObject_Vectorcall
+*** Check failure stack trace: ***
+    @     0x1555495c8104  absl::lts_20260107::log_internal::LogMessage::SendToLog()
+    @     0x1555495c8086  absl::lts_20260107::log_internal::LogMessage::Flush()
+    @     0x155549621f9e  std::_Function_handler<>::_M_invoke()
+    @     0x155545cdcf25  std::_Function_handler<>::_M_invoke()
+    @     0x155545cf5b0e  xla::CoordinationServiceAgent::SetError()
+    @     0x155545cf7ecf  xla::CoordinationServiceAgent::Shutdown()
+    @     0x155545cdbbbd  xla::DistributedRuntimeCoordinationServiceClient::Shutdown()
+    @     0x15554961dc63  nanobind::detail::func_create<>()::{lambda()#1}::__invoke()
+    @     0x155545c1f7ad  nanobind::detail::nb_func_vectorcall_simple_1()
+    @     0x155554f54f03  PyObject_Vectorcall
+srun: error: workergpu208: tasks 8-9: Aborted (core dumped)
+srun: Terminating StepId=6907476.6
+slurmstepd: error: *** STEP 6907476.6 ON workergpu202 CANCELLED AT 2026-08-19T20:13:48 ***
+srun: error: workergpu209: tasks 12-14: Aborted (core dumped)
+srun: error: workergpu202: tasks 1-3: Aborted (core dumped)
+srun: error: workergpu208: task 11: Aborted (core dumped)
+srun: error: workergpu209: task 15: Aborted (core dumped)
+srun: error: workergpu207: tasks 4-7: Aborted (core dumped)
+srun: error: workergpu208: task 10: Aborted (core dumped)
+srun: error: workergpu202: task 0: Aborted (core dumped)

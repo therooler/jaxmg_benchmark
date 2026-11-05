@@ -1,0 +1,829 @@
+syevd__float64__g4x4__n262144__t512: cold 1/1 start
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 676, in <module>
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 676, in <module>
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 676, in <module>
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 676, in <module>
+    main()
+    main()
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 665, in main
+    main()
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 665, in main
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 665, in main
+    payload = _run(args)
+    main()
+    payload = _run(args)
+              ^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 619, in _run
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 665, in main
+    payload = _run(args)
+    elapsed, metrics = run_iteration(
+Traceback (most recent call last):
+                       ^^^^^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 507, in _syevd_iteration
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 676, in <module>
+              ^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 619, in _run
+    payload = _run(args)
+              ^^^^^^^^^^
+              ^^^^^^^^^^
+    frobenius_squared = _global_scalar(
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 619, in _run
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 619, in _run
+                        ^^^^^^^^^^^^^^^
+    elapsed, metrics = run_iteration(
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 103, in _global_scalar
+    elapsed, metrics = run_iteration(
+                       ^^^^^^^^^^^^^^
+    elapsed, metrics = run_iteration(
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 507, in _syevd_iteration
+                       ^^^^^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 507, in _syevd_iteration
+Traceback (most recent call last):
+    return float(np.asarray(_global_numpy(value)).reshape(-1)[0])
+                            ^^^^^^^^^^^^^^^^^^^^
+  File "<frozen runpy>", line 198, in _run_module_as_main
+    frobenius_squared = _global_scalar(
+  File "<frozen runpy>", line 88, in _run_code
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 676, in <module>
+    frobenius_squared = _global_scalar(
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 90, in _global_numpy
+                       ^^^^^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 507, in _syevd_iteration
+                        ^^^^^^^^^^^^^^^
+    main()
+                        ^^^^^^^^^^^^^^^
+    return np.asarray(multihost_utils.process_allgather(value, tiled=True))
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 103, in _global_scalar
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 665, in main
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 103, in _global_scalar
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 676, in <module>
+Traceback (most recent call last):
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    frobenius_squared = _global_scalar(
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/mnt/home/rwiersema/jaxmg/.venv/lib/python3.11/site-packages/jax/experimental/multihost_utils.py", line 159, in process_allgather
+                        ^^^^^^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 103, in _global_scalar
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 676, in <module>
+    payload = _run(args)
+    return float(np.asarray(_global_numpy(value)).reshape(-1)[0])
+    return float(np.asarray(_global_numpy(value)).reshape(-1)[0])
+    return float(np.asarray(_global_numpy(value)).reshape(-1)[0])
+              ^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 619, in _run
+                            ^^^^^^^^^^^^^^^^^^^^
+    main()
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 90, in _global_numpy
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 665, in main
+                            ^^^^^^^^^^^^^^^^^^^^
+                            ^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 90, in _global_numpy
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 90, in _global_numpy
+    return jax.tree.map(_pjit, in_tree)
+    return np.asarray(multihost_utils.process_allgather(value, tiled=True))
+    return np.asarray(multihost_utils.process_allgather(value, tiled=True))
+Traceback (most recent call last):
+    elapsed, metrics = run_iteration(
+    return np.asarray(multihost_utils.process_allgather(value, tiled=True))
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+                       ^^^^^^^^^^^^^^
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 676, in <module>
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 507, in _syevd_iteration
+  File "/mnt/home/rwiersema/jaxmg/.venv/lib/python3.11/site-packages/jax/experimental/multihost_utils.py", line 159, in process_allgather
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    payload = _run(args)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/.venv/lib/python3.11/site-packages/jax/experimental/multihost_utils.py", line 159, in process_allgather
+  File "/mnt/home/rwiersema/jaxmg/.venv/lib/python3.11/site-packages/jax/_src/tree.py", line 156, in map
+              ^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 619, in _run
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+    return tree_util.tree_map(f, tree, *rest, is_leaf=is_leaf)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/.venv/lib/python3.11/site-packages/jax/experimental/multihost_utils.py", line 159, in process_allgather
+  File "<frozen runpy>", line 88, in _run_code
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    main()
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 676, in <module>
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 665, in main
+    main()
+  File "/mnt/home/rwiersema/jaxmg/.venv/lib/python3.11/site-packages/jax/_src/tree_util.py", line 394, in tree_map
+    frobenius_squared = _global_scalar(
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 665, in main
+    return jax.tree.map(_pjit, in_tree)
+    return jax.tree.map(_pjit, in_tree)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/.venv/lib/python3.11/site-packages/jax/_src/tree.py", line 156, in map
+  File "/mnt/home/rwiersema/jaxmg/.venv/lib/python3.11/site-packages/jax/_src/tree.py", line 156, in map
+                        ^^^^^^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 103, in _global_scalar
+    payload = _run(args)
+  File "<frozen runpy>", line 88, in _run_code
+    elapsed, metrics = run_iteration(
+                       ^^^^^^^^^^^^^^
+    return tree_util.tree_map(f, tree, *rest, is_leaf=is_leaf)
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 676, in <module>
+    return jax.tree.map(_pjit, in_tree)
+              ^^^^^^^^^^
+    main()
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 507, in _syevd_iteration
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 619, in _run
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 665, in main
+    payload = _run(args)
+    return tree_util.tree_map(f, tree, *rest, is_leaf=is_leaf)
+    return treedef.unflatten(f(*xs) for xs in zip(*all_leaves))
+    return float(np.asarray(_global_numpy(value)).reshape(-1)[0])
+    main()
+    payload = _run(args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/.venv/lib/python3.11/site-packages/jax/_src/tree_util.py", line 394, in tree_map
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/.venv/lib/python3.11/site-packages/jax/_src/tree.py", line 156, in map
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 665, in main
+              ^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 619, in _run
+              ^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 619, in _run
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/.venv/lib/python3.11/site-packages/jax/_src/tree_util.py", line 394, in <genexpr>
+                            ^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/.venv/lib/python3.11/site-packages/jax/_src/tree_util.py", line 394, in tree_map
+    main()
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 90, in _global_numpy
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 665, in main
+    frobenius_squared = _global_scalar(
+    elapsed, metrics = run_iteration(
+                        ^^^^^^^^^^^^^^^
+    return treedef.unflatten(f(*xs) for xs in zip(*all_leaves))
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 103, in _global_scalar
+                             ^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/.venv/lib/python3.11/site-packages/jax/experimental/multihost_utils.py", line 158, in _pjit
+    return np.asarray(multihost_utils.process_allgather(value, tiled=True))
+    elapsed, metrics = run_iteration(
+                       ^^^^^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 507, in _syevd_iteration
+    return tree_util.tree_map(f, tree, *rest, is_leaf=is_leaf)
+                       ^^^^^^^^^^^^^^
+    payload = _run(args)
+    elapsed, metrics = run_iteration(
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 507, in _syevd_iteration
+              ^^^^^^^^^^
+    return float(np.asarray(_global_numpy(value)).reshape(-1)[0])
+    return treedef.unflatten(f(*xs) for xs in zip(*all_leaves))
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 619, in _run
+                       ^^^^^^^^^^^^^^
+    payload = _run(args)
+    return _handle_array_process_allgather(inp, tiled)
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 507, in _syevd_iteration
+    return treedef.unflatten(f(*xs) for xs in zip(*all_leaves))
+    frobenius_squared = _global_scalar(
+                            ^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 90, in _global_numpy
+              ^^^^^^^^^^
+                        ^^^^^^^^^^^^^^^
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/.venv/lib/python3.11/site-packages/jax/_src/tree_util.py", line 394, in tree_map
+    frobenius_squared = _global_scalar(
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 103, in _global_scalar
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/.venv/lib/python3.11/site-packages/jax/experimental/multihost_utils.py", line 159, in process_allgather
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 619, in _run
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    return np.asarray(multihost_utils.process_allgather(value, tiled=True))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/.venv/lib/python3.11/site-packages/jax/_src/tree_util.py", line 394, in <genexpr>
+  File "/mnt/home/rwiersema/jaxmg/.venv/lib/python3.11/site-packages/jax/experimental/multihost_utils.py", line 135, in _handle_array_process_allgather
+    frobenius_squared = _global_scalar(
+                        ^^^^^^^^^^^^^^^
+    elapsed, metrics = run_iteration(
+                        ^^^^^^^^^^^^^^^
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    return float(np.asarray(_global_numpy(value)).reshape(-1)[0])
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 103, in _global_scalar
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 103, in _global_scalar
+                       ^^^^^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 507, in _syevd_iteration
+    return treedef.unflatten(f(*xs) for xs in zip(*all_leaves))
+  File "/mnt/home/rwiersema/jaxmg/.venv/lib/python3.11/site-packages/jax/_src/tree_util.py", line 394, in <genexpr>
+                            ^^^^^^^^^^^^^^^^^^^^
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    elapsed, metrics = run_iteration(
+    return np.asarray(out.addressable_data(0))
+  File "/mnt/home/rwiersema/jaxmg/.venv/lib/python3.11/site-packages/jax/experimental/multihost_utils.py", line 159, in process_allgather
+    return float(np.asarray(_global_numpy(value)).reshape(-1)[0])
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 90, in _global_numpy
+    return jax.tree.map(_pjit, in_tree)
+    return treedef.unflatten(f(*xs) for xs in zip(*all_leaves))
+    frobenius_squared = _global_scalar(
+    return float(np.asarray(_global_numpy(value)).reshape(-1)[0])
+                       ^^^^^^^^^^^^^^
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 507, in _syevd_iteration
+    return np.asarray(multihost_utils.process_allgather(value, tiled=True))
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 676, in <module>
+  File "/mnt/home/rwiersema/jaxmg/.venv/lib/python3.11/site-packages/jax/_src/tree_util.py", line 394, in <genexpr>
+                            ^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 90, in _global_numpy
+  File "/mnt/home/rwiersema/jaxmg/.venv/lib/python3.11/site-packages/jax/_src/array.py", line 414, in __array__
+                            ^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 90, in _global_numpy
+    return treedef.unflatten(f(*xs) for xs in zip(*all_leaves))
+                        ^^^^^^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 103, in _global_scalar
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/.venv/lib/python3.11/site-packages/jax/_src/tree.py", line 156, in map
+                             ^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/.venv/lib/python3.11/site-packages/jax/experimental/multihost_utils.py", line 158, in _pjit
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+    return jax.tree.map(_pjit, in_tree)
+                             ^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 676, in <module>
+    return np.asarray(multihost_utils.process_allgather(value, tiled=True))
+  File "/mnt/home/rwiersema/jaxmg/.venv/lib/python3.11/site-packages/jax/experimental/multihost_utils.py", line 158, in _pjit
+    return float(np.asarray(_global_numpy(value)).reshape(-1)[0])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    return np.asarray(multihost_utils.process_allgather(value, tiled=True))
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/.venv/lib/python3.11/site-packages/jax/experimental/multihost_utils.py", line 159, in process_allgather
+  File "/mnt/home/rwiersema/jaxmg/.venv/lib/python3.11/site-packages/jax/_src/tree.py", line 156, in map
+    return _handle_array_process_allgather(inp, tiled)
+                            ^^^^^^^^^^^^^^^^^^^^
+    return tree_util.tree_map(f, tree, *rest, is_leaf=is_leaf)
+    frobenius_squared = _global_scalar(
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 90, in _global_numpy
+    return treedef.unflatten(f(*xs) for xs in zip(*all_leaves))
+    return _handle_array_process_allgather(inp, tiled)
+    return np.asarray(self._value, dtype=dtype, **kwds)  # pyrefly: ignore[no-matching-overload]
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/.venv/lib/python3.11/site-packages/jax/experimental/multihost_utils.py", line 159, in process_allgather
+                        ^^^^^^^^^^^^^^^
+                      ^^^^^^^^^^^
+    main()
+    return tree_util.tree_map(f, tree, *rest, is_leaf=is_leaf)
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 103, in _global_scalar
+    return np.asarray(multihost_utils.process_allgather(value, tiled=True))
+                             ^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/.venv/lib/python3.11/site-packages/jax/experimental/multihost_utils.py", line 158, in _pjit
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/.venv/lib/python3.11/site-packages/jax/experimental/multihost_utils.py", line 159, in process_allgather
+  File "/mnt/home/rwiersema/jaxmg/.venv/lib/python3.11/site-packages/jax/_src/profiler.py", line 427, in wrapper
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 665, in main
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/.venv/lib/python3.11/site-packages/jax/experimental/multihost_utils.py", line 135, in _handle_array_process_allgather
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/.venv/lib/python3.11/site-packages/jax/_src/tree_util.py", line 394, in tree_map
+    return float(np.asarray(_global_numpy(value)).reshape(-1)[0])
+  File "/mnt/home/rwiersema/jaxmg/.venv/lib/python3.11/site-packages/jax/experimental/multihost_utils.py", line 159, in process_allgather
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    return jax.tree.map(_pjit, in_tree)
+  File "/mnt/home/rwiersema/jaxmg/.venv/lib/python3.11/site-packages/jax/_src/tree_util.py", line 394, in tree_map
+  File "/mnt/home/rwiersema/jaxmg/.venv/lib/python3.11/site-packages/jax/experimental/multihost_utils.py", line 135, in _handle_array_process_allgather
+    return func(*args, **kwargs)
+    return _handle_array_process_allgather(inp, tiled)
+                            ^^^^^^^^^^^^^^^^^^^^
+           ^^^^^^^^^^^^^^^^^^^^^
+    return treedef.unflatten(f(*xs) for xs in zip(*all_leaves))
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 90, in _global_numpy
+    main()
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 665, in main
+    payload = _run(args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/.venv/lib/python3.11/site-packages/jax/experimental/multihost_utils.py", line 135, in _handle_array_process_allgather
+    return np.asarray(out.addressable_data(0))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/.venv/lib/python3.11/site-packages/jax/_src/tree.py", line 156, in map
+    return jax.tree.map(_pjit, in_tree)
+    return jax.tree.map(_pjit, in_tree)
+  File "/mnt/home/rwiersema/jaxmg/.venv/lib/python3.11/site-packages/jax/_src/array.py", line 614, in _value
+              ^^^^^^^^^^
+    return treedef.unflatten(f(*xs) for xs in zip(*all_leaves))
+    return np.asarray(out.addressable_data(0))
+    return jax.tree.map(_pjit, in_tree)
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 619, in _run
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/.venv/lib/python3.11/site-packages/jax/_src/tree_util.py", line 394, in <genexpr>
+    return np.asarray(multihost_utils.process_allgather(value, tiled=True))
+    return np.asarray(out.addressable_data(0))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    payload = _run(args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/.venv/lib/python3.11/site-packages/jax/_src/tree.py", line 156, in map
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/.venv/lib/python3.11/site-packages/jax/_src/array.py", line 414, in __array__
+              ^^^^^^^^^^
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/.venv/lib/python3.11/site-packages/jax/_src/tree_util.py", line 394, in <genexpr>
+  File "/mnt/home/rwiersema/jaxmg/.venv/lib/python3.11/site-packages/jax/_src/tree.py", line 156, in map
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    return treedef.unflatten(f(*xs) for xs in zip(*all_leaves))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    return tree_util.tree_map(f, tree, *rest, is_leaf=is_leaf)
+    elapsed, metrics = run_iteration(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/.venv/lib/python3.11/site-packages/jax/_src/array.py", line 414, in __array__
+  File "/mnt/home/rwiersema/jaxmg/.venv/lib/python3.11/site-packages/jax/_src/array.py", line 414, in __array__
+  File "/mnt/home/rwiersema/jaxmg/.venv/lib/python3.11/site-packages/jax/_src/tree.py", line 156, in map
+                             ^^^^^^
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 619, in _run
+  File "/mnt/home/rwiersema/jaxmg/.venv/lib/python3.11/site-packages/jax/experimental/multihost_utils.py", line 158, in _pjit
+  File "/mnt/home/rwiersema/jaxmg/.venv/lib/python3.11/site-packages/jax/experimental/multihost_utils.py", line 159, in process_allgather
+    npy_value, did_copy = self._single_device_array_to_np_array_did_copy()
+                       ^^^^^^^^^^^^^^
+    return treedef.unflatten(f(*xs) for xs in zip(*all_leaves))
+    return tree_util.tree_map(f, tree, *rest, is_leaf=is_leaf)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/.venv/lib/python3.11/site-packages/jax/_src/tree_util.py", line 394, in tree_map
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 507, in _syevd_iteration
+    return tree_util.tree_map(f, tree, *rest, is_leaf=is_leaf)
+    return np.asarray(self._value, dtype=dtype, **kwds)  # pyrefly: ignore[no-matching-overload]
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    return _handle_array_process_allgather(inp, tiled)
+                      ^^^^^^^^^^^
+    elapsed, metrics = run_iteration(
+                             ^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/.venv/lib/python3.11/site-packages/jax/experimental/multihost_utils.py", line 158, in _pjit
+    return np.asarray(self._value, dtype=dtype, **kwds)  # pyrefly: ignore[no-matching-overload]
+    return tree_util.tree_map(f, tree, *rest, is_leaf=is_leaf)
+    return np.asarray(self._value, dtype=dtype, **kwds)  # pyrefly: ignore[no-matching-overload]
+  File "/mnt/home/rwiersema/jaxmg/.venv/lib/python3.11/site-packages/jax/_src/profiler.py", line 427, in wrapper
+jax.errors.JaxRuntimeError: RESOURCE_EXHAUSTED: Not enough PA budget for allocation: pa_allocated=68721573888B, rounded_size=34359738368B, pa_budget=98951930481B [executable_name='jit__identity_fn']
+    frobenius_squared = _global_scalar(
+                      ^^^^^^^^^^^
+                      ^^^^^^^^^^^
+                       ^^^^^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 507, in _syevd_iteration
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/.venv/lib/python3.11/site-packages/jax/_src/profiler.py", line 427, in wrapper
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/.venv/lib/python3.11/site-packages/jax/_src/profiler.py", line 427, in wrapper
+    return jax.tree.map(_pjit, in_tree)
+    return treedef.unflatten(f(*xs) for xs in zip(*all_leaves))
+                        ^^^^^^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/.venv/lib/python3.11/site-packages/jax/experimental/multihost_utils.py", line 135, in _handle_array_process_allgather
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/.venv/lib/python3.11/site-packages/jax/_src/tree_util.py", line 394, in tree_map
+  File "/mnt/home/rwiersema/jaxmg/.venv/lib/python3.11/site-packages/jax/_src/tree_util.py", line 394, in tree_map
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 103, in _global_scalar
+    return _handle_array_process_allgather(inp, tiled)
+    return func(*args, **kwargs)
+    frobenius_squared = _global_scalar(
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/.venv/lib/python3.11/site-packages/jax/_src/tree_util.py", line 394, in tree_map
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                        ^^^^^^^^^^^^^^^
+  File "<frozen runpy>", line 88, in _run_code
+    return np.asarray(out.addressable_data(0))
+  File "/mnt/home/rwiersema/jaxmg/.venv/lib/python3.11/site-packages/jax/_src/tree.py", line 156, in map
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 103, in _global_scalar
+    return float(np.asarray(_global_numpy(value)).reshape(-1)[0])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/.venv/lib/python3.11/site-packages/jax/_src/array.py", line 614, in _value
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 676, in <module>
+  File "/mnt/home/rwiersema/jaxmg/.venv/lib/python3.11/site-packages/jax/experimental/multihost_utils.py", line 135, in _handle_array_process_allgather
+    return func(*args, **kwargs)
+  File "/mnt/home/rwiersema/jaxmg/.venv/lib/python3.11/site-packages/jax/_src/tree_util.py", line 394, in <genexpr>
+                            ^^^^^^^^^^^^^^^^^^^^
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/.venv/lib/python3.11/site-packages/jax/_src/array.py", line 614, in _value
+    return float(np.asarray(_global_numpy(value)).reshape(-1)[0])
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 90, in _global_numpy
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/.venv/lib/python3.11/site-packages/jax/_src/array.py", line 414, in __array__
+    return treedef.unflatten(f(*xs) for xs in zip(*all_leaves))
+    return treedef.unflatten(f(*xs) for xs in zip(*all_leaves))
+    return np.asarray(multihost_utils.process_allgather(value, tiled=True))
+    return treedef.unflatten(f(*xs) for xs in zip(*all_leaves))
+    return tree_util.tree_map(f, tree, *rest, is_leaf=is_leaf)
+                            ^^^^^^^^^^^^^^^^^^^^
+           ^^^^^^^^^^^^^^^^^^^^^
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/.venv/lib/python3.11/site-packages/jax/_src/tree_util.py", line 394, in <genexpr>
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 90, in _global_numpy
+  File "/mnt/home/rwiersema/jaxmg/.venv/lib/python3.11/site-packages/jax/_src/array.py", line 614, in _value
+    npy_value, did_copy = self._single_device_array_to_np_array_did_copy()
+    return treedef.unflatten(f(*xs) for xs in zip(*all_leaves))
+    main()
+    return np.asarray(out.addressable_data(0))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/.venv/lib/python3.11/site-packages/jax/_src/tree_util.py", line 394, in tree_map
+    return np.asarray(multihost_utils.process_allgather(value, tiled=True))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    npy_value, did_copy = self._single_device_array_to_np_array_did_copy()
+                             ^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/.venv/lib/python3.11/site-packages/jax/experimental/multihost_utils.py", line 158, in _pjit
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 665, in main
+  File "/mnt/home/rwiersema/jaxmg/.venv/lib/python3.11/site-packages/jax/_src/array.py", line 414, in __array__
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+jax.errors.JaxRuntimeError: RESOURCE_EXHAUSTED: Not enough PA budget for allocation: pa_allocated=68721573888B, rounded_size=34359738368B, pa_budget=98951930481B [executable_name='jit__identity_fn']
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/.venv/lib/python3.11/site-packages/jax/_src/tree_util.py", line 394, in <genexpr>
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    return np.asarray(self._value, dtype=dtype, **kwds)  # pyrefly: ignore[no-matching-overload]
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/.venv/lib/python3.11/site-packages/jax/experimental/multihost_utils.py", line 159, in process_allgather
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/.venv/lib/python3.11/site-packages/jax/_src/tree_util.py", line 394, in <genexpr>
+    return treedef.unflatten(f(*xs) for xs in zip(*all_leaves))
+  File "/mnt/home/rwiersema/jaxmg/.venv/lib/python3.11/site-packages/jax/experimental/multihost_utils.py", line 159, in process_allgather
+                      ^^^^^^^^^^^
+jax.errors.JaxRuntimeError: RESOURCE_EXHAUSTED: Not enough PA budget for allocation: pa_allocated=68721573888B, rounded_size=34359738368B, pa_budget=98951930481B [executable_name='jit__identity_fn']
+    return _handle_array_process_allgather(inp, tiled)
+  File "/mnt/home/rwiersema/jaxmg/.venv/lib/python3.11/site-packages/jax/_src/profiler.py", line 427, in wrapper
+    return treedef.unflatten(f(*xs) for xs in zip(*all_leaves))
+    return treedef.unflatten(f(*xs) for xs in zip(*all_leaves))
+    payload = _run(args)
+    npy_value, did_copy = self._single_device_array_to_np_array_did_copy()
+                             ^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/.venv/lib/python3.11/site-packages/jax/experimental/multihost_utils.py", line 158, in _pjit
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    return np.asarray(self._value, dtype=dtype, **kwds)  # pyrefly: ignore[no-matching-overload]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/.venv/lib/python3.11/site-packages/jax/experimental/multihost_utils.py", line 135, in _handle_array_process_allgather
+              ^^^^^^^^^^
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/.venv/lib/python3.11/site-packages/jax/_src/tree_util.py", line 394, in <genexpr>
+                             ^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/.venv/lib/python3.11/site-packages/jax/experimental/multihost_utils.py", line 158, in _pjit
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 619, in _run
+    return treedef.unflatten(f(*xs) for xs in zip(*all_leaves))
+    return _handle_array_process_allgather(inp, tiled)
+    return jax.tree.map(_pjit, in_tree)
+jax.errors.JaxRuntimeError: RESOURCE_EXHAUSTED: Not enough PA budget for allocation: pa_allocated=68721573888B, rounded_size=34359738368B, pa_budget=98951930481B [executable_name='jit__identity_fn']
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    return _handle_array_process_allgather(inp, tiled)
+    return jax.tree.map(_pjit, in_tree)
+    return func(*args, **kwargs)
+    return treedef.unflatten(f(*xs) for xs in zip(*all_leaves))
+    return np.asarray(out.addressable_data(0))
+                      ^^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/.venv/lib/python3.11/site-packages/jax/experimental/multihost_utils.py", line 135, in _handle_array_process_allgather
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    elapsed, metrics = run_iteration(
+                             ^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/.venv/lib/python3.11/site-packages/jax/experimental/multihost_utils.py", line 158, in _pjit
+                             ^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/.venv/lib/python3.11/site-packages/jax/_src/tree.py", line 156, in map
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/.venv/lib/python3.11/site-packages/jax/_src/profiler.py", line 427, in wrapper
+  File "/mnt/home/rwiersema/jaxmg/.venv/lib/python3.11/site-packages/jax/experimental/multihost_utils.py", line 158, in _pjit
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/.venv/lib/python3.11/site-packages/jax/_src/array.py", line 414, in __array__
+  File "/mnt/home/rwiersema/jaxmg/.venv/lib/python3.11/site-packages/jax/_src/tree.py", line 156, in map
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/.venv/lib/python3.11/site-packages/jax/_src/array.py", line 614, in _value
+    return np.asarray(out.addressable_data(0))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                       ^^^^^^^^^^^^^^
+    return _handle_array_process_allgather(inp, tiled)
+    return _handle_array_process_allgather(inp, tiled)
+  File "/mnt/home/rwiersema/jaxmg/.venv/lib/python3.11/site-packages/jax/experimental/multihost_utils.py", line 135, in _handle_array_process_allgather
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 507, in _syevd_iteration
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    return np.asarray(out.addressable_data(0))
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/.venv/lib/python3.11/site-packages/jax/_src/array.py", line 414, in __array__
+    return tree_util.tree_map(f, tree, *rest, is_leaf=is_leaf)
+    npy_value, did_copy = self._single_device_array_to_np_array_did_copy()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/.venv/lib/python3.11/site-packages/jax/experimental/multihost_utils.py", line 135, in _handle_array_process_allgather
+    return np.asarray(self._value, dtype=dtype, **kwds)  # pyrefly: ignore[no-matching-overload]
+    frobenius_squared = _global_scalar(
+  File "/mnt/home/rwiersema/jaxmg/.venv/lib/python3.11/site-packages/jax/_src/array.py", line 614, in _value
+    return np.asarray(out.addressable_data(0))
+                      ^^^^^^^^^^^
+    return tree_util.tree_map(f, tree, *rest, is_leaf=is_leaf)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/.venv/lib/python3.11/site-packages/jax/experimental/multihost_utils.py", line 135, in _handle_array_process_allgather
+    return np.asarray(self._value, dtype=dtype, **kwds)  # pyrefly: ignore[no-matching-overload]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/.venv/lib/python3.11/site-packages/jax/_src/array.py", line 414, in __array__
+                        ^^^^^^^^^^^^^^^
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                      ^^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/.venv/lib/python3.11/site-packages/jax/_src/profiler.py", line 427, in wrapper
+  File "/mnt/home/rwiersema/jaxmg/.venv/lib/python3.11/site-packages/jax/_src/profiler.py", line 427, in wrapper
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 103, in _global_scalar
+jax.errors.JaxRuntimeError: RESOURCE_EXHAUSTED: Not enough PA budget for allocation: pa_allocated=68721573888B, rounded_size=34359738368B, pa_budget=98951930481B [executable_name='jit__identity_fn']
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    return float(np.asarray(_global_numpy(value)).reshape(-1)[0])
+    return np.asarray(out.addressable_data(0))
+  File "/mnt/home/rwiersema/jaxmg/.venv/lib/python3.11/site-packages/jax/_src/array.py", line 414, in __array__
+  File "/mnt/home/rwiersema/jaxmg/.venv/lib/python3.11/site-packages/jax/_src/tree_util.py", line 394, in tree_map
+    npy_value, did_copy = self._single_device_array_to_np_array_did_copy()
+    return func(*args, **kwargs)
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    return np.asarray(self._value, dtype=dtype, **kwds)  # pyrefly: ignore[no-matching-overload]
+    return np.asarray(self._value, dtype=dtype, **kwds)  # pyrefly: ignore[no-matching-overload]
+  File "/mnt/home/rwiersema/jaxmg/.venv/lib/python3.11/site-packages/jax/_src/tree_util.py", line 394, in tree_map
+  File "/mnt/home/rwiersema/jaxmg/.venv/lib/python3.11/site-packages/jax/_src/array.py", line 414, in __array__
+           ^^^^^^^^^^^^^^^^^^^^^
+    return treedef.unflatten(f(*xs) for xs in zip(*all_leaves))
+                            ^^^^^^^^^^^^^^^^^^^^
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/.venv/lib/python3.11/site-packages/jax/_src/array.py", line 614, in _value
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/.venv/lib/python3.11/site-packages/jax/_src/array.py", line 614, in _value
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 90, in _global_numpy
+jax.errors.JaxRuntimeError: RESOURCE_EXHAUSTED: Not enough PA budget for allocation: pa_allocated=68721573888B, rounded_size=34359738368B, pa_budget=98951930481B [executable_name='jit__identity_fn']
+                      ^^^^^^^^^^^
+    return np.asarray(self._value, dtype=dtype, **kwds)  # pyrefly: ignore[no-matching-overload]
+  File "/mnt/home/rwiersema/jaxmg/.venv/lib/python3.11/site-packages/jax/_src/profiler.py", line 427, in wrapper
+                      ^^^^^^^^^^^
+    return np.asarray(multihost_utils.process_allgather(value, tiled=True))
+                      ^^^^^^^^^^^
+    return func(*args, **kwargs)
+  File "/mnt/home/rwiersema/jaxmg/.venv/lib/python3.11/site-packages/jax/_src/profiler.py", line 427, in wrapper
+  File "/mnt/home/rwiersema/jaxmg/.venv/lib/python3.11/site-packages/jax/_src/profiler.py", line 427, in wrapper
+    npy_value, did_copy = self._single_device_array_to_np_array_did_copy()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    return treedef.unflatten(f(*xs) for xs in zip(*all_leaves))
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/.venv/lib/python3.11/site-packages/jax/_src/tree_util.py", line 394, in <genexpr>
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/.venv/lib/python3.11/site-packages/jax/_src/array.py", line 614, in _value
+  File "/mnt/home/rwiersema/jaxmg/.venv/lib/python3.11/site-packages/jax/_src/array.py", line 614, in _value
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    npy_value, did_copy = self._single_device_array_to_np_array_did_copy()
+jax.errors.JaxRuntimeError: RESOURCE_EXHAUSTED: Not enough PA budget for allocation: pa_allocated=68721573888B, rounded_size=34359738368B, pa_budget=98951930481B [executable_name='jit__identity_fn']
+    npy_value, did_copy = self._single_device_array_to_np_array_did_copy()
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/.venv/lib/python3.11/site-packages/jax/experimental/multihost_utils.py", line 159, in process_allgather
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    npy_value, did_copy = self._single_device_array_to_np_array_did_copy()
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+jax.errors.JaxRuntimeError: RESOURCE_EXHAUSTED: Not enough PA budget for allocation: pa_allocated=68721573888B, rounded_size=34359738368B, pa_budget=98951930481B [executable_name='jit__identity_fn']
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    return treedef.unflatten(f(*xs) for xs in zip(*all_leaves))
+  File "/mnt/home/rwiersema/jaxmg/.venv/lib/python3.11/site-packages/jax/_src/tree_util.py", line 394, in <genexpr>
+jax.errors.JaxRuntimeError: RESOURCE_EXHAUSTED: Not enough PA budget for allocation: pa_allocated=68721573888B, rounded_size=34359738368B, pa_budget=98951930481B [executable_name='jit__identity_fn']
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/.venv/lib/python3.11/site-packages/jax/_src/array.py", line 614, in _value
+                             ^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/.venv/lib/python3.11/site-packages/jax/experimental/multihost_utils.py", line 158, in _pjit
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    return jax.tree.map(_pjit, in_tree)
+jax.errors.JaxRuntimeError: RESOURCE_EXHAUSTED: Not enough PA budget for allocation: pa_allocated=68721573888B, rounded_size=34359738368B, pa_budget=98951930481B [executable_name='jit__identity_fn']
+    return _handle_array_process_allgather(inp, tiled)
+    npy_value, did_copy = self._single_device_array_to_np_array_did_copy()
+    return treedef.unflatten(f(*xs) for xs in zip(*all_leaves))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                             ^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/.venv/lib/python3.11/site-packages/jax/experimental/multihost_utils.py", line 158, in _pjit
+  File "/mnt/home/rwiersema/jaxmg/.venv/lib/python3.11/site-packages/jax/experimental/multihost_utils.py", line 135, in _handle_array_process_allgather
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/.venv/lib/python3.11/site-packages/jax/_src/tree.py", line 156, in map
+jax.errors.JaxRuntimeError: RESOURCE_EXHAUSTED: Not enough PA budget for allocation: pa_allocated=68721573888B, rounded_size=34359738368B, pa_budget=98951930481B [executable_name='jit__identity_fn']
+    return np.asarray(out.addressable_data(0))
+    return _handle_array_process_allgather(inp, tiled)
+    return tree_util.tree_map(f, tree, *rest, is_leaf=is_leaf)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/.venv/lib/python3.11/site-packages/jax/_src/array.py", line 414, in __array__
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/.venv/lib/python3.11/site-packages/jax/experimental/multihost_utils.py", line 135, in _handle_array_process_allgather
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/.venv/lib/python3.11/site-packages/jax/_src/tree_util.py", line 394, in tree_map
+    return np.asarray(self._value, dtype=dtype, **kwds)  # pyrefly: ignore[no-matching-overload]
+    return np.asarray(out.addressable_data(0))
+                      ^^^^^^^^^^^
+    return treedef.unflatten(f(*xs) for xs in zip(*all_leaves))
+  File "/mnt/home/rwiersema/jaxmg/.venv/lib/python3.11/site-packages/jax/_src/profiler.py", line 427, in wrapper
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/.venv/lib/python3.11/site-packages/jax/_src/array.py", line 414, in __array__
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    return func(*args, **kwargs)
+  File "/mnt/home/rwiersema/jaxmg/.venv/lib/python3.11/site-packages/jax/_src/tree_util.py", line 394, in <genexpr>
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/.venv/lib/python3.11/site-packages/jax/_src/array.py", line 614, in _value
+    return np.asarray(self._value, dtype=dtype, **kwds)  # pyrefly: ignore[no-matching-overload]
+    return treedef.unflatten(f(*xs) for xs in zip(*all_leaves))
+                      ^^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/.venv/lib/python3.11/site-packages/jax/_src/profiler.py", line 427, in wrapper
+                             ^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/.venv/lib/python3.11/site-packages/jax/experimental/multihost_utils.py", line 158, in _pjit
+    npy_value, did_copy = self._single_device_array_to_np_array_did_copy()
+    return _handle_array_process_allgather(inp, tiled)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+jax.errors.JaxRuntimeError: RESOURCE_EXHAUSTED: Not enough PA budget for allocation: pa_allocated=68721573888B, rounded_size=34359738368B, pa_budget=98951930481B [executable_name='jit__identity_fn']
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/.venv/lib/python3.11/site-packages/jax/experimental/multihost_utils.py", line 135, in _handle_array_process_allgather
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/.venv/lib/python3.11/site-packages/jax/_src/array.py", line 614, in _value
+    return np.asarray(out.addressable_data(0))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/.venv/lib/python3.11/site-packages/jax/_src/array.py", line 414, in __array__
+    npy_value, did_copy = self._single_device_array_to_np_array_did_copy()
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    return np.asarray(self._value, dtype=dtype, **kwds)  # pyrefly: ignore[no-matching-overload]
+jax.errors.JaxRuntimeError: RESOURCE_EXHAUSTED: Not enough PA budget for allocation: pa_allocated=68721573888B, rounded_size=34359738368B, pa_budget=98951930481B [executable_name='jit__identity_fn']
+                      ^^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/.venv/lib/python3.11/site-packages/jax/_src/profiler.py", line 427, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/.venv/lib/python3.11/site-packages/jax/_src/array.py", line 614, in _value
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 676, in <module>
+    npy_value, did_copy = self._single_device_array_to_np_array_did_copy()
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+jax.errors.JaxRuntimeError: RESOURCE_EXHAUSTED: Not enough PA budget for allocation: pa_allocated=68721573888B, rounded_size=34359738368B, pa_budget=98951930481B [executable_name='jit__identity_fn']
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 676, in <module>
+    main()
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 665, in main
+    main()
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 665, in main
+    payload = _run(args)
+              ^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 619, in _run
+    payload = _run(args)
+              ^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 619, in _run
+    elapsed, metrics = run_iteration(
+                       ^^^^^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 507, in _syevd_iteration
+    elapsed, metrics = run_iteration(
+                       ^^^^^^^^^^^^^^
+    frobenius_squared = _global_scalar(
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 507, in _syevd_iteration
+                        ^^^^^^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 103, in _global_scalar
+    frobenius_squared = _global_scalar(
+    return float(np.asarray(_global_numpy(value)).reshape(-1)[0])
+                        ^^^^^^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 103, in _global_scalar
+                            ^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 90, in _global_numpy
+    return float(np.asarray(_global_numpy(value)).reshape(-1)[0])
+    return np.asarray(multihost_utils.process_allgather(value, tiled=True))
+                            ^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 90, in _global_numpy
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    return np.asarray(multihost_utils.process_allgather(value, tiled=True))
+  File "/mnt/home/rwiersema/jaxmg/.venv/lib/python3.11/site-packages/jax/experimental/multihost_utils.py", line 159, in process_allgather
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/.venv/lib/python3.11/site-packages/jax/experimental/multihost_utils.py", line 159, in process_allgather
+    return jax.tree.map(_pjit, in_tree)
+    return jax.tree.map(_pjit, in_tree)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/.venv/lib/python3.11/site-packages/jax/_src/tree.py", line 156, in map
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/.venv/lib/python3.11/site-packages/jax/_src/tree.py", line 156, in map
+    return tree_util.tree_map(f, tree, *rest, is_leaf=is_leaf)
+    return tree_util.tree_map(f, tree, *rest, is_leaf=is_leaf)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/.venv/lib/python3.11/site-packages/jax/_src/tree_util.py", line 394, in tree_map
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/.venv/lib/python3.11/site-packages/jax/_src/tree_util.py", line 394, in tree_map
+    return treedef.unflatten(f(*xs) for xs in zip(*all_leaves))
+    return treedef.unflatten(f(*xs) for xs in zip(*all_leaves))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/.venv/lib/python3.11/site-packages/jax/_src/tree_util.py", line 394, in <genexpr>
+  File "/mnt/home/rwiersema/jaxmg/.venv/lib/python3.11/site-packages/jax/_src/tree_util.py", line 394, in <genexpr>
+    return treedef.unflatten(f(*xs) for xs in zip(*all_leaves))
+    return treedef.unflatten(f(*xs) for xs in zip(*all_leaves))
+                             ^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/.venv/lib/python3.11/site-packages/jax/experimental/multihost_utils.py", line 158, in _pjit
+                             ^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/.venv/lib/python3.11/site-packages/jax/experimental/multihost_utils.py", line 158, in _pjit
+    return _handle_array_process_allgather(inp, tiled)
+    return _handle_array_process_allgather(inp, tiled)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/.venv/lib/python3.11/site-packages/jax/experimental/multihost_utils.py", line 135, in _handle_array_process_allgather
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/.venv/lib/python3.11/site-packages/jax/experimental/multihost_utils.py", line 135, in _handle_array_process_allgather
+    return np.asarray(out.addressable_data(0))
+    return np.asarray(out.addressable_data(0))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/.venv/lib/python3.11/site-packages/jax/_src/array.py", line 414, in __array__
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/.venv/lib/python3.11/site-packages/jax/_src/array.py", line 414, in __array__
+    return np.asarray(self._value, dtype=dtype, **kwds)  # pyrefly: ignore[no-matching-overload]
+                      ^^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/.venv/lib/python3.11/site-packages/jax/_src/profiler.py", line 427, in wrapper
+    return np.asarray(self._value, dtype=dtype, **kwds)  # pyrefly: ignore[no-matching-overload]
+                      ^^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/.venv/lib/python3.11/site-packages/jax/_src/profiler.py", line 427, in wrapper
+    return func(*args, **kwargs)
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/.venv/lib/python3.11/site-packages/jax/_src/array.py", line 614, in _value
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/.venv/lib/python3.11/site-packages/jax/_src/array.py", line 614, in _value
+    npy_value, did_copy = self._single_device_array_to_np_array_did_copy()
+    npy_value, did_copy = self._single_device_array_to_np_array_did_copy()
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+jax.errors.JaxRuntimeError: RESOURCE_EXHAUSTED: Not enough PA budget for allocation: pa_allocated=68721573888B, rounded_size=34359738368B, pa_budget=98951930481B [executable_name='jit__identity_fn']
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+jax.errors.JaxRuntimeError: RESOURCE_EXHAUSTED: Not enough PA budget for allocation: pa_allocated=68721573888B, rounded_size=34359738368B, pa_budget=98951930481B [executable_name='jit__identity_fn']
+W0821 15:24:47.760503  408191 pjrt_client.cc:1613] WatchTasksAsync failed for task 0: UNAVAILABLE: failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.155:62420: Failed to connect to remote host: Connection refused
+Additional GRPC error information from remote target coordination_service while calling /xla.coordination.CoordinationService/WatchTasks:
+:UNKNOWN:Error received from peer  {grpc_message:"failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.155:62420: Failed to connect to remote host: Connection refused", grpc_status:14}
+W0821 15:24:47.760493 2707242 pjrt_client.cc:1613] WatchTasksAsync failed for task 13: UNAVAILABLE: failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.155:62420: Failed to connect to remote host: Connection refused
+Additional GRPC error information from remote target coordination_service while calling /xla.coordination.CoordinationService/WatchTasks:
+:UNKNOWN:Error received from peer  {grpc_status:14, grpc_message:"failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.155:62420: Failed to connect to remote host: Connection refused"}
+W0821 15:24:47.760641 2714532 pjrt_client.cc:1613] WatchTasksAsync failed for task 8: UNAVAILABLE: failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.155:62420: Failed to connect to remote host: Connection refused
+Additional GRPC error information from remote target coordination_service while calling /xla.coordination.CoordinationService/WatchTasks:
+:UNKNOWN:Error received from peer  {grpc_status:14, grpc_message:"failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.155:62420: Failed to connect to remote host: Connection refused"}
+W0821 15:24:47.760632 2714533 pjrt_client.cc:1613] WatchTasksAsync failed for task 9: UNAVAILABLE: failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.155:62420: Failed to connect to remote host: Connection refused
+Additional GRPC error information from remote target coordination_service while calling /xla.coordination.CoordinationService/WatchTasks:
+:UNKNOWN:Error received from peer  {grpc_status:14, grpc_message:"failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.155:62420: Failed to connect to remote host: Connection refused"}
+W0821 15:24:47.760754  408195 pjrt_client.cc:1613] WatchTasksAsync failed for task 2: UNAVAILABLE: failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.155:62420: Failed to connect to remote host: Connection refused
+Additional GRPC error information from remote target coordination_service while calling /xla.coordination.CoordinationService/WatchTasks:
+:UNKNOWN:Error received from peer  {grpc_message:"failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.155:62420: Failed to connect to remote host: Connection refused", grpc_status:14}
+W0821 15:24:47.760717 2813673 pjrt_client.cc:1613] WatchTasksAsync failed for task 7: UNAVAILABLE: failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.155:62420: Failed to connect to remote host: Connection refused
+Additional GRPC error information from remote target coordination_service while calling /xla.coordination.CoordinationService/WatchTasks:
+:UNKNOWN:Error received from peer  {grpc_status:14, grpc_message:"failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.155:62420: Failed to connect to remote host: Connection refused"}
+W0821 15:24:47.760688 2707243 pjrt_client.cc:1613] WatchTasksAsync failed for task 12: UNAVAILABLE: failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.155:62420: Failed to connect to remote host: Connection refused
+Additional GRPC error information from remote target coordination_service while calling /xla.coordination.CoordinationService/WatchTasks:
+:UNKNOWN:Error received from peer  {grpc_status:14, grpc_message:"failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.155:62420: Failed to connect to remote host: Connection refused"}
+W0821 15:24:47.760650 2707244 pjrt_client.cc:1613] WatchTasksAsync failed for task 14: UNAVAILABLE: failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.155:62420: Failed to connect to remote host: Connection refused
+Additional GRPC error information from remote target coordination_service while calling /xla.coordination.CoordinationService/WatchTasks:
+:UNKNOWN:Error received from peer  {grpc_message:"failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.155:62420: Failed to connect to remote host: Connection refused", grpc_status:14}
+W0821 15:24:47.760855  408197 pjrt_client.cc:1613] WatchTasksAsync failed for task 1: UNAVAILABLE: failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.155:62420: Failed to connect to remote host: Connection refused
+Additional GRPC error information from remote target coordination_service while calling /xla.coordination.CoordinationService/WatchTasks:
+:UNKNOWN:Error received from peer  {grpc_message:"failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.155:62420: Failed to connect to remote host: Connection refused", grpc_status:14}
+W0821 15:24:47.761040 2813674 pjrt_client.cc:1613] WatchTasksAsync failed for task 6: UNAVAILABLE: failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.155:62420: Failed to connect to remote host: Connection refused
+Additional GRPC error information from remote target coordination_service while calling /xla.coordination.CoordinationService/WatchTasks:
+:UNKNOWN:Error received from peer  {grpc_message:"failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.155:62420: Failed to connect to remote host: Connection refused", grpc_status:14}
+W0821 15:24:47.760987 2714535 pjrt_client.cc:1613] WatchTasksAsync failed for task 11: UNAVAILABLE: failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.155:62420: Failed to connect to remote host: Connection refused
+Additional GRPC error information from remote target coordination_service while calling /xla.coordination.CoordinationService/WatchTasks:
+:UNKNOWN:Error received from peer  {grpc_status:14, grpc_message:"failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.155:62420: Failed to connect to remote host: Connection refused"}
+W0821 15:24:47.761109 2813672 pjrt_client.cc:1613] WatchTasksAsync failed for task 5: UNAVAILABLE: failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.155:62420: Failed to connect to remote host: Connection refused
+Additional GRPC error information from remote target coordination_service while calling /xla.coordination.CoordinationService/WatchTasks:
+:UNKNOWN:Error received from peer  {grpc_status:14, grpc_message:"failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.155:62420: Failed to connect to remote host: Connection refused"}
+W0821 15:24:47.761022 2714534 pjrt_client.cc:1613] WatchTasksAsync failed for task 10: UNAVAILABLE: failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.155:62420: Failed to connect to remote host: Connection refused
+Additional GRPC error information from remote target coordination_service while calling /xla.coordination.CoordinationService/WatchTasks:
+:UNKNOWN:Error received from peer  {grpc_status:14, grpc_message:"failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.155:62420: Failed to connect to remote host: Connection refused"}
+W0821 15:24:47.761076  408196 pjrt_client.cc:1613] WatchTasksAsync failed for task 3: UNAVAILABLE: failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.155:62420: Failed to connect to remote host: Connection refused
+Additional GRPC error information from remote target coordination_service while calling /xla.coordination.CoordinationService/WatchTasks:
+:UNKNOWN:Error received from peer  {grpc_message:"failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.155:62420: Failed to connect to remote host: Connection refused", grpc_status:14}
+W0821 15:24:47.761181 2813675 pjrt_client.cc:1613] WatchTasksAsync failed for task 4: UNAVAILABLE: failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.155:62420: Failed to connect to remote host: Connection refused
+Additional GRPC error information from remote target coordination_service while calling /xla.coordination.CoordinationService/WatchTasks:
+:UNKNOWN:Error received from peer  {grpc_status:14, grpc_message:"failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.155:62420: Failed to connect to remote host: Connection refused"}
+W0821 15:24:47.761279 2707245 pjrt_client.cc:1613] WatchTasksAsync failed for task 15: UNAVAILABLE: failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.155:62420: Failed to connect to remote host: Connection refused
+Additional GRPC error information from remote target coordination_service while calling /xla.coordination.CoordinationService/WatchTasks:
+:UNKNOWN:Error received from peer  {grpc_status:14, grpc_message:"failed to connect to all addresses; last error: UNKNOWN: ipv4:10.250.149.155:62420: Failed to connect to remote host: Connection refused"}
+srun: error: workergpu211: task 3: Exited with exit code 1
+srun: Terminating StepId=6923220.30
+slurmstepd: error: *** STEP 6923220.30 ON workergpu211 CANCELLED AT 2026-08-21T15:24:48 ***
+srun: error: workergpu221: tasks 4-5: Exited with exit code 1
+srun: error: workergpu222: tasks 8-9: Exited with exit code 1
+srun: error: workergpu223: tasks 12,14-15: Exited with exit code 1
+srun: error: workergpu221: task 6: Exited with exit code 1
+srun: error: workergpu221: task 7: Exited with exit code 1
+srun: error: workergpu223: task 13: Exited with exit code 1
+srun: error: workergpu222: task 10: Exited with exit code 1
+srun: error: workergpu222: task 11: Exited with exit code 1
+srun: error: workergpu211: tasks 0-2: Exited with exit code 1

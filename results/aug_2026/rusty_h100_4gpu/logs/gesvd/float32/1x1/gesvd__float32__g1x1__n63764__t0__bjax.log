@@ -1,0 +1,96 @@
+gesvd__float32__g1x1__n63764__t0__bjax: cold 1/1 start
+W0831 02:07:17.799760 1588152 hlo_rematerialization.cc:3233] Can't reduce memory use below 72.26GiB (77589449247 bytes) by rematerialization; only reduced to 90.88GiB (97580854884 bytes), down from 90.88GiB (97580854884 bytes) originally
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 931, in <module>
+    main()
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 920, in main
+    payload = _run(args)
+              ^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 850, in _run
+    elapsed, metrics = run_iteration(
+                       ^^^^^^^^^^^^^^
+  File "/mnt/home/rwiersema/jaxmg/jaxmg_benchmark/benchmark/cusolvermp/run_case.py", line 672, in _native_gesvd_iteration
+    array.block_until_ready()
+jax.errors.JaxRuntimeError: INTERNAL: jaxlib/gpu/solver_kernels_ffi.cc:1029: operation cusolverDnXgesvd( handle.get(), params, job, job, m, n, aType, out_data, m, sType, s_data, aType, u_data, m, aType, vt_data, n, aType, workspaceOnDevice, workspaceInBytesOnDevice, workspaceOnHost.get(), workspaceInBytesOnHost, info_data) failed: cuSolver internal error [executable_name='jit__lambda']
+E0831 02:13:39.796242 1588152 cuda_executor.cc:279] [0] failed to unload module 0x33a6310; leaking: INTERNAL: CUDA error: : CUDA_ERROR_ILLEGAL_ADDRESS: an illegal memory access was encountered
+E0831 02:13:39.796345 1588152 cuda_executor.cc:279] [0] failed to unload module 0x33a88b0; leaking: INTERNAL: CUDA error: : CUDA_ERROR_ILLEGAL_ADDRESS: an illegal memory access was encountered
+E0831 02:13:39.797089 1588152 cuda_executor.cc:279] [0] failed to unload module 0x3e127c0; leaking: INTERNAL: CUDA error: : CUDA_ERROR_ILLEGAL_ADDRESS: an illegal memory access was encountered
+E0831 02:13:39.797280 1588152 cuda_executor.cc:279] [0] failed to unload module 0x450fd70; leaking: INTERNAL: CUDA error: : CUDA_ERROR_ILLEGAL_ADDRESS: an illegal memory access was encountered
+E0831 02:13:39.797382 1588152 cuda_executor.cc:279] [0] failed to unload module 0x4667700; leaking: INTERNAL: CUDA error: : CUDA_ERROR_ILLEGAL_ADDRESS: an illegal memory access was encountered
+E0831 02:13:39.797431 1588152 cuda_executor.cc:279] [0] failed to unload module 0x4874960; leaking: INTERNAL: CUDA error: : CUDA_ERROR_ILLEGAL_ADDRESS: an illegal memory access was encountered
+E0831 02:13:39.797749 1588152 cuda_executor.cc:279] [0] failed to unload module 0x4a24120; leaking: INTERNAL: CUDA error: : CUDA_ERROR_ILLEGAL_ADDRESS: an illegal memory access was encountered
+E0831 02:13:39.797784 1588152 cuda_executor.cc:279] [0] failed to unload module 0x49fc9c0; leaking: INTERNAL: CUDA error: : CUDA_ERROR_ILLEGAL_ADDRESS: an illegal memory access was encountered
+E0831 02:13:39.797802 1588152 cuda_executor.cc:279] [0] failed to unload module 0x4ab6b20; leaking: INTERNAL: CUDA error: : CUDA_ERROR_ILLEGAL_ADDRESS: an illegal memory access was encountered
+E0831 02:13:39.821626 1588152 tracked_device_buffer.cc:89] Buffer deallocation failed: INTERNAL: CUDA error: cuStreamWriteValue64: CUDA_ERROR_ILLEGAL_ADDRESS: an illegal memory access was encountered
+E0831 02:13:39.821657 1588152 tracked_device_buffer.cc:89] Buffer deallocation failed: INTERNAL: CUDA error: cuStreamWriteValue64: CUDA_ERROR_ILLEGAL_ADDRESS: an illegal memory access was encountered
+E0831 02:13:39.821668 1588152 tracked_device_buffer.cc:89] Buffer deallocation failed: INTERNAL: CUDA error: cuStreamWriteValue64: CUDA_ERROR_ILLEGAL_ADDRESS: an illegal memory access was encountered
+E0831 02:13:39.834229 1588152 local_device_state.cc:166] Error when closing device: INTERNAL: CUDA error: Could not synchronize CUDA stream: CUDA_ERROR_ILLEGAL_ADDRESS: an illegal memory access was encountered
+E0831 02:13:39.834266 1588152 cuda_stream.cc:252] stream not idle on destroy: INTERNAL: CUDA error: : CUDA_ERROR_ILLEGAL_ADDRESS: an illegal memory access was encountered
+E0831 02:13:39.834279 1588152 cuda_stream.cc:257] failed to destroy CUDA stream for executor 0x1552180014a0: INTERNAL: CUDA error: : CUDA_ERROR_ILLEGAL_ADDRESS: an illegal memory access was encountered
+E0831 02:13:39.834290 1588152 cuda_event.cc:49] CUDA error: Error destroying CUDA event: CUDA_ERROR_ILLEGAL_ADDRESS: an illegal memory access was encountered
+E0831 02:13:39.834294 1588152 cuda_stream.cc:252] stream not idle on destroy: INTERNAL: CUDA error: : CUDA_ERROR_ILLEGAL_ADDRESS: an illegal memory access was encountered
+E0831 02:13:39.834297 1588152 cuda_stream.cc:257] failed to destroy CUDA stream for executor 0x1552180014a0: INTERNAL: CUDA error: : CUDA_ERROR_ILLEGAL_ADDRESS: an illegal memory access was encountered
+E0831 02:13:39.834300 1588152 cuda_event.cc:49] CUDA error: Error destroying CUDA event: CUDA_ERROR_ILLEGAL_ADDRESS: an illegal memory access was encountered
+E0831 02:13:39.834306 1588152 cuda_stream.cc:252] stream not idle on destroy: INTERNAL: CUDA error: : CUDA_ERROR_ILLEGAL_ADDRESS: an illegal memory access was encountered
+E0831 02:13:39.834308 1588152 cuda_stream.cc:257] failed to destroy CUDA stream for executor 0x1552180014a0: INTERNAL: CUDA error: : CUDA_ERROR_ILLEGAL_ADDRESS: an illegal memory access was encountered
+E0831 02:13:39.834311 1588152 cuda_event.cc:49] CUDA error: Error destroying CUDA event: CUDA_ERROR_ILLEGAL_ADDRESS: an illegal memory access was encountered
+E0831 02:13:39.834317 1588152 cuda_stream.cc:252] stream not idle on destroy: INTERNAL: CUDA error: : CUDA_ERROR_ILLEGAL_ADDRESS: an illegal memory access was encountered
+E0831 02:13:39.834320 1588152 cuda_stream.cc:257] failed to destroy CUDA stream for executor 0x1552180014a0: INTERNAL: CUDA error: : CUDA_ERROR_ILLEGAL_ADDRESS: an illegal memory access was encountered
+E0831 02:13:39.834322 1588152 cuda_event.cc:49] CUDA error: Error destroying CUDA event: CUDA_ERROR_ILLEGAL_ADDRESS: an illegal memory access was encountered
+E0831 02:13:39.834327 1588152 cuda_stream.cc:252] stream not idle on destroy: INTERNAL: CUDA error: : CUDA_ERROR_ILLEGAL_ADDRESS: an illegal memory access was encountered
+E0831 02:13:39.834330 1588152 cuda_stream.cc:257] failed to destroy CUDA stream for executor 0x1552180014a0: INTERNAL: CUDA error: : CUDA_ERROR_ILLEGAL_ADDRESS: an illegal memory access was encountered
+E0831 02:13:39.834332 1588152 cuda_event.cc:49] CUDA error: Error destroying CUDA event: CUDA_ERROR_ILLEGAL_ADDRESS: an illegal memory access was encountered
+E0831 02:13:39.834338 1588152 cuda_stream.cc:252] stream not idle on destroy: INTERNAL: CUDA error: : CUDA_ERROR_ILLEGAL_ADDRESS: an illegal memory access was encountered
+E0831 02:13:39.834341 1588152 cuda_stream.cc:257] failed to destroy CUDA stream for executor 0x1552180014a0: INTERNAL: CUDA error: : CUDA_ERROR_ILLEGAL_ADDRESS: an illegal memory access was encountered
+E0831 02:13:39.834344 1588152 cuda_event.cc:49] CUDA error: Error destroying CUDA event: CUDA_ERROR_ILLEGAL_ADDRESS: an illegal memory access was encountered
+E0831 02:13:39.834349 1588152 cuda_stream.cc:252] stream not idle on destroy: INTERNAL: CUDA error: : CUDA_ERROR_ILLEGAL_ADDRESS: an illegal memory access was encountered
+E0831 02:13:39.834352 1588152 cuda_stream.cc:257] failed to destroy CUDA stream for executor 0x1552180014a0: INTERNAL: CUDA error: : CUDA_ERROR_ILLEGAL_ADDRESS: an illegal memory access was encountered
+E0831 02:13:39.834354 1588152 cuda_event.cc:49] CUDA error: Error destroying CUDA event: CUDA_ERROR_ILLEGAL_ADDRESS: an illegal memory access was encountered
+E0831 02:13:39.834360 1588152 cuda_stream.cc:252] stream not idle on destroy: INTERNAL: CUDA error: : CUDA_ERROR_ILLEGAL_ADDRESS: an illegal memory access was encountered
+E0831 02:13:39.834362 1588152 cuda_stream.cc:257] failed to destroy CUDA stream for executor 0x1552180014a0: INTERNAL: CUDA error: : CUDA_ERROR_ILLEGAL_ADDRESS: an illegal memory access was encountered
+E0831 02:13:39.834365 1588152 cuda_event.cc:49] CUDA error: Error destroying CUDA event: CUDA_ERROR_ILLEGAL_ADDRESS: an illegal memory access was encountered
+E0831 02:13:39.834370 1588152 cuda_stream.cc:252] stream not idle on destroy: INTERNAL: CUDA error: : CUDA_ERROR_ILLEGAL_ADDRESS: an illegal memory access was encountered
+E0831 02:13:39.834373 1588152 cuda_stream.cc:257] failed to destroy CUDA stream for executor 0x1552180014a0: INTERNAL: CUDA error: : CUDA_ERROR_ILLEGAL_ADDRESS: an illegal memory access was encountered
+E0831 02:13:39.834376 1588152 cuda_event.cc:49] CUDA error: Error destroying CUDA event: CUDA_ERROR_ILLEGAL_ADDRESS: an illegal memory access was encountered
+E0831 02:13:39.834381 1588152 cuda_stream.cc:252] stream not idle on destroy: INTERNAL: CUDA error: : CUDA_ERROR_ILLEGAL_ADDRESS: an illegal memory access was encountered
+E0831 02:13:39.834384 1588152 cuda_stream.cc:257] failed to destroy CUDA stream for executor 0x1552180014a0: INTERNAL: CUDA error: : CUDA_ERROR_ILLEGAL_ADDRESS: an illegal memory access was encountered
+E0831 02:13:39.834386 1588152 cuda_event.cc:49] CUDA error: Error destroying CUDA event: CUDA_ERROR_ILLEGAL_ADDRESS: an illegal memory access was encountered
+E0831 02:13:39.834392 1588152 cuda_stream.cc:252] stream not idle on destroy: INTERNAL: CUDA error: : CUDA_ERROR_ILLEGAL_ADDRESS: an illegal memory access was encountered
+E0831 02:13:39.834394 1588152 cuda_stream.cc:257] failed to destroy CUDA stream for executor 0x1552180014a0: INTERNAL: CUDA error: : CUDA_ERROR_ILLEGAL_ADDRESS: an illegal memory access was encountered
+E0831 02:13:39.834397 1588152 cuda_event.cc:49] CUDA error: Error destroying CUDA event: CUDA_ERROR_ILLEGAL_ADDRESS: an illegal memory access was encountered
+E0831 02:13:39.834403 1588152 cuda_stream.cc:252] stream not idle on destroy: INTERNAL: CUDA error: : CUDA_ERROR_ILLEGAL_ADDRESS: an illegal memory access was encountered
+E0831 02:13:39.834405 1588152 cuda_stream.cc:257] failed to destroy CUDA stream for executor 0x1552180014a0: INTERNAL: CUDA error: : CUDA_ERROR_ILLEGAL_ADDRESS: an illegal memory access was encountered
+E0831 02:13:39.834408 1588152 cuda_event.cc:49] CUDA error: Error destroying CUDA event: CUDA_ERROR_ILLEGAL_ADDRESS: an illegal memory access was encountered
+E0831 02:13:39.834412 1588152 cuda_stream.cc:252] stream not idle on destroy: INTERNAL: CUDA error: : CUDA_ERROR_ILLEGAL_ADDRESS: an illegal memory access was encountered
+E0831 02:13:39.834415 1588152 cuda_stream.cc:257] failed to destroy CUDA stream for executor 0x1552180014a0: INTERNAL: CUDA error: : CUDA_ERROR_ILLEGAL_ADDRESS: an illegal memory access was encountered
+E0831 02:13:39.834417 1588152 cuda_event.cc:49] CUDA error: Error destroying CUDA event: CUDA_ERROR_ILLEGAL_ADDRESS: an illegal memory access was encountered
+E0831 02:13:39.834422 1588152 cuda_stream.cc:252] stream not idle on destroy: INTERNAL: CUDA error: : CUDA_ERROR_ILLEGAL_ADDRESS: an illegal memory access was encountered
+E0831 02:13:39.834425 1588152 cuda_stream.cc:257] failed to destroy CUDA stream for executor 0x1552180014a0: INTERNAL: CUDA error: : CUDA_ERROR_ILLEGAL_ADDRESS: an illegal memory access was encountered
+E0831 02:13:39.834427 1588152 cuda_event.cc:49] CUDA error: Error destroying CUDA event: CUDA_ERROR_ILLEGAL_ADDRESS: an illegal memory access was encountered
+E0831 02:13:39.834432 1588152 cuda_stream.cc:252] stream not idle on destroy: INTERNAL: CUDA error: : CUDA_ERROR_ILLEGAL_ADDRESS: an illegal memory access was encountered
+E0831 02:13:39.834435 1588152 cuda_stream.cc:257] failed to destroy CUDA stream for executor 0x1552180014a0: INTERNAL: CUDA error: : CUDA_ERROR_ILLEGAL_ADDRESS: an illegal memory access was encountered
+E0831 02:13:39.834438 1588152 cuda_event.cc:49] CUDA error: Error destroying CUDA event: CUDA_ERROR_ILLEGAL_ADDRESS: an illegal memory access was encountered
+E0831 02:13:39.834443 1588152 cuda_stream.cc:252] stream not idle on destroy: INTERNAL: CUDA error: : CUDA_ERROR_ILLEGAL_ADDRESS: an illegal memory access was encountered
+E0831 02:13:39.834447 1588152 cuda_stream.cc:257] failed to destroy CUDA stream for executor 0x1552180014a0: INTERNAL: CUDA error: : CUDA_ERROR_ILLEGAL_ADDRESS: an illegal memory access was encountered
+E0831 02:13:39.834449 1588152 cuda_event.cc:49] CUDA error: Error destroying CUDA event: CUDA_ERROR_ILLEGAL_ADDRESS: an illegal memory access was encountered
+E0831 02:13:39.834455 1588152 cuda_stream.cc:252] stream not idle on destroy: INTERNAL: CUDA error: : CUDA_ERROR_ILLEGAL_ADDRESS: an illegal memory access was encountered
+E0831 02:13:39.834457 1588152 cuda_stream.cc:257] failed to destroy CUDA stream for executor 0x1552180014a0: INTERNAL: CUDA error: : CUDA_ERROR_ILLEGAL_ADDRESS: an illegal memory access was encountered
+E0831 02:13:39.834460 1588152 cuda_event.cc:49] CUDA error: Error destroying CUDA event: CUDA_ERROR_ILLEGAL_ADDRESS: an illegal memory access was encountered
+E0831 02:13:39.834464 1588152 cuda_stream.cc:252] stream not idle on destroy: INTERNAL: CUDA error: : CUDA_ERROR_ILLEGAL_ADDRESS: an illegal memory access was encountered
+E0831 02:13:39.834467 1588152 cuda_stream.cc:257] failed to destroy CUDA stream for executor 0x1552180014a0: INTERNAL: CUDA error: : CUDA_ERROR_ILLEGAL_ADDRESS: an illegal memory access was encountered
+E0831 02:13:39.834469 1588152 cuda_event.cc:49] CUDA error: Error destroying CUDA event: CUDA_ERROR_ILLEGAL_ADDRESS: an illegal memory access was encountered
+E0831 02:13:39.834560 1588152 cuda_stream.cc:252] stream not idle on destroy: INTERNAL: CUDA error: : CUDA_ERROR_ILLEGAL_ADDRESS: an illegal memory access was encountered
+E0831 02:13:39.834568 1588152 cuda_stream.cc:257] failed to destroy CUDA stream for executor 0x1552180014a0: INTERNAL: CUDA error: : CUDA_ERROR_ILLEGAL_ADDRESS: an illegal memory access was encountered
+E0831 02:13:39.834571 1588152 cuda_event.cc:49] CUDA error: Error destroying CUDA event: CUDA_ERROR_ILLEGAL_ADDRESS: an illegal memory access was encountered
+E0831 02:13:39.834575 1588152 cuda_stream.cc:252] stream not idle on destroy: INTERNAL: CUDA error: : CUDA_ERROR_ILLEGAL_ADDRESS: an illegal memory access was encountered
+E0831 02:13:39.834578 1588152 cuda_stream.cc:257] failed to destroy CUDA stream for executor 0x1552180014a0: INTERNAL: CUDA error: : CUDA_ERROR_ILLEGAL_ADDRESS: an illegal memory access was encountered
+E0831 02:13:39.834581 1588152 cuda_event.cc:49] CUDA error: Error destroying CUDA event: CUDA_ERROR_ILLEGAL_ADDRESS: an illegal memory access was encountered
+E0831 02:13:39.834589 1588152 cuda_event.cc:49] CUDA error: Error destroying CUDA event: CUDA_ERROR_ILLEGAL_ADDRESS: an illegal memory access was encountered
+E0831 02:13:39.834593 1588152 cuda_event.cc:49] CUDA error: Error destroying CUDA event: CUDA_ERROR_ILLEGAL_ADDRESS: an illegal memory access was encountered
+E0831 02:13:39.834596 1588152 cuda_event.cc:49] CUDA error: Error destroying CUDA event: CUDA_ERROR_ILLEGAL_ADDRESS: an illegal memory access was encountered
+E0831 02:13:39.834599 1588152 cuda_event.cc:49] CUDA error: Error destroying CUDA event: CUDA_ERROR_ILLEGAL_ADDRESS: an illegal memory access was encountered
+W0831 02:13:39.834606 1588152 cuda_device_address_vmm_allocator.cc:167] Failed to free pinned timeline memory for device 0: INTERNAL: CUDA error: cuMemFreeHost for timeline counter: CUDA_ERROR_ILLEGAL_ADDRESS: an illegal memory access was encountered
+srun: error: workergpu209: task 0: Exited with exit code 1
+srun: Terminating StepId=6966145.16
