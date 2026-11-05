@@ -10,6 +10,9 @@ cpus_per_gpu = 4
 # Add "gesvd" or "syevd" here to benchmark the decompositions alongside the solves.
 routines = ["potrs", "lu_solve", "syevd", "gesvd"]
 dtypes = ["float32", "float64", "complex64", "complex128"]
+# "jax" adds the single-GPU reference the distributed timings are compared
+# against. It always runs on a 1x1 grid and ignores `tiles`.
+backends = ["cusolvermp", "jax"]
 tiles = [256, 512, 1024, 2048, 4096]
 # Generate factor grids for 8, 16, 24, and 32 GPUs. Set explicit
 # `grids = [...]` instead when a restricted topology is required.
@@ -29,4 +32,6 @@ suite_walltime = "8:00:00"
 # Host CPU RAM requested per node with `sbatch --mem`; this is not GPU HBM.
 suite_memory = "128G"
 # Add site requirements when needed, for example:
-submit_args = ["--partition=gpuxl", "--constraint=h100&ib-gpuxl4", "--reservation=rocky9"]
+# The rocky9 reservation ended 2026-08-31T00:00; rocky9 is now a node feature
+# carried by every gpuxl node, so no reservation or extra constraint is needed.
+submit_args = ["--partition=gpuxl", "--constraint=h100&ib-gpuxl4"]
