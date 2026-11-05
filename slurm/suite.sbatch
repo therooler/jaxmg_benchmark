@@ -7,6 +7,8 @@ set -euo pipefail
 : "${JAXMG_BENCHMARK_DTYPE:?Missing dtype}"
 : "${JAXMG_BENCHMARK_GRID:?Missing process grid}"
 : "${JAXMG_BENCHMARK_OUTPUT_ROOT:?Missing output directory}"
+# Older submissions predate the backend axis and mean the distributed path.
+JAXMG_BENCHMARK_BACKEND="${JAXMG_BENCHMARK_BACKEND:-cusolvermp}"
 
 # A cluster profile may load modules and extend LD_LIBRARY_PATH here. Keeping
 # that setup outside this generic runner makes the benchmark portable.
@@ -69,6 +71,7 @@ python -m benchmark.cusolvermp.run_suite \
     --routine "${JAXMG_BENCHMARK_ROUTINE}" \
     --dtype "${JAXMG_BENCHMARK_DTYPE}" \
     --grid "${JAXMG_BENCHMARK_GRID}" \
+    --backend "${JAXMG_BENCHMARK_BACKEND}" \
     --output-root "${JAXMG_BENCHMARK_OUTPUT_ROOT}" \
     --retry-failures \
     "${extra_args[@]}"
