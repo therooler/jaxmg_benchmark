@@ -23,11 +23,35 @@ DTYPE_BYTES = {
 
 ROUTINES = ("potrs", "lu_solve", "gesvd", "syevd")
 
+# Solver implementations a case can measure. ``cusolvermp`` is the distributed
+# JAXMg path; ``jax`` is the single-GPU reference built from the linear-algebra
+# routines JAX ships.
+BACKENDS = ("cusolvermp", "jax")
+DEFAULT_BACKEND = "cusolvermp"
+
 # Peak number of matrix-sized buffers one process holds at any point in a case,
 ROUTINE_MATRIX_COPIES = {"potrs": 1, "lu_solve": 1, "gesvd": 3, "syevd": 2}
 
 # Matrix-sized results returned alongside the factorized input.
 ROUTINE_VECTOR_OUTPUTS = {"potrs": 0, "lu_solve": 0, "gesvd": 2, "syevd": 1}
+
+# The same count for the single-GPU reference, measured rather than reasoned:
+# ``peak_bytes_in_use / (N**2 * itemsize)`` converges to these values as N grows
+# (4.03 at N=8192 and 4.01 at N=16384 for the solves, 6.03 and 6.01 for the
+# decompositions), so this is a real N**2 term and not fixed overhead. Counting
+# only the buffers one can name -- input, factor, outputs -- predicts half of
+# this and would drive most of the near-limit sweep into OOM, truncating the
+# curve well below the frontier it exists to show.
+#
+# Measured on an RTX 6000 Ada with the platform allocator, since ``memory_stats``
+# reports nothing under XLA_PYTHON_CLIENT_ALLOCATOR=vmm. The buffer count is a
+# property of the XLA program, so it should carry to other devices, but one
+# probe on a new machine is cheap insurance.
+NATIVE_MATRIX_COPIES = {"potrs": 4, "lu_solve": 4, "gesvd": 6, "syevd": 6}
+
+# The single-GPU reference takes no tile, so its dimensions carry no alignment
+# requirement and its records store this instead of a meaningless tile width.
+NATIVE_TILE_SIZE = 0
 
 
 @dataclass(frozen=True, order=True)
@@ -115,6 +139,7 @@ class BenchmarkConfig:
     tiles: tuple[int, ...]
     dtypes: tuple[str, ...]
     routines: tuple[str, ...]
+    backends: tuple[str, ...]
     baseline_sizes: tuple[int, ...]
     frontier_fractions: tuple[float, ...]
     grids: tuple[ProcessGrid, ...]
@@ -166,6 +191,11 @@ class BenchmarkConfig:
             tiles=tuple(int(value) for value in sweep["tiles"]),
             dtypes=tuple(str(value) for value in sweep["dtypes"]),
             routines=tuple(str(value) for value in sweep["routines"]),
+            # Absent means the distributed sweep only, so profiles written before
+            # the single-GPU reference existed keep loading unchanged.
+            backends=tuple(
+                str(value) for value in sweep.get("backends", (DEFAULT_BACKEND,))
+            ),
             baseline_sizes=tuple(int(value) for value in sweep["baseline_sizes"]),
             frontier_fractions=tuple(float(value) for value in sweep["frontier_fractions"]),
             grids=grids,
@@ -199,6 +229,8 @@ class BenchmarkConfig:
             raise ValueError(f"unsupported dtypes: {set(self.dtypes) - set(DTYPE_BYTES)}")
         if set(self.routines) - set(ROUTINES):
             raise ValueError(f"routines must be drawn from {', '.join(ROUTINES)}")
+        if not self.backends or set(self.backends) - set(BACKENDS):
+            raise ValueError(f"backends must be drawn from {', '.join(BACKENDS)}")
         if any(tile < 1 for tile in self.tiles):
             raise ValueError("tile sizes must be positive")
         if not self.grids:
@@ -282,19 +314,31 @@ class BenchmarkCase:
     grid: ProcessGrid
     matrix_size: int
     tile_size: int
+    backend: str = DEFAULT_BACKEND
+
+    @property
+    def is_native(self) -> bool:
+        """Return whether this case measures the single-GPU JAX reference."""
+        return self.backend == "jax"
 
     @property
     def case_id(self) -> str:
-        """Return the stable filename-safe identifier used for logs and JSON."""
+        """Return the stable filename-safe identifier used for logs and JSON.
+
+        The distributed identifier is deliberately left unchanged by the backend
+        axis: completed cases are skipped by filename, so adding a segment here
+        would orphan every recorded result and rerun the whole sweep.
+        """
+        suffix = "" if self.backend == DEFAULT_BACKEND else f"__b{self.backend}"
         return (
             f"{self.routine}__{self.dtype}__g{self.grid}__"
-            f"n{self.matrix_size}__t{self.tile_size}"
+            f"n{self.matrix_size}__t{self.tile_size}{suffix}"
         )
 
     @property
     def alignment_quantum(self) -> int:
-        """Return the smallest valid increment of ``N`` for this tile and grid."""
-        return self.tile_size * lcm(self.grid.rows, self.grid.cols)
+        """Return the smallest valid increment of ``N`` for this case."""
+        return alignment_quantum(self.grid, self.tile_size, self.backend)
 
     @property
     def needs_matrix_padding(self) -> bool:
@@ -322,6 +366,23 @@ class BenchmarkCase:
         # Only the solves take a right-hand side; the decompositions instead
         # return matrix-sized results counted by ROUTINE_VECTOR_OUTPUTS.
         takes_rhs = self.routine in ("potrs", "lu_solve")
+
+        if self.is_native:
+            # The single-GPU reference calls cuSOLVERDn directly on the whole
+            # matrix: no redistribution, no tile-aligned RHS work capacity, and
+            # LAPACK-style 32-bit pivots rather than the 64-bit indices JAXMg
+            # hands to cuSOLVERMp.
+            return MemoryEstimate(
+                local_matrix_bytes=local_matrix_bytes,
+                rhs_capacity_bytes=self.matrix_size * itemsize if takes_rhs else 0,
+                redistribution_scratch_bytes=0,
+                pivot_bytes=self.matrix_size * 4 if self.routine == "lu_solve" else 0,
+                vector_output_bytes=(
+                    ROUTINE_VECTOR_OUTPUTS[self.routine] * local_matrix_bytes
+                ),
+                allocator_budget_bytes=config.allocator_budget_per_gpu,
+            )
+
         # The native redistribution uses three equally sized tile buffers:
         # receive, send, and saved local data. It is sized for whichever
         # process-grid direction has the longer local slab.
@@ -353,6 +414,7 @@ class BenchmarkCase:
         return {
             "case_id": self.case_id,
             "routine": self.routine,
+            "backend": self.backend,
             "dtype": self.dtype,
             "process_rows": self.grid.rows,
             "process_cols": self.grid.cols,
@@ -390,6 +452,67 @@ def _round_up_to_multiple(value: int, multiple: int) -> int:
     return (value + multiple - 1) // multiple * multiple
 
 
+def alignment_quantum(
+    grid: ProcessGrid, tile_size: int, backend: str = DEFAULT_BACKEND
+) -> int:
+    """Return the smallest valid increment of ``N`` for one configuration.
+
+    A block-cyclic dimension must be a whole number of tiles in both grid
+    directions. The single-GPU reference is not block-cyclic and takes no tile,
+    so every dimension is valid for it.
+
+    Args:
+        grid: Process grid the matrix is distributed over.
+        tile_size: cuSOLVERMp tile width, ignored by the native backend.
+        backend: Solver implementation.
+
+    Returns:
+        The alignment increment, always at least one.
+    """
+    if backend == "jax":
+        return 1
+    return tile_size * lcm(grid.rows, grid.cols)
+
+
+def node_shape(grid: ProcessGrid, config: BenchmarkConfig) -> tuple[int, int]:
+    """Return the node count and per-node task count for one process grid.
+
+    A distributed grid always occupies whole nodes, so the rounding here is
+    exact for it. The single-GPU reference asks for less than a node, which is
+    why this rounds up rather than truncating to zero.
+
+    Args:
+        grid: Process grid being launched.
+        config: Hardware settings holding the GPUs available per node.
+
+    Returns:
+        The number of nodes and the number of tasks to place on each.
+    """
+    nodes = -(-grid.processes // config.gpus_per_node)
+    return nodes, min(grid.processes, config.gpus_per_node)
+
+
+def grids_for_backend(
+    config: BenchmarkConfig, backend: str
+) -> tuple[ProcessGrid, ...]:
+    """Return the process grids one backend is swept over.
+
+    The single-GPU reference exists precisely to show what one GPU can do, so it
+    has exactly one grid. Deriving it here keeps ``sweep.grids`` describing only
+    the distributed topologies a site actually has to configure.
+
+    Args:
+        config: Benchmark configuration holding the distributed grids.
+        backend: Solver implementation being swept.
+
+    Returns:
+        The grids to sweep for that backend.
+    """
+    if backend == "jax":
+        return (ProcessGrid(1, 1),)
+    return config.grids
+
+
 def _near_limit_sizes(
     config: BenchmarkConfig,
     *,
@@ -397,11 +520,13 @@ def _near_limit_sizes(
     dtype: str,
     grid: ProcessGrid,
     tile_size: int,
+    backend: str = DEFAULT_BACKEND,
 ) -> set[int]:
     """Return aligned dimensions near the matrix-only allocator limit.
 
-    This is a guide for the sweep, not a promise that a case fits. The native
-    cuSOLVERMp workspace is routine-specific and cannot be known in advance.
+    This is a guide for the sweep, not a promise that a case fits. The solver
+    workspace is routine-specific and cannot be known in advance, for either
+    cuSOLVERMp or the cuSOLVERDn calls behind the single-GPU reference.
 
     Args:
         config: Hardware and allocator settings.
@@ -409,6 +534,7 @@ def _near_limit_sizes(
         dtype: Element dtype used by the matrix.
         grid: Distributed process grid.
         tile_size: cuSOLVERMp tile width.
+        backend: Solver implementation, which decides the matrix-copy count.
 
     Returns:
         Aligned dimensions at the requested fractions of the matrix-only
@@ -417,9 +543,14 @@ def _near_limit_sizes(
     Raises:
         KeyError: If the routine has no recorded matrix-copy count.
     """
-    budget = config.allocator_budget_per_gpu / ROUTINE_MATRIX_COPIES[routine]
+    copies = (
+        NATIVE_MATRIX_COPIES[routine]
+        if backend == "jax"
+        else ROUTINE_MATRIX_COPIES[routine]
+    )
+    budget = config.allocator_budget_per_gpu / copies
     matrix_limit = floor(sqrt(budget * grid.processes / DTYPE_BYTES[dtype]))
-    quantum = tile_size * lcm(grid.rows, grid.cols)
+    quantum = alignment_quantum(grid, tile_size, backend)
     return {
         floor(sqrt(fraction) * matrix_limit) // quantum * quantum
         for fraction in config.frontier_fractions
@@ -433,6 +564,7 @@ def planned_sizes(
     dtype: str,
     grid: ProcessGrid,
     tile_size: int,
+    backend: str = DEFAULT_BACKEND,
 ) -> tuple[int, ...]:
     """Return small-to-large aligned dimensions for one configuration.
 
@@ -446,15 +578,21 @@ def planned_sizes(
         dtype: Element dtype used by the matrix.
         grid: Distributed process grid.
         tile_size: cuSOLVERMp tile width.
+        backend: Solver implementation being planned.
 
     Returns:
         Sorted no-padding matrix dimensions for this configuration.
     """
-    quantum = tile_size * lcm(grid.rows, grid.cols)
+    quantum = alignment_quantum(grid, tile_size, backend)
     near_limit = {
         size
         for size in _near_limit_sizes(
-            config, routine=routine, dtype=dtype, grid=grid, tile_size=tile_size
+            config,
+            routine=routine,
+            dtype=dtype,
+            grid=grid,
+            tile_size=tile_size,
+            backend=backend,
         )
         if size >= quantum
     }

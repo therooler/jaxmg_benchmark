@@ -8,7 +8,7 @@ from pathlib import Path
 
 import matplotlib.pyplot as plt
 
-from benchmark.cusolvermp.model import ROUTINES, ProcessGrid
+from benchmark.cusolvermp.model import BACKENDS, DEFAULT_BACKEND, ROUTINES, ProcessGrid
 
 
 def _arguments() -> argparse.Namespace:
@@ -22,6 +22,7 @@ def _arguments() -> argparse.Namespace:
     parser.add_argument("--routine", choices=ROUTINES, required=True)
     parser.add_argument("--dtype", choices=("float32", "float64", "complex64", "complex128"), required=True)
     parser.add_argument("--grid", type=ProcessGrid.parse, required=True)
+    parser.add_argument("--backend", choices=BACKENDS, default=DEFAULT_BACKEND)
     parser.add_argument("--output")
     return parser.parse_args()
 
@@ -35,7 +36,9 @@ def main() -> None:
     records = []
     for path in sorted(result_dir.glob("*.json")):
         record = json.loads(path.read_text(encoding="utf-8"))
-        if record.get("status") == "passed":
+        if record.get("status") != "passed":
+            continue
+        if record.get("backend", DEFAULT_BACKEND) == args.backend:
             records.append(record)
     if not records:
         raise SystemExit(f"no passing records found under {result_dir}")
@@ -50,21 +53,26 @@ def main() -> None:
             [record["matrix_size"] for record in selected],
             [record["warm_median_seconds"] for record in selected],
             marker="o",
-            label=rf"$T_A={tile_size}$",
+            # The single-GPU reference takes no tile, so naming one would be a
+            # fiction; it also only ever has this one series.
+            label="single GPU" if args.backend == "jax" else rf"$T_A={tile_size}$",
         )
     axis.set_xscale("log")
     axis.set_yscale("log")
     axis.set_xlabel(r"Matrix dimension $N$")
     axis.set_ylabel("Warm median solve time [s]")
+    solver = "JAXMg" if args.backend == DEFAULT_BACKEND else "native JAX"
     axis.set_title(
-        f"JAXMg {args.routine}: {args.dtype}, {args.grid} process grid"
+        f"{solver} {args.routine}: {args.dtype}, {args.grid} process grid"
     )
     axis.grid(which="both", alpha=0.25)
     axis.legend()
 
     output = Path(args.output or (
         Path(args.output_root) / "plots"
-        / f"{args.routine}__{args.dtype}__g{args.grid}.png"
+        / (f"{args.routine}__{args.dtype}__g{args.grid}"
+           + ("" if args.backend == DEFAULT_BACKEND else f"__b{args.backend}")
+           + ".png")
     ))
     output.parent.mkdir(parents=True, exist_ok=True)
     figure.savefig(output, dpi=200)

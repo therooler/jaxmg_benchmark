@@ -15,10 +15,15 @@ import sys
 import time
 
 from benchmark.cusolvermp.model import (
+    BACKENDS,
+    DEFAULT_BACKEND,
+    NATIVE_TILE_SIZE,
     ROUTINES,
     BenchmarkCase,
     BenchmarkConfig,
     ProcessGrid,
+    grids_for_backend,
+    node_shape,
     planned_sizes,
 )
 
@@ -34,6 +39,7 @@ def _arguments() -> argparse.Namespace:
     parser.add_argument("--routine", choices=ROUTINES, required=True)
     parser.add_argument("--dtype", choices=("float32", "float64", "complex64", "complex128"), required=True)
     parser.add_argument("--grid", type=ProcessGrid.parse, required=True)
+    parser.add_argument("--backend", choices=BACKENDS, default=DEFAULT_BACKEND)
     parser.add_argument("--tile-size", type=int, action="append")
     parser.add_argument("--matrix-size", type=int, action="append")
     parser.add_argument("--output-root", default="results")
@@ -78,6 +84,7 @@ def _write_failure(path: Path, case: BenchmarkCase, returncode: int | str,
             {
                 "case_id": case.case_id,
                 "routine": case.routine,
+                "backend": case.backend,
                 "dtype": case.dtype,
                 "process_rows": case.grid.rows,
                 "process_cols": case.grid.cols,
@@ -110,6 +117,7 @@ def _selected_sizes(
     Returns:
         Sorted matrix dimensions valid for the selected tile width.
     """
+    backend = getattr(args, "backend", DEFAULT_BACKEND)
     if not args.matrix_size:
         return planned_sizes(
             config,
@@ -117,6 +125,7 @@ def _selected_sizes(
             dtype=args.dtype,
             grid=args.grid,
             tile_size=tile_size,
+            backend=backend,
         )
 
     sizes = tuple(
@@ -124,7 +133,7 @@ def _selected_sizes(
             size
             for size in set(args.matrix_size)
             if not BenchmarkCase(
-                args.routine, args.dtype, args.grid, size, tile_size
+                args.routine, args.dtype, args.grid, size, tile_size, backend
             ).needs_matrix_padding
         )
     )
@@ -146,15 +155,21 @@ def _selected_cases(
     Raises:
         ValueError: If no requested dimension is valid for the selected grid.
     """
-    tiles = tuple(args.tile_size or config.tiles)
-    if set(tiles) - set(config.tiles):
-        raise ValueError("every selected tile size must be configured")
+    backend = getattr(args, "backend", DEFAULT_BACKEND)
+    if backend == "jax":
+        # The native call has no tile, so sweeping the configured tiles would
+        # just measure the same thing five times.
+        tiles = (NATIVE_TILE_SIZE,)
+    else:
+        tiles = tuple(args.tile_size or config.tiles)
+        if set(tiles) - set(config.tiles):
+            raise ValueError("every selected tile size must be configured")
 
     cases = []
     for tile_size in tiles:
         sizes = _selected_sizes(args, config, tile_size=tile_size)
         cases.extend(
-            BenchmarkCase(args.routine, args.dtype, args.grid, size, tile_size)
+            BenchmarkCase(args.routine, args.dtype, args.grid, size, tile_size, backend)
             for size in sizes
         )
     if not cases:
@@ -180,7 +195,7 @@ def _srun_command(
     Returns:
         Argument vector suitable for ``subprocess.run``.
     """
-    nodes = case.grid.processes // config.gpus_per_node
+    nodes, tasks_per_node = node_shape(case.grid, config)
     return [
         "srun",
         # If one rank reports CUDA/NCCL OOM, do not leave the remaining ranks
@@ -191,7 +206,7 @@ def _srun_command(
         "--ntasks",
         str(case.grid.processes),
         "--ntasks-per-node",
-        str(config.gpus_per_node),
+        str(tasks_per_node),
         # Keep the host cores assigned by the outer Slurm allocation. NCCL and
         # the JAX runtime both need CPU progress while CUDA work is in flight.
         "--cpus-per-task",
@@ -208,6 +223,8 @@ def _srun_command(
         case.dtype,
         "--grid",
         str(case.grid),
+        "--backend",
+        case.backend,
         "--matrix-size",
         str(case.matrix_size),
         "--tile-size",
@@ -257,10 +274,14 @@ def main() -> None:
     config = BenchmarkConfig.load(args.config)
     if args.routine not in config.routines or args.dtype not in config.dtypes:
         raise ValueError("routine or dtype is not enabled by the configuration")
-    if args.grid not in config.grids:
-        raise ValueError(f"grid {args.grid} is not enabled by the configuration")
+    if args.backend not in config.backends:
+        raise ValueError(f"backend {args.backend} is not enabled by the configuration")
+    if args.grid not in grids_for_backend(config, args.backend):
+        raise ValueError(
+            f"grid {args.grid} is not enabled for backend {args.backend}"
+        )
 
-    suite = f"{args.routine}/{args.dtype}/{args.grid}"
+    suite = f"{args.backend}/{args.routine}/{args.dtype}/{args.grid}"
     root = Path(args.output_root)
     result_dir = root / "cases" / args.routine / args.dtype / str(args.grid)
     log_dir = root / "logs" / args.routine / args.dtype / str(args.grid)

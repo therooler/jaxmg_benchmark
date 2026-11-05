@@ -3,6 +3,12 @@
 ``run_suite.py`` starts this module once per case with ``srun``. Each Python
 process owns one GPU. Input creation and validation are not timed. The first
 call includes compilation; the remaining calls use the same compiled solver.
+
+Two backends share all of this. ``cusolvermp`` is the distributed JAXMg path.
+``jax`` is the single-GPU reference the distributed timings are compared
+against: it runs alone on a ``1x1`` grid, builds its inputs with the same
+factories so both sides solve an identical problem, and is checked by the same
+validators.
 """
 
 from __future__ import annotations
@@ -26,11 +32,15 @@ import jax
 jax.config.update("jax_enable_x64", True)
 
 import jax.numpy as jnp
+import jax.scipy.linalg as jsl
 import numpy as np
 from jax.experimental import multihost_utils
 from jax.sharding import Mesh, NamedSharding, PartitionSpec as P
 
 from benchmark.cusolvermp.model import (
+    BACKENDS,
+    DEFAULT_BACKEND,
+    NATIVE_TILE_SIZE,
     ROUTINES,
     BenchmarkCase,
     BenchmarkConfig,
@@ -54,6 +64,7 @@ def _arguments() -> argparse.Namespace:
         required=True,
     )
     parser.add_argument("--grid", type=ProcessGrid.parse, required=True)
+    parser.add_argument("--backend", choices=BACKENDS, default=DEFAULT_BACKEND)
     parser.add_argument("--matrix-size", type=int, required=True)
     parser.add_argument("--tile-size", type=int, required=True)
     parser.add_argument("--output", required=True)
@@ -86,7 +97,7 @@ def _global_numpy(value: jax.Array) -> np.ndarray:
     Returns:
         The complete global value on every host when gathering is required.
     """
-    if not value.is_fully_addressable:
+    if _distributed() and not value.is_fully_addressable:
         return np.asarray(multihost_utils.process_allgather(value, tiled=True))
     return np.asarray(value)
 
@@ -103,6 +114,25 @@ def _global_scalar(value: jax.Array) -> float:
     return float(np.asarray(_global_numpy(value)).reshape(-1)[0])
 
 
+def _distributed() -> bool:
+    """Return whether this case runs across more than one process.
+
+    The single-GPU reference runs alone and never calls
+    ``jax.distributed.initialize``, so the collectives below must not be issued.
+    """
+    return jax.process_count() > 1
+
+
+def _barrier(name: str) -> None:
+    """Synchronize every participating process, or do nothing when alone.
+
+    Args:
+        name: Unique barrier name shared by all processes.
+    """
+    if _distributed():
+        multihost_utils.sync_global_devices(name)
+
+
 def _global_max_seconds(elapsed: float) -> float:
     """Return the largest elapsed time reported by any process.
 
@@ -112,6 +142,8 @@ def _global_max_seconds(elapsed: float) -> float:
     Returns:
         The slowest rank's duration, used as the distributed solve time.
     """
+    if not _distributed():
+        return elapsed
     gathered = multihost_utils.process_allgather(jnp.asarray(elapsed), tiled=False)
     return float(np.max(np.asarray(gathered)))
 
@@ -185,19 +217,23 @@ def _make_gesvd_input_factory(
     return jax.jit(make_inputs, out_shardings=a_sharding)
 
 
-def _rank_status_codes(status: jax.Array, status_size: int) -> list[int]:
+def _rank_status_codes(status: jax.Array | None, status_size: int | None) -> list[int]:
     """Return the leading native status value reported by each rank.
 
     Args:
-        status: Concatenated native status values.
+        status: Concatenated native status values, or ``None`` for the
+            single-GPU reference, which has no native backend to report one.
         status_size: Number of status values emitted by one rank.
 
     Returns:
-        One native return code per participating rank.
+        One native return code per participating rank, empty when there is no
+        native status to read.
 
     Raises:
         AssertionError: If the status shape is wrong or any code is non-zero.
     """
+    if status is None:
+        return []
     words = _global_numpy(status).reshape(-1)
     if words.size % status_size:
         raise AssertionError(f"unexpected native status size {words.size}")
@@ -208,13 +244,18 @@ def _rank_status_codes(status: jax.Array, status_size: int) -> list[int]:
 
 
 def _validate(
-    *, out: jax.Array, status: jax.Array, status_size: int, dtype_name: str
+    *,
+    out: jax.Array,
+    dtype_name: str,
+    status: jax.Array | None = None,
+    status_size: int | None = None,
 ) -> dict[str, object]:
     """Validate the diagonal solution and native status from every rank.
 
     Args:
         out: Returned solution vector or matrix.
-        status: Concatenated native status values.
+        status: Concatenated native status values, or ``None`` when the
+            single-GPU reference produced the result.
         status_size: Number of status values emitted by one rank.
         dtype_name: Benchmark dtype, used to select numerical tolerance.
 
@@ -242,10 +283,10 @@ def _validate(
 def _validate_gesvd(
     *,
     singular_values: jax.Array,
-    status: jax.Array,
-    status_size: int,
     dtype_name: str,
     frobenius_squared: float,
+    status: jax.Array | None = None,
+    status_size: int | None = None,
 ) -> dict[str, object]:
     """Validate the singular values of a dense random matrix.
 
@@ -254,7 +295,8 @@ def _validate_gesvd(
 
     Args:
         singular_values: Replicated singular values returned by GESVD.
-        status: Concatenated native status values.
+        status: Concatenated native status values, or ``None`` when the
+            single-GPU reference produced the result.
         status_size: Number of status values emitted by one rank.
         dtype_name: Benchmark dtype, used to select numerical tolerance.
         frobenius_squared: ``||A||_F**2`` accumulated before the matrix was
@@ -309,11 +351,11 @@ def _package_versions() -> dict[str, str | None]:
 def _validate_syevd(
     *,
     eigenvalues: jax.Array,
-    status: jax.Array,
-    status_size: int,
     dtype_name: str,
     trace: float,
     frobenius_squared: float,
+    status: jax.Array | None = None,
+    status_size: int | None = None,
 ) -> dict[str, object]:
     """Validate the eigenvalues of a dense symmetric matrix.
 
@@ -325,7 +367,8 @@ def _validate_syevd(
 
     Args:
         eigenvalues: Replicated ascending eigenvalues returned by SYEVD.
-        status: Concatenated native status values.
+        status: Concatenated native status values, or ``None`` when the
+            single-GPU reference produced the result.
         status_size: Number of status values emitted by one rank.
         dtype_name: Benchmark dtype, used to select numerical tolerance.
         trace: ``trace(A)`` accumulated before the matrix was donated.
@@ -397,7 +440,7 @@ def _solve_iteration(
     a, b = make_inputs()
     for array in (a, b):
         array.block_until_ready()
-    multihost_utils.sync_global_devices(f"{barrier}_start")
+    _barrier(f"{barrier}_start")
     started = time.perf_counter()
     out, status = solver(
         a,
@@ -410,10 +453,10 @@ def _solve_iteration(
     )
     out.block_until_ready()
     status.block_until_ready()
-    multihost_utils.sync_global_devices(f"{barrier}_stop")
+    _barrier(f"{barrier}_stop")
     elapsed = _global_max_seconds(time.perf_counter() - started)
     metrics = _validate(
-        out=out, status=status, status_size=status_size, dtype_name=case.dtype
+        out=out, dtype_name=case.dtype, status=status, status_size=status_size
     )
     return elapsed, metrics
 
@@ -446,7 +489,7 @@ def _gesvd_iteration(
     frobenius_squared = _global_scalar(
         jnp.sum(jnp.square(jnp.abs(a)), dtype=jnp.float64)
     )
-    multihost_utils.sync_global_devices(f"{barrier}_start")
+    _barrier(f"{barrier}_start")
     started = time.perf_counter()
     u, singular_values, vh, status = solver(
         a,
@@ -461,14 +504,14 @@ def _gesvd_iteration(
     )
     for array in (u, singular_values, vh, status):
         array.block_until_ready()
-    multihost_utils.sync_global_devices(f"{barrier}_stop")
+    _barrier(f"{barrier}_stop")
     elapsed = _global_max_seconds(time.perf_counter() - started)
     metrics = _validate_gesvd(
         singular_values=singular_values,
-        status=status,
-        status_size=status_size,
         dtype_name=case.dtype,
         frobenius_squared=frobenius_squared,
+        status=status,
+        status_size=status_size,
     )
     return elapsed, metrics
 
@@ -507,7 +550,7 @@ def _syevd_iteration(
     frobenius_squared = _global_scalar(
         jnp.sum(jnp.square(jnp.abs(a)), dtype=jnp.float64)
     )
-    multihost_utils.sync_global_devices(f"{barrier}_start")
+    _barrier(f"{barrier}_start")
     started = time.perf_counter()
     eigenvalues, eigenvectors, status = solver(
         a,
@@ -520,17 +563,219 @@ def _syevd_iteration(
     )
     for array in (eigenvalues, eigenvectors, status):
         array.block_until_ready()
-    multihost_utils.sync_global_devices(f"{barrier}_stop")
+    _barrier(f"{barrier}_stop")
     elapsed = _global_max_seconds(time.perf_counter() - started)
     metrics = _validate_syevd(
         eigenvalues=eigenvalues,
+        dtype_name=case.dtype,
+        trace=trace,
+        frobenius_squared=frobenius_squared,
         status=status,
         status_size=status_size,
+    )
+    return elapsed, metrics
+
+
+# The single-GPU reference. Each entry mirrors the factorization the matching
+# cuSOLVERMp routine performs, so the two sides of the comparison do the same
+# work: Cholesky factor-and-solve, pivoted LU factor-and-solve, a reduced SVD,
+# and a symmetric eigendecomposition that also returns its eigenvectors.
+# ``donate_argnums`` matches JAXMg, which donates the input matrix.
+def _native_solvers() -> dict[str, object]:
+    """Return the jitted single-GPU JAX callable for every routine.
+
+    Returns:
+        Routine name to compiled callable. Compilation happens on first call,
+        which is exactly what the cold iteration is there to measure.
+    """
+    return {
+        "potrs": jax.jit(
+            lambda a, b: jsl.cho_solve(jsl.cho_factor(a, lower=True), b),
+            donate_argnums=(0,),
+        ),
+        "lu_solve": jax.jit(
+            lambda a, b: jsl.lu_solve(jsl.lu_factor(a), b), donate_argnums=(0,)
+        ),
+        "gesvd": jax.jit(
+            lambda a: jnp.linalg.svd(a, full_matrices=False), donate_argnums=(0,)
+        ),
+        "syevd": jax.jit(jnp.linalg.eigh, donate_argnums=(0,)),
+    }
+
+
+def _native_solve_iteration(
+    *,
+    solver,
+    status_size: int | None,
+    case: BenchmarkCase,
+    mesh: Mesh,
+    make_inputs,
+    barrier: str,
+) -> tuple[float, dict[str, object]]:
+    """Time one single-GPU Cholesky or LU solve and validate its solution.
+
+    Args:
+        solver: Jitted native callable taking ``(A, b)``.
+        status_size: Unused; the reference has no native status to report.
+        case: Case being measured.
+        mesh: Single-device mesh matching the case grid.
+        make_inputs: Compiled factory returning the ``(A, b)`` pair.
+        barrier: Unique prefix for this iteration's collective barriers.
+
+    Returns:
+        The solve duration and the validation result fields.
+    """
+    a, b = make_inputs()
+    for array in (a, b):
+        array.block_until_ready()
+    _barrier(f"{barrier}_start")
+    started = time.perf_counter()
+    out = solver(a, b)
+    out.block_until_ready()
+    _barrier(f"{barrier}_stop")
+    elapsed = _global_max_seconds(time.perf_counter() - started)
+    return elapsed, _validate(out=out, dtype_name=case.dtype)
+
+
+def _native_gesvd_iteration(
+    *,
+    solver,
+    status_size: int | None,
+    case: BenchmarkCase,
+    mesh: Mesh,
+    make_inputs,
+    barrier: str,
+) -> tuple[float, dict[str, object]]:
+    """Time one single-GPU reduced SVD and validate its singular values.
+
+    Args:
+        solver: Jitted ``jnp.linalg.svd`` wrapper.
+        status_size: Unused; the reference has no native status to report.
+        case: Case being measured.
+        mesh: Single-device mesh matching the case grid.
+        make_inputs: Compiled factory returning the dense matrix.
+        barrier: Unique prefix for this iteration's collective barriers.
+
+    Returns:
+        The decomposition duration and the validation result fields.
+    """
+    a = make_inputs()
+    a.block_until_ready()
+    # Accumulate in float64, before the timed region: the call donates ``a``.
+    frobenius_squared = _global_scalar(
+        jnp.sum(jnp.square(jnp.abs(a)), dtype=jnp.float64)
+    )
+    _barrier(f"{barrier}_start")
+    started = time.perf_counter()
+    u, singular_values, vh = solver(a)
+    for array in (u, singular_values, vh):
+        array.block_until_ready()
+    _barrier(f"{barrier}_stop")
+    elapsed = _global_max_seconds(time.perf_counter() - started)
+    metrics = _validate_gesvd(
+        singular_values=singular_values,
+        dtype_name=case.dtype,
+        frobenius_squared=frobenius_squared,
+    )
+    return elapsed, metrics
+
+
+def _native_syevd_iteration(
+    *,
+    solver,
+    status_size: int | None,
+    case: BenchmarkCase,
+    mesh: Mesh,
+    make_inputs,
+    barrier: str,
+) -> tuple[float, dict[str, object]]:
+    """Time one single-GPU eigendecomposition and validate its eigenvalues.
+
+    Args:
+        solver: Jitted ``jnp.linalg.eigh`` wrapper.
+        status_size: Unused; the reference has no native status to report.
+        case: Case being measured.
+        mesh: Single-device mesh matching the case grid.
+        make_inputs: Compiled factory returning the symmetric matrix.
+        barrier: Unique prefix for this iteration's collective barriers.
+
+    Returns:
+        The decomposition duration and the validation result fields.
+    """
+    a, _ = make_inputs()
+    a.block_until_ready()
+    trace_dtype = jnp.complex128 if case.dtype.startswith("complex") else jnp.float64
+    trace = _global_scalar(jnp.real(jnp.trace(a, dtype=trace_dtype)))
+    frobenius_squared = _global_scalar(
+        jnp.sum(jnp.square(jnp.abs(a)), dtype=jnp.float64)
+    )
+    _barrier(f"{barrier}_start")
+    started = time.perf_counter()
+    eigenvalues, eigenvectors = solver(a)
+    for array in (eigenvalues, eigenvectors):
+        array.block_until_ready()
+    _barrier(f"{barrier}_stop")
+    elapsed = _global_max_seconds(time.perf_counter() - started)
+    metrics = _validate_syevd(
+        eigenvalues=eigenvalues,
         dtype_name=case.dtype,
         trace=trace,
         frobenius_squared=frobenius_squared,
     )
     return elapsed, metrics
+
+
+NATIVE_ITERATIONS = {
+    "potrs": _native_solve_iteration,
+    "lu_solve": _native_solve_iteration,
+    "gesvd": _native_gesvd_iteration,
+    "syevd": _native_syevd_iteration,
+}
+
+
+def _select_solver(routine: str, backend: str):
+    """Return the callable, status width, and iteration body for one case.
+
+    Args:
+        routine: Routine name.
+        backend: ``"cusolvermp"`` for the distributed path, ``"jax"`` for the
+            single-GPU reference.
+
+    Returns:
+        The solver, the number of native status values one rank emits (``None``
+        for the reference), and the function that times one iteration.
+    """
+    if backend == "jax":
+        return _native_solvers()[routine], None, NATIVE_ITERATIONS[routine]
+
+    if routine == "potrs":
+        from jaxmg import potrs as solver
+        from jaxmg._cusolvermp_status import (
+            _CUSOLVERMP_POTRS_STATUS_SIZE as status_size,
+        )
+
+        return solver, status_size, _solve_iteration
+    if routine == "lu_solve":
+        from jaxmg import lu_solve as solver
+        from jaxmg._cusolvermp_status import (
+            _CUSOLVERMP_LU_SOLVE_STATUS_SIZE as status_size,
+        )
+
+        return solver, status_size, _solve_iteration
+    if routine == "gesvd":
+        from jaxmg import gesvd as solver
+        from jaxmg._cusolvermp_status import (
+            _CUSOLVERMP_GESVD_STATUS_SIZE as status_size,
+        )
+
+        return solver, status_size, _gesvd_iteration
+
+    from jaxmg import syevd as solver
+    from jaxmg._cusolvermp_status import (
+        _CUSOLVERMP_SYEVD_STATUS_SIZE as status_size,
+    )
+
+    return solver, status_size, _syevd_iteration
 
 
 def _run(args: argparse.Namespace) -> dict[str, object]:
@@ -542,39 +787,22 @@ def _run(args: argparse.Namespace) -> dict[str, object]:
     Returns:
         Complete case metadata, timings, validation results, and package data.
     """
-    if args.routine == "potrs":
-        from jaxmg import potrs as solver
-        from jaxmg._cusolvermp_status import (
-            _CUSOLVERMP_POTRS_STATUS_SIZE as status_size,
-        )
-
-        run_iteration = _solve_iteration
-    elif args.routine == "lu_solve":
-        from jaxmg import lu_solve as solver
-        from jaxmg._cusolvermp_status import (
-            _CUSOLVERMP_LU_SOLVE_STATUS_SIZE as status_size,
-        )
-
-        run_iteration = _solve_iteration
-    elif args.routine == "gesvd":
-        from jaxmg import gesvd as solver
-        from jaxmg._cusolvermp_status import (
-            _CUSOLVERMP_GESVD_STATUS_SIZE as status_size,
-        )
-
-        run_iteration = _gesvd_iteration
-    else:
-        from jaxmg import syevd as solver
-        from jaxmg._cusolvermp_status import (
-            _CUSOLVERMP_SYEVD_STATUS_SIZE as status_size,
-        )
-
-        run_iteration = _syevd_iteration
+    solver, status_size, run_iteration = _select_solver(args.routine, args.backend)
 
     config = BenchmarkConfig.load(args.config)
     case = BenchmarkCase(
-        args.routine, args.dtype, args.grid, args.matrix_size, args.tile_size
+        args.routine,
+        args.dtype,
+        args.grid,
+        args.matrix_size,
+        args.tile_size,
+        args.backend,
     )
+    if case.is_native and args.tile_size != NATIVE_TILE_SIZE:
+        # Storing a tile the run never consulted would misreport the case.
+        raise ValueError(
+            f"backend jax takes no tile; pass --tile-size {NATIVE_TILE_SIZE}"
+        )
     if case.needs_matrix_padding:
         raise ValueError(
             f"{case.case_id} needs matrix padding; N must be divisible by "
@@ -585,7 +813,10 @@ def _run(args: argparse.Namespace) -> dict[str, object]:
             f"expected {case.grid.processes} processes, got {jax.process_count()}"
         )
     if len(jax.local_devices(backend="gpu")) != 1:
-        raise RuntimeError("JAXMg requires one visible GPU per Python process")
+        raise RuntimeError(
+            "every benchmark process must see exactly one GPU; JAXMg requires it, "
+            "and the single-GPU reference is only meaningful on one device"
+        )
 
     dtype = getattr(jnp, case.dtype)
     mesh = _make_mesh(case.grid)
@@ -655,18 +886,42 @@ def _run(args: argparse.Namespace) -> dict[str, object]:
     }
 
 
+def _restrict_to_one_gpu() -> None:
+    """Hide every GPU but this process's own, before JAX opens its client.
+
+    A distributed case gets this from ``local_device_ids``. A single-process case
+    has no such call, and its ``srun`` runs inside an allocation that reserves
+    whole nodes, so without this it would see every GPU on the node and fail the
+    one-GPU check. Importing JAX does not create the GPU client, so setting the
+    variable here still takes effect.
+    """
+    local_id = int(os.environ.get("SLURM_LOCALID", "0"))
+    visible = os.environ.get("CUDA_VISIBLE_DEVICES")
+    if visible:
+        # Slurm usually sets this to the whole allocation; index into it rather
+        # than overwrite it, so the device chosen is one we were actually given.
+        allocated = [entry for entry in visible.split(",") if entry]
+        if local_id < len(allocated):
+            os.environ["CUDA_VISIBLE_DEVICES"] = allocated[local_id]
+            return
+    os.environ["CUDA_VISIBLE_DEVICES"] = str(local_id)
+
+
 def main() -> None:
     """Initialize distributed JAX, run the case, and write one result on rank zero."""
     args = _arguments()
-    # Slurm supplies rank and coordinator metadata. This makes the one GPU
-    # assigned to each process explicit to JAX.
-    local_id = int(os.environ.get("SLURM_LOCALID", "0"))
-    jax.distributed.initialize(local_device_ids=[local_id])
+    if args.grid.processes == 1:
+        _restrict_to_one_gpu()
+    if args.grid.processes > 1:
+        # Slurm supplies rank and coordinator metadata. This makes the one GPU
+        # assigned to each process explicit to JAX.
+        local_id = int(os.environ.get("SLURM_LOCALID", "0"))
+        jax.distributed.initialize(local_device_ids=[local_id])
     payload = _run(args)
 
     # Finish validation on every rank before rank zero writes the result.
     # Normal process exit releases the distributed runtime.
-    multihost_utils.sync_global_devices("jaxmg_benchmark_case_complete")
+    _barrier("jaxmg_benchmark_case_complete")
     if jax.process_index() == 0:
         _atomic_json(Path(args.output), payload)
         print(json.dumps(payload, sort_keys=True), flush=True)

@@ -11,9 +11,14 @@ from pathlib import Path
 import subprocess
 
 from benchmark.cusolvermp.model import (
+    BACKENDS,
+    DEFAULT_BACKEND,
+    NATIVE_TILE_SIZE,
     ROUTINES,
     BenchmarkConfig,
     ProcessGrid,
+    grids_for_backend,
+    node_shape,
     planned_sizes,
 )
 
@@ -32,6 +37,7 @@ def _arguments() -> argparse.Namespace:
     parser.add_argument("--routine", action="append", choices=ROUTINES)
     parser.add_argument("--dtype", action="append", choices=("float32", "float64", "complex64", "complex128"))
     parser.add_argument("--grid", action="append", type=ProcessGrid.parse)
+    parser.add_argument("--backend", action="append", choices=BACKENDS)
     parser.add_argument("--submit", action="store_true")
     return parser.parse_args()
 
@@ -45,11 +51,16 @@ def _submission_command(
     routine: str,
     dtype: str,
     grid: ProcessGrid,
+    backend: str = DEFAULT_BACKEND,
 ) -> list[str]:
     """Build one outer Slurm job that will run a complete benchmark suite.
 
-    The outer allocation reserves whole nodes. ``run_suite.py`` then starts a
-    separate one-process-per-GPU ``srun`` for each matrix-size/tile-size case.
+    The allocation always reserves whole nodes, including for the single-GPU
+    reference: sites commonly enforce a minimum GRES per job (Slurm rejects a
+    smaller request with ``QOSMinGRES``), and a node to itself also keeps the
+    reference timings free of contention. ``run_suite.py`` then starts a
+    separate ``srun`` per case inside it, sized to the case's own grid, so the
+    reference still runs on exactly one GPU.
 
     Args:
         config: Hardware, CPU, memory, and wall-time settings.
@@ -59,11 +70,14 @@ def _submission_command(
         routine: Selected solver.
         dtype: Selected matrix dtype.
         grid: Selected GPU process grid.
+        backend: Selected solver implementation.
 
     Returns:
         Argument vector suitable for ``subprocess.run``.
     """
-    nodes = grid.processes // config.gpus_per_node
+    nodes, _ = node_shape(grid, config)
+    short_dtype = dtype.replace("complex", "c").replace("float", "f")
+    tag = "" if backend == DEFAULT_BACKEND else f"_{backend}"
     exported = (
         "ALL,JAXMG_BENCHMARK_CONFIG="
         + str(config_path)
@@ -73,13 +87,15 @@ def _submission_command(
         + dtype
         + ",JAXMG_BENCHMARK_GRID="
         + str(grid)
+        + ",JAXMG_BENCHMARK_BACKEND="
+        + backend
         + ",JAXMG_BENCHMARK_OUTPUT_ROOT="
         + str(output_root)
     )
     return [
         "sbatch",
         "--job-name",
-        f"jaxmg_{routine}_{dtype.replace('complex', 'c').replace('float', 'f')}_{grid}",
+        f"jaxmg{tag}_{routine}_{short_dtype}_{grid}",
         "--nodes",
         str(nodes),
         "--ntasks",
@@ -113,9 +129,10 @@ def main() -> None:
     config = BenchmarkConfig.load(config_path)
     routines = tuple(args.routine or config.routines)
     dtypes = tuple(args.dtype or config.dtypes)
-    grids = tuple(args.grid or config.grids)
+    backends = tuple(args.backend or config.backends)
 
-    # run_suite.py rejects a routine or dtype the configuration does not enable.
+    # run_suite.py rejects a routine, dtype, or backend the configuration does
+    # not enable.
     if set(routines) - set(config.routines):
         raise ValueError(
             f"routines not enabled by the configuration: "
@@ -126,43 +143,63 @@ def main() -> None:
             f"dtypes not enabled by the configuration: "
             f"{sorted(set(dtypes) - set(config.dtypes))}"
         )
+    if set(backends) - set(config.backends):
+        raise ValueError(
+            f"backends not enabled by the configuration: "
+            f"{sorted(set(backends) - set(config.backends))}"
+        )
 
     submitted = 0
     total_cases = 0
-    for routine in routines:
-        for dtype in dtypes:
-            for grid in grids:
-                if grid not in config.grids:
-                    raise ValueError(f"grid {grid} is not configured")
-                case_count = sum(
-                    len(
-                        planned_sizes(
-                            config,
-                            routine=routine,
-                            dtype=dtype,
-                            grid=grid,
-                            tile_size=tile_size,
+    suites = 0
+    for backend in backends:
+        # The single-GPU reference has one grid of its own; an explicit --grid
+        # filter only applies to the distributed backend it belongs to.
+        available = grids_for_backend(config, backend)
+        grids = tuple(grid for grid in (args.grid or available) if grid in available)
+        if not grids:
+            raise ValueError(
+                f"backend {backend} runs on "
+                f"{', '.join(str(grid) for grid in available)}, "
+                f"but --grid selected {', '.join(str(grid) for grid in args.grid)}"
+            )
+        # A native suite runs each dimension once, because the tile is not used.
+        tiles = (NATIVE_TILE_SIZE,) if backend == "jax" else config.tiles
+        for routine in routines:
+            for dtype in dtypes:
+                for grid in grids:
+                    suites += 1
+                    case_count = sum(
+                        len(
+                            planned_sizes(
+                                config,
+                                routine=routine,
+                                dtype=dtype,
+                                grid=grid,
+                                tile_size=tile_size,
+                                backend=backend,
+                            )
                         )
+                        for tile_size in tiles
                     )
-                    for tile_size in config.tiles
-                )
-                total_cases += case_count
-                command = _submission_command(
-                    config=config,
-                    config_path=config_path,
-                    script_path=script_path,
-                    output_root=Path(args.output_root).resolve(),
-                    routine=routine,
-                    dtype=dtype,
-                    grid=grid,
-                )
-                print(f"cases={case_count:3d} {' '.join(command)}")
-                if args.submit:
-                    Path("slurm-logs").mkdir(parents=True, exist_ok=True)
-                    subprocess.run(command, check=True)
-                    submitted += 1
+                    total_cases += case_count
+                    command = _submission_command(
+                        config=config,
+                        config_path=config_path,
+                        script_path=script_path,
+                        output_root=Path(args.output_root).resolve(),
+                        routine=routine,
+                        dtype=dtype,
+                        grid=grid,
+                        backend=backend,
+                    )
+                    print(f"cases={case_count:3d} {' '.join(command)}")
+                    if args.submit:
+                        Path("slurm-logs").mkdir(parents=True, exist_ok=True)
+                        subprocess.run(command, check=True)
+                        submitted += 1
     print(
-        f"logical_suites={len(routines) * len(dtypes) * len(grids)} "
+        f"logical_suites={suites} "
         f"fresh_process_cases={total_cases} submitted={submitted}"
     )
 
