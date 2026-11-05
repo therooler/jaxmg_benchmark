@@ -4,17 +4,31 @@ This repository benchmarks the distributed `jaxmg.potrs`, `jaxmg.lu_solve`,
 `jaxmg.gesvd`, and `jaxmg.syevd` routines backed by cuSOLVERMp. Each GPU runs
 one Python process.
 
+It also measures the single-GPU routines JAX ships, so the distributed timings
+have something to be compared against. Select this with `backends` (see
+[Backends](#backends)).
+
 The benchmark measures one cold call and one warm call for combinations of:
 
 - matrix size;
 - tile size;
 - datatype;
-- GPU count and two-dimensional process grid.
+- GPU count and two-dimensional process grid;
+- backend (distributed cuSOLVERMp, or the single-GPU JAX reference).
 
 Every result is numerically validated. Matrix construction and validation are
 outside the timed region.
 
+## Benchmark runs
 
+Each run is one result root, `results/<campaign>/<run>/`, holding the `cases/`
+and `logs/` trees described in [Results](#results). Add a row when a new run
+lands.
+
+| Run | Date | Hardware | Grids | Sweep  | Largest passing `N` | Stack |
+|---|---|---|---|---|---|---|
+| [`aug_2026/rusty_h100_4gpu`](results/aug_2026/rusty_h100_4gpu) | 2026-08-31 | Rusty, 4 nodes × 4 H100 (16 GPUs) | `16x1`, `4x4`, plus `1x1` JAX reference | `potrs`, `lu_solve`, `syevd`, `gesvd`; all four dtypes; `T_A` 256–4096 | 618,496 (`16x1`), 617,472 (`4x4`), 78,094 (`1x1`) | jaxmg 1.1.0, jax 0.10.1, cuSOLVERMp 0.9.0 |
+| [`aug_2026/rusty_h200_8gpu`](results/aug_2026/rusty_h200_8gpu) | 2026-08-28 | Rusty, 8 nodes × 8 H200 (64 GPUs) | `64x1`, `8x8` | `potrs` `float32`, `T_A` 1024, near-limit sizes only |  1,376,256 (`64x1`), 1,499,136 (`8x8`) | jaxmg 1.1.0, jax 0.10.1, cuSOLVERMp 0.9.0 |
 
 ## Requirements
 
@@ -86,6 +100,33 @@ To select grids manually, replace `node_counts` with, for example:
 ```toml
 grids = ["8x1", "4x2"]
 ```
+
+### Backends
+
+`backends` chooses what is measured:
+
+```toml
+[sweep]
+backends = ["cusolvermp", "jax"]
+```
+
+- `cusolvermp` is the distributed JAXMg path described above. This is the
+  default, and the only value assumed when the key is absent.
+- `jax` is the single-GPU reference: `jax.scipy.linalg.cho_factor` and
+  `cho_solve` for `potrs`, `lu_factor` and `lu_solve` for `lu_solve`,
+  `jax.numpy.linalg.svd` for `gesvd`, and `jax.numpy.linalg.eigh` for `syevd`.
+
+Both backends build their inputs with the same factories and are checked by the
+same validators, so the two sides of the comparison solve an identical problem
+and are timed the same way, with allocation outside the timed region.
+
+The reference always runs on one GPU, recorded as the `1x1` grid; it does not
+need to appear in `grids`. Its Slurm allocation is still a whole node, because
+sites commonly enforce a minimum GRES per job and reject a one-GPU request with
+`QOSMinGRES`; the per-case `srun` inside that allocation is what narrows the run
+to a single GPU. It takes no tile, so it ignores `tiles` and records
+`tile_size = 0`, and it reaches far smaller matrices than the distributed path
+because one GPU holds the whole matrix.
 
 The profile also contains the routines, datatypes, tile sizes, timing limits,
 and Slurm resources. Optional site arguments can be added directly:
@@ -226,6 +267,8 @@ results/my_cluster/
 
 Each successful JSON record contains cold and warm timings, numerical error,
 native status values, topology, package versions, and known memory estimates.
+Note that `max_abs_error` is reported by the two solves; `gesvd` reports
+`frobenius_identity_error` and `syevd` adds `trace_identity_error`.
 The estimate includes the local matrix, RHS capacity, redistribution scratch,
 and LU pivots. cuSOLVERMp's internal workspace is not known before execution.
 
@@ -261,12 +304,13 @@ The principal fields are:
 
 | Field | Meaning |
 |---|---|
-| `case_id` | Stable routine, datatype, grid, matrix-size, and tile-size identifier. |
+| `case_id` | Stable routine, datatype, grid, matrix-size, and tile-size identifier. Single-GPU reference cases add a `__bjax` suffix. |
+| `backend` | `cusolvermp` or `jax`. Absent in records written before this axis existed, which are all `cusolvermp`. |
 | `cold_seconds` | Solve durations that include first-call compilation. |
 | `warm_seconds` | Individual post-compilation solve durations. |
 | `warm_median_seconds` | Primary warm timing used by the plotting command. |
 | `max_abs_error` | Largest absolute difference from the expected solution. |
-| `native_status_codes` | One native backend status value per participating rank; successful calls report zeros. |
+| `native_status_codes` | One native backend status value per participating rank; successful calls report zeros. Empty for the single-GPU reference, which has no native backend. |
 | `local_matrix_bytes` | Input-matrix shard stored by one GPU process. |
 | `redistribution_scratch_bytes` | Native redistribution scratch allocation per GPU process. |
 | `known_total_bytes` | Matrix, RHS capacity, redistribution scratch, and LU pivots known before the solve. |
